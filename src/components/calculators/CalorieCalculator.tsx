@@ -1,7 +1,7 @@
 
 import React, { useState } from 'react';
-import { calculateDailyCalories } from '../../utils/calculations';
-import { ActivityLevel, WeightGoal } from '../../types';
+import { calculateDailyCalories } from '../../../utils/calculations';
+import { ActivityLevel, WeightGoal } from '../../../types';
 
 export const CalorieCalculator: React.FC = () => {
   const [bmr, setBmr] = useState<string>('');

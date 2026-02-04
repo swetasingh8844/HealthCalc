@@ -1,7 +1,7 @@
 
 import React, { useState } from 'react';
-import { calculateBMR } from '../../utils/calculations';
-import { UnitSystem, Gender } from '../../types';
+import { calculateBMR } from '../../../utils/calculations';
+import { UnitSystem, Gender } from '../../../types';
 
 export const BMRCalculator: React.FC = () => {
   const [weight, setWeight] = useState<string>('');
