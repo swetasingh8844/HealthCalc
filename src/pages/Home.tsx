@@ -122,7 +122,7 @@ export const Home: React.FC = () => {
           </div>
 
           <div className="bg-white dark:bg-gray-800 p-6 rounded-2xl border border-gray-200 dark:border-gray-700 shadow-sm">
-            <h3 className="text-lg font-bold mb-4 dark:text-white">Why Use HealthCalc Pro?</h3>
+            <h3 className="text-lg font-bold mb-4 dark:text-white">Why Use HealthCalculator Pro?</h3>
             <p className="text-sm text-gray-600 dark:text-gray-400 leading-relaxed">
               We provide accurate calculations based on established medical formulas like Harris-Benedict and BMI standards to help you prepare your own diet and health plans effectively.
             </p>

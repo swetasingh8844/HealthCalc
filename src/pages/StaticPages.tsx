@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 
 export const About: React.FC = () => (
   <div className="container mx-auto px-4 py-16 prose prose-brand dark:prose-invert max-w-4xl">
-    <h1 className="text-4xl font-black text-gray-900 dark:text-white mb-8">About HealthCalc Pro</h1>
+    <h1 className="text-4xl font-black text-gray-900 dark:text-white mb-8">About HealthCalculator Pro</h1>
     <p className="text-xl text-gray-700 dark:text-gray-300 leading-relaxed">
       We are making this so that everyone can calculate their BMI, BMR, etc., and according to this they can prepare their diet plans. Our goal is to provide accessible, high-quality health metrics to help individuals take charge of their wellness journey through science-backed calculations.
     </p>
@@ -15,7 +15,7 @@ export const PrivacyPolicy: React.FC = () => (
     <h1 className="text-4xl font-black text-gray-900 dark:text-white mb-8">Privacy Policy</h1>
     <div className="space-y-6 text-gray-700 dark:text-gray-300 leading-relaxed">
       <p>
-        At HealthCalc Pro, your privacy is our top priority. We understand that health data is deeply personal, which is why we have designed our platform to be as secure as possible. Every calculation you perform—whether it's for BMI, BMR, or daily calorie needs—is processed entirely within your own web browser. Your height, weight, age, and gender are never transmitted to our servers, nor are they stored in any permanent database.
+        At HealthCalculator Pro, your privacy is our top priority. We understand that health data is deeply personal, which is why we have designed our platform to be as secure as possible. Every calculation you perform—whether it's for BMI, BMR, or daily calorie needs—is processed entirely within your own web browser. Your height, weight, age, and gender are never transmitted to our servers, nor are they stored in any permanent database.
       </p>
       <p>
         We utilize local storage only for functional preferences, such as remembering your choice between light and dark modes, to ensure a seamless experience upon your return. While we use standard third-party tools like Google Analytics and Google AdSense to monitor site traffic and support our free services through advertising, these services handle data according to their own strict privacy protocols. We are committed to providing a safe, transparent, and private environment where you can track your health metrics with absolute peace of mind.
