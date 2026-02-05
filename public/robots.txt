@@ -1,5 +1,8 @@
-
 User-agent: *
 Allow: /
 
+<<<<<<< HEAD
 Sitemap: https://www.thefitcalculator.com/sitemap.xml
+=======
+Sitemap: https://www.thefitcalculator.com/sitemap.xml
+>>>>>>> 67ef06dbf83c969b185b2b6ae8a448ab997f519b
