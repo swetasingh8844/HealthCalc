@@ -1,4 +1,5 @@
 
 User-agent: *
 Allow: /
-Sitemap: https://healthcalcpro.com/sitemap.xml
+
+Sitemap: https://www.thefitcalculator.com/sitemap.xml
