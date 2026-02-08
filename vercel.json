@@ -1,9 +1,5 @@
 {
-  "redirects": [
-    {
-      "source": "https://www.thefitcalculator.com/(.*)",
-      "destination": "https://thefitcalculator.com/$1",
-      "permanent": true
-    }
+  "rewrites": [
+    { "source": "/(.*)", "destination": "/index.html" }
   ]
 }
