@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Routes, Route, useLocation } from 'react-router-dom';
 import { HelmetProvider } from 'react-helmet-async';
+
 import { Header } from './components/Header';
 import { Footer } from './components/Footer';
 import { Home } from './pages/Home';
@@ -36,30 +37,23 @@ const App: React.FC = () => {
 
   return (
     <HelmetProvider>
-    <div className="min-h-screen flex flex-col font-sans selection:bg-brand-100 selection:text-brand-700 bg-gray-50 dark:bg-gray-900 text-gray-900 dark:text-gray-100 transition-colors duration-300">
-      <ScrollToTop />
-      <Header isDarkMode={isDarkMode} toggleDarkMode={toggleDarkMode} />
-
-      <main className="flex-grow">
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/privacy-policy" element={<PrivacyPolicy />} />
-          <Route path="/contact" element={<ContactUs />} />
-          <Route
-            path="/terms"
-            element={
-              <div className="container mx-auto p-12">
-                <h1>Terms of Service</h1>
-                <p>Standard terms for HealthCalc Pro users...</p>
-              </div>
-            }
-          />
-        </Routes>
-      </main>
-
-      <Footer />
-    </div>
+        <main className="flex-grow">
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+            <Route path="/contact" element={<ContactUs />} />
+            <Route
+              path="/terms"
+              element={
+                <div className="container mx-auto p-12">
+                  <h1>Terms of Service</h1>
+                  <p>Standard terms for HealthCalc Pro users...</p>
+                </div>
+              }
+            />
+          </Routes>
+        </main>
     </HelmetProvider>
   );
 };

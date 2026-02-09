@@ -73,6 +73,12 @@ export const Header: React.FC<HeaderProps> = ({ isDarkMode, toggleDarkMode }) =>
           </div>
         </div>
       )}
+      <div style={{ display: 'none' }}>
+      <a href="/about">About</a>
+      <a href="/contact">Contact</a>
+     <a href="/privacy-policy">Privacy Policy</a>
+    </div>
+
     </header>
   );
 };
