@@ -1,6 +1,10 @@
 
 import React, { useEffect, useState } from 'react';
+<<<<<<< HEAD
 import { Routes, Route, useLocation } from 'react-router-dom';
+=======
+import {Routes, Route, useLocation } from 'react-router-dom';
+>>>>>>> 494e4633de1f73787ad8ab023303a5e94906e152
 import { BrowserRouter as Router } from 'react-router-dom';
 
 import { Header } from './components/Header';

@@ -2,28 +2,23 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
   <url>
-    <loc>https://www.thefitcalculator.com/</loc>
-    <lastmod>2026-02-05</lastmod>
+    <loc>https://thefitcalculator.com/</loc>
     <priority>1.0</priority>
   </url>
 
   <url>
-    <loc>https://www.thefitcalculator.com/bmi</loc>
+    <loc>https://thefitcalculator.com/about</loc>
     <priority>0.8</priority>
   </url>
 
   <url>
-    <loc>https://www.thefitcalculator.com/bmr</loc>
-    <priority>0.8</priority>
+    <loc>https://thefitcalculator.com/privacy-policy</loc>
+    <priority>0.6</priority>
   </url>
 
   <url>
-    <loc>https://www.thefitcalculator.com/calorie</loc>
-    <priority>0.8</priority>
+    <loc>https://thefitcalculator.com/contact</loc>
+    <priority>0.6</priority>
   </url>
 
-<<<<<<< HEAD
 </urlset>
-=======
-</urlset>
->>>>>>> 67ef06dbf83c969b185b2b6ae8a448ab997f519b
