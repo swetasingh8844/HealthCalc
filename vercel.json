@@ -1,14 +1,7 @@
-
 {
   "redirects": [
     {
-      "source": "/(.*)",
-      "has": [
-        {
-          "type": "host",
-          "value": "www.thefitcalculator.com"
-        }
-      ],
+      "source": "https://www.thefitcalculator.com/(.*)",
       "destination": "https://thefitcalculator.com/$1",
       "permanent": true
     }
