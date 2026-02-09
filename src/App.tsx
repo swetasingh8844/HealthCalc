@@ -37,6 +37,10 @@ const App: React.FC = () => {
 
   return (
     <HelmetProvider>
+      <div className="min-h-screen flex flex-col font-sans selection:bg-brand-100 selection:text-brand-700 bg-gray-50 dark:bg-gray-900 text-gray-900 dark:text-gray-100 transition-colors duration-300">
+        <ScrollToTop />
+        <Header isDarkMode={isDarkMode} toggleDarkMode={toggleDarkMode} />
+
         <main className="flex-grow">
           <Routes>
             <Route path="/" element={<Home />} />
@@ -54,8 +58,11 @@ const App: React.FC = () => {
             />
           </Routes>
         </main>
+
+        <Footer />
+      </div>
     </HelmetProvider>
   );
 };
 
-export default App;
+export default App;  
