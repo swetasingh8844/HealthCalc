@@ -1,8 +1,13 @@
 
 import React, { useState } from 'react';
+import { Helmet } from "react-helmet-async";
 
 export const About: React.FC = () => (
   <div className="container mx-auto px-4 py-16 prose prose-brand dark:prose-invert max-w-4xl">
+    <Helmet>
+      <title>About | HealthCalculator Pro</title>
+      <link rel="canonical" href="https://thefitcalculator.com/about" />
+    </Helmet>
     <h1 className="text-4xl font-black text-gray-900 dark:text-white mb-8">About HealthCalculator Pro</h1>
     <p className="text-xl text-gray-700 dark:text-gray-300 leading-relaxed">
       We are making this so that everyone can calculate their BMI, BMR, etc., and according to this they can prepare their diet plans. Our goal is to provide accessible, high-quality health metrics to help individuals take charge of their wellness journey through science-backed calculations.
@@ -12,6 +17,10 @@ export const About: React.FC = () => (
 
 export const PrivacyPolicy: React.FC = () => (
   <div className="container mx-auto px-4 py-16 prose prose-brand dark:prose-invert max-w-4xl">
+    <Helmet>
+      <title>Privacy Policy | HealthCalculator Pro</title>
+      <link rel="canonical" href="https://thefitcalculator.com/privacy-policy" />
+    </Helmet>
     <h1 className="text-4xl font-black text-gray-900 dark:text-white mb-8">Privacy Policy</h1>
     <div className="space-y-6 text-gray-700 dark:text-gray-300 leading-relaxed">
       <p>
@@ -59,6 +68,10 @@ export const ContactUs: React.FC = () => {
 
   return (
     <div className="container mx-auto px-4 py-16 max-w-2xl">
+       <Helmet>
+        <title>Contact | HealthCalculator Pro</title>
+        <link rel="canonical" href="https://thefitcalculator.com/contact" />
+      </Helmet>
       <div className="text-center mb-12">
         <h1 className="text-4xl font-black text-gray-900 dark:text-white mb-4">Contact Us</h1>
         <p className="text-lg text-gray-600 dark:text-gray-400">

@@ -10,7 +10,7 @@ export const Home: React.FC = () => {
   return (
     <div className="container mx-auto px-4 py-8">
       {/* Top Ad */}
-      <AdPlaceholder slot="top-banner" className="h-[90px]" />
+      {/* <AdPlaceholder slot="top-banner" className="h-[90px]" /> */}
 
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-10">
         <div className="lg:col-span-2 space-y-12">
@@ -33,7 +33,7 @@ export const Home: React.FC = () => {
           <IdealWeightCalculator />
 
           {/* In-content Ad */}
-          <AdPlaceholder slot="mid-content" className="h-[250px]" />
+          {/* <AdPlaceholder slot="mid-content" className="h-[250px]" /> */}
 
           <article className="prose prose-brand dark:prose-invert max-w-none bg-white dark:bg-gray-800 p-8 rounded-2xl border border-gray-100 dark:border-gray-700 shadow-sm space-y-8">
             <section>
@@ -101,7 +101,7 @@ export const Home: React.FC = () => {
 
         <aside className="space-y-8">
           {/* Sidebar Ad */}
-          <AdPlaceholder slot="sidebar-top" className="h-[600px] hidden lg:flex" label="Premium Partner" />
+          {/* <AdPlaceholder slot="sidebar-top" className="h-[600px] hidden lg:flex" label="Premium Partner" /> */}
 
           <div className="bg-brand-600 dark:bg-brand-700 p-6 rounded-2xl text-white shadow-lg">
             <h3 className="text-xl font-bold mb-3">Quick Health Tips</h3>
@@ -128,12 +128,12 @@ export const Home: React.FC = () => {
             </p>
           </div>
 
-          <AdPlaceholder slot="sidebar-bottom" className="h-[250px]" />
+          {/* <AdPlaceholder slot="sidebar-bottom" className="h-[250px]" /> */}
         </aside>
       </div>
 
       {/* Footer Ad */}
-      <AdPlaceholder slot="footer-banner" className="h-[90px]" />
+      {/* <AdPlaceholder slot="footer-banner" className="h-[90px]" /> */}
     </div>
   );
 };
