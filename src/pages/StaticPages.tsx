@@ -1,6 +1,6 @@
 
 import React, { useState } from 'react';
-import { Helmet } from "react-helmet";
+import { Helmet } from 'react-helmet-async';
 
 export const About: React.FC = () => (
   <div className="container mx-auto px-4 py-16 prose prose-brand dark:prose-invert max-w-4xl">

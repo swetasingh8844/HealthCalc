@@ -3,12 +3,22 @@ import React from 'react';
 import { BMICalculator } from '../components/calculators/BMICalculator';
 import { BMRCalculator } from '../components/calculators/BMRCalculator';
 import { CalorieCalculator } from '../components/calculators/CalorieCalculator';
+import { Helmet } from 'react-helmet-async';
 import { IdealWeightCalculator } from '../components/calculators/IdealWeightCalculator';
 import { AdPlaceholder } from '../components/AdPlaceholder';
 
 export const Home: React.FC = () => {
   return (
     <div className="container mx-auto px-4 py-8">
+       {/* Add canonical and meta info here */}
+      <Helmet>
+        <title>HealthCalculator Pro | BMI, BMR & Calorie Calculator</title>
+        <meta
+          name="description"
+          content="Calculate your BMI, BMR, and daily calorie needs with our accurate health calculators. Get personalized health metrics for a better lifestyle."
+        />
+        <link rel="canonical" href="https://thefitcalculator.com/" />
+      </Helmet>
       {/* Top Ad */}
       {/* <AdPlaceholder slot="top-banner" className="h-[90px]" /> */}
 
