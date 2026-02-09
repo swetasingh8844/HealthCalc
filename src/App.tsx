@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Routes, Route, useLocation } from 'react-router-dom';
-
+import { HelmetProvider } from 'react-helmet-async';
 import { Header } from './components/Header';
 import { Footer } from './components/Footer';
 import { Home } from './pages/Home';
@@ -35,6 +35,7 @@ const App: React.FC = () => {
   const toggleDarkMode = () => setIsDarkMode(!isDarkMode);
 
   return (
+    <HelmetProvider>
     <div className="min-h-screen flex flex-col font-sans selection:bg-brand-100 selection:text-brand-700 bg-gray-50 dark:bg-gray-900 text-gray-900 dark:text-gray-100 transition-colors duration-300">
       <ScrollToTop />
       <Header isDarkMode={isDarkMode} toggleDarkMode={toggleDarkMode} />
@@ -59,6 +60,7 @@ const App: React.FC = () => {
 
       <Footer />
     </div>
+    </HelmetProvider>
   );
 };
 
