@@ -17,13 +17,12 @@ export const Footer: React.FC = () => {
           <div>
             <h4 className="text-white font-bold mb-4">Calculators</h4>
             <ul className="space-y-2 text-sm">
-              <li><Link to="/" className="hover:text-brand-500 transition-colors">BMI Calculator</Link></li>
-              <li><Link to="/" className="hover:text-brand-500 transition-colors">BMR Calculator</Link></li>
-              <li><Link to="/" className="hover:text-brand-500 transition-colors">Calorie Calculator</Link></li>
-              <li><Link to="/" className="hover:text-brand-500 transition-colors">Ideal Weight</Link></li>
+              <li><Link to="/bmi-calculator" className="hover:text-brand-500 transition-colors">BMI Calculator</Link></li>
+              <li><Link to="/bmr-calculator" className="hover:text-brand-500 transition-colors">BMR Calculator</Link></li>
+              <li><Link to="/calorie-calculator" className="hover:text-brand-500 transition-colors">Calorie Calculator</Link></li>
+              <li><Link to="/ideal-weight-calculator" className="hover:text-brand-500 transition-colors">Ideal Weight</Link></li>
             </ul>
           </div>
-
           <div>
             <h4 className="text-white font-bold mb-4">Information</h4>
             <ul className="space-y-2 text-sm">

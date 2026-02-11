@@ -2,7 +2,8 @@
 import React, { useState } from 'react';
 import { calculateDailyCalories } from '../../../utils/calculations';
 import { ActivityLevel, WeightGoal } from '../../../types';
-
+import { Helmet } from 'react-helmet-async';
+import { UnitConverter } from '../../components/UnitConverter';
 export const CalorieCalculator: React.FC = () => {
   const [bmr, setBmr] = useState<string>('');
   const [activity, setActivity] = useState<ActivityLevel>(ActivityLevel.Sedentary);
@@ -33,6 +34,16 @@ export const CalorieCalculator: React.FC = () => {
   };
 
   return (
+    <>
+    <Helmet>
+  <title>Calorie Calculator - Daily Calorie Needs</title>
+  <meta
+    name="description"
+    content="Calculate your daily calorie needs based on your age, weight, height, and activity level using our free calorie calculator."
+  />
+  <link rel="canonical" href="https://thefitcalculator.com/calorie" />
+</Helmet>
+ {/* <UnitConverter /> */}
     <section id="calorie-calculator" className="bg-white dark:bg-gray-800 p-6 rounded-2xl shadow-xl border border-gray-100 dark:border-gray-700 transition-colors duration-300">
       <h2 className="text-2xl font-bold mb-4 text-brand-700 dark:text-brand-500">Daily Calorie Calculator</h2>
       
@@ -126,6 +137,32 @@ export const CalorieCalculator: React.FC = () => {
           </div>
         </div>
       )}
-    </section>
+   <br></br>
+     <h3 className="text-xl font-bold mb-2">What is a Calorie Calculator?</h3>
+  <p className="mb-3">
+    A calorie calculator estimates the number of calories your body needs
+    each day based on your age, weight, height, gender, and activity level.
+  </p>
+  <p>
+    This helps you plan your diet for weight loss, weight gain, or maintaining
+    your current weight in a healthy way.
+     </p>
+    <br></br>
+    <h3 className="text-xl font-bold mb-4">Mastering Your Daily Calories</h3>
+              <p className="text-gray-700 dark:text-gray-300 mb-4">
+                Calculating your daily calorie needs is the first step toward effective weight management. This metric, often called Total Daily Energy Expenditure (TDEE), combines your BMR with the energy you burn during physical activity.
+              </p>
+ 
+   <h3 className="text-xl font-bold mb-2">Caloric Goals & Management</h3>
+              <p className="text-gray-700 dark:text-gray-300 mb-4">
+                To prepare your diet plan, you must first define your goal:
+              </p>
+              <ul className="list-disc pl-5 space-y-2 text-gray-700 dark:text-gray-300">
+                <li><strong>Weight Loss:</strong> Consuming roughly 500 calories less than your TDEE daily can lead to a healthy weight loss of about 1lb (0.5kg) per week.</li>
+                <li><strong>Maintenance:</strong> Eating exactly what you burn keeps your weight steady.</li>
+                <li><strong>Weight Gain:</strong> A caloric surplus, combined with resistance training, supports muscle development and weight gain.</li>
+              </ul>
+  </section>
+    </>
   );
 };

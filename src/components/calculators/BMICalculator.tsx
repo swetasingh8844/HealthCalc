@@ -2,6 +2,8 @@
 import React, { useState } from 'react';
 import { calculateBMI, getBMICategory } from '../../../utils/calculations';
 import { UnitSystem } from '../../../types';
+import { Helmet } from 'react-helmet-async';
+import { UnitConverter } from '../../components/UnitConverter';
 
 export const BMICalculator: React.FC = () => {
   const [weight, setWeight] = useState<string>('');
@@ -37,6 +39,17 @@ export const BMICalculator: React.FC = () => {
   };
 
   return (
+      <>
+    <Helmet>
+      <title>BMI Calculator - Free Online BMI Tool</title>
+      <meta
+        name="description"
+        content="Calculate your Body Mass Index (BMI) instantly with our free online BMI calculator. Supports metric and imperial units."
+      />
+      <link rel="canonical" href="https://thefitcalculator.com/bmi" />
+    </Helmet>
+
+
     <section id="bmi-calculator" className="bg-white dark:bg-gray-800 p-6 rounded-2xl shadow-xl border border-gray-100 dark:border-gray-700 transition-colors duration-300">
       <h2 className="text-2xl font-bold mb-4 text-brand-700 dark:text-brand-500">BMI Calculator for Adults</h2>
       
@@ -117,6 +130,18 @@ export const BMICalculator: React.FC = () => {
           </div>
         </div>
       )}
+      <br></br>
+      <h3 className="text-xl font-bold mb-2">What is BMI?</h3>
+   
+  <p className="mb-3">
+    Body Mass Index (BMI) is a simple index of weight-for-height that is commonly used to classify underweight, overweight and obesity in adults. It is defined as the weight in kilograms divided by the square of the height in metres (kg/m²).
+  </p>
+
+   <h3 className="text-xl font-bold mb-2">Why Calculate Your BMI?</h3>
+  <p>
+    While BMI is not a direct measure of body fatness, it provides a reliable indicator for most people. It is used as a screening tool to identify potential weight problems for adults. However, BMI does not take into account muscle mass, bone density, and overall body composition.
+  </p>
     </section>
+     </>
   );
 };

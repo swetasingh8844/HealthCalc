@@ -6,6 +6,8 @@ import { CalorieCalculator } from '../components/calculators/CalorieCalculator';
 import { Helmet } from 'react-helmet-async';
 import { IdealWeightCalculator } from '../components/calculators/IdealWeightCalculator';
 import { AdPlaceholder } from '../components/AdPlaceholder';
+import { useLocation } from "react-router-dom";
+import { UnitConverter } from '../components/UnitConverter';
 
 export const Home: React.FC = () => {
   return (
@@ -33,7 +35,7 @@ export const Home: React.FC = () => {
               Use our suite of free, professional health tools to track your progress. From BMI calculations to daily calorie needs, we've got you covered.
             </p>
           </header>
-
+         
           <BMICalculator />
 
           <BMRCalculator />
@@ -45,8 +47,8 @@ export const Home: React.FC = () => {
           {/* In-content Ad */}
           {/* <AdPlaceholder slot="mid-content" className="h-[250px]" /> */}
 
-          <article className="prose prose-brand dark:prose-invert max-w-none bg-white dark:bg-gray-800 p-8 rounded-2xl border border-gray-100 dark:border-gray-700 shadow-sm space-y-8">
-            <section>
+          {/* <article className="prose prose-brand dark:prose-invert max-w-none bg-white dark:bg-gray-800 p-8 rounded-2xl border border-gray-100 dark:border-gray-700 shadow-sm space-y-8"> */}
+            {/* <section>
               <h2 className="text-2xl font-bold mb-4">What is BMI?</h2>
               <p className="text-gray-700 dark:text-gray-300 mb-4">
                 Body Mass Index (BMI) is a simple index of weight-for-height that is commonly used to classify underweight, overweight and obesity in adults. It is defined as the weight in kilograms divided by the square of the height in metres (kg/m²).
@@ -94,9 +96,9 @@ export const Home: React.FC = () => {
               </ul>
             </section>
 
-            <hr className="border-gray-100 dark:border-gray-700" />
+            <hr className="border-gray-100 dark:border-gray-700" /> */}
 
-            <section>
+            {/* <section>
               <h2 className="text-2xl font-bold mb-4">The Science of Ideal Weight</h2>
               <p className="text-gray-700 dark:text-gray-300 mb-4">
                 "Ideal weight" is an estimated healthy range derived from extensive population studies. Our calculator uses the Devine Formula, a standard medical reference point for clinical assessments.
@@ -105,8 +107,8 @@ export const Home: React.FC = () => {
               <p className="text-gray-700 dark:text-gray-300 mb-4">
                 While no single weight is perfect for everyone, staying within your recommended ideal range significantly reduces the risk of chronic conditions like hypertension, cardiovascular disease, and joint issues. It serves as a helpful target when you are preparing long-term diet and lifestyle plans.
               </p>
-            </section>
-          </article>
+            </section> */}
+          {/* </article> */}
         </div>
 
         <aside className="space-y-8">
@@ -147,3 +149,5 @@ export const Home: React.FC = () => {
     </div>
   );
 };
+
+export default Home;

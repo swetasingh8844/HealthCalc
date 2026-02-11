@@ -2,7 +2,8 @@
 import React, { useState } from 'react';
 import { calculateBMR } from '../../../utils/calculations';
 import { UnitSystem, Gender } from '../../../types';
-
+import { Helmet } from 'react-helmet-async';
+import { UnitConverter } from '../../components/UnitConverter';
 export const BMRCalculator: React.FC = () => {
   const [weight, setWeight] = useState<string>('');
   const [height, setHeight] = useState<string>('');
@@ -41,6 +42,16 @@ export const BMRCalculator: React.FC = () => {
   };
 
   return (
+    <>
+    <Helmet>
+  <title>BMR Calculator - Basal Metabolic Rate Calculator</title>
+  <meta
+    name="description"
+    content="Use our BMR calculator to estimate your basal metabolic rate and understand how many calories your body needs at rest."
+  />
+  <link rel="canonical" href="https://thefitcalculator.com/bmr" />
+</Helmet>
+ {/* <UnitConverter /> */}
     <section id="bmr-calculator" className="bg-white dark:bg-gray-800 p-6 rounded-2xl shadow-xl border border-gray-100 dark:border-gray-700 transition-colors duration-300">
       <h2 className="text-2xl font-bold mb-4 text-brand-700 dark:text-brand-500">BMR Calculator (Harris-Benedict)</h2>
       
@@ -141,6 +152,31 @@ export const BMRCalculator: React.FC = () => {
           </div>
         </div>
       )}
+      <br></br>
+      <h3 className="text-xl font-bold mb-2">What is BMR?</h3>
+   
+  <p className="mb-3">
+     Basal Metabolic Rate (BMR) is the number of calories your body needs to
+    perform basic functions like breathing, circulation, and cell production
+    while at rest.
+  </p>
+
+   <h3 className="text-xl font-bold mb-2">Understanding BMR</h3>
+  <p>
+   Your BMR represents the minimum amount of energy (calories) your body requires to keep its vital systems functioning—like breathing, blood circulation, and cell production—while at complete rest.
+  </p>
+   <br></br>
+  <h3 className="text-xl font-bold mb-2">Factors Influencing BMR</h3>
+  <p>
+  Several variables determine your metabolic rate:
+  <ul className="list-disc pl-5 space-y-2 text-gray-700 dark:text-gray-300">
+                <li><strong>Muscle Mass:</strong> Muscle burns more energy at rest than fat, so higher muscle mass increases BMR.</li>
+                <li><strong>Age:</strong> Metabolic rate typically slows down as we age due to changes in muscle tissue.</li>
+                <li><strong>Gender:</strong> Men generally have a slightly higher BMR because they often possess more lean muscle mass.</li>
+                <li><strong>Genetics:</strong> Individual metabolic traits can vary based on your family history.</li>
+              </ul>
+  </p>
     </section>
+    </>
   );
 };

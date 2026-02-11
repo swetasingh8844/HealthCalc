@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 
@@ -24,7 +23,10 @@ export const Header: React.FC<HeaderProps> = ({ isDarkMode, toggleDarkMode }) =>
           <Link to="/about" className="text-gray-600 dark:text-gray-300 hover:text-brand-600 dark:hover:text-brand-500 font-medium transition">About</Link>
           <Link to="/contact" className="text-gray-600 dark:text-gray-300 hover:text-brand-600 dark:hover:text-brand-500 font-medium transition">Contact</Link>
           <Link to="/privacy-policy" className="text-gray-600 dark:text-gray-300 hover:text-brand-600 dark:hover:text-brand-500 font-medium transition">Privacy</Link>
-          
+          <Link to="/bmi-calculator">BMI Calculator</Link>
+          <Link to="/bmr-calculator">BMR Calculator</Link>
+         <Link to="/ideal-weight-calculator">Ideal Weight</Link>
+          <Link to="/calorie-calculator">Calorie Calculator</Link>
           <button 
             onClick={toggleDarkMode}
             className="p-2 rounded-lg bg-gray-100 dark:bg-gray-700 text-gray-600 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-600 transition-colors"
@@ -73,7 +75,6 @@ export const Header: React.FC<HeaderProps> = ({ isDarkMode, toggleDarkMode }) =>
           </div>
         </div>
       )}
-     
     </header>
   );
 };

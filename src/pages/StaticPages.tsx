@@ -126,7 +126,7 @@ export const ContactUs: React.FC = () => {
                 type="text" 
                 required
                 className="w-full px-4 py-3 rounded-xl border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-900 dark:text-white focus:ring-2 focus:ring-brand-500 outline-none transition"
-                placeholder="Inquiry about BMI Calculator"
+                placeholder="Inquiry about any Calculator"
               />
             </div>
             <div>
