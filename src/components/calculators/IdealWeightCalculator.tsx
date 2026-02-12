@@ -42,7 +42,8 @@ export const IdealWeightCalculator: React.FC = () => {
   return (
     <>
     <Helmet>
-  <title>Ideal Weight Calculator - Find Your Healthy Body Weight</title>
+    
+  <title>Healthcare Pro Ideal Weight Calculator - Find Your Healthy Body Weight</title>
 
   <meta
     name="description"
