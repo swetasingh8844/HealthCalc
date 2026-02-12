@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-
+import { Helmet } from 'react-helmet-async';
 export const UnitConverter: React.FC = () => {
   const [height, setHeight] = useState('');
   const [heightUnit, setHeightUnit] = useState<'cm' | 'inch'>('cm');
@@ -51,6 +51,24 @@ export const UnitConverter: React.FC = () => {
 
   return (
     <div className="flex justify-center my-6">
+      <Helmet>
+  <title>Unit Converter | cm to inches, kg to lbs</title>
+
+  <meta
+    name="description"
+    content="Convert height and weight easily. Convert cm to inches and kg to lbs instantly."
+  />
+
+  <meta property="og:title" content="Unit Converter | cm to inches, kg to lbs" />
+  <meta
+    property="og:description"
+    content="Convert cm to inches and kg to lbs instantly."
+  />
+  <meta property="og:url" content="https://thefitcalculator.com/unit-converter" />
+  <meta property="og:type" content="website" />
+  <link rel="canonical" href="https://thefitcalculator.com/unit-converterr" />
+</Helmet>
+
       <div className="bg-white dark:bg-gray-800 p-5 rounded-xl shadow-md border border-gray-200 dark:border-gray-700 w-full max-w-xs text-center">
 
         <h3 className="text-lg font-semibold mb-4 text-gray-800 dark:text-gray-200">

@@ -48,7 +48,7 @@ export const BMICalculator: React.FC = () => {
         name="description"
         content="Calculate your Body Mass Index (BMI) instantly with our free online BMI calculator. Supports metric and imperial units."
       />
-      <link rel="canonical" href="https://thefitcalculator.com/bmi" />
+      <link rel="canonical" href="https://thefitcalculator.com/bmi-calculator" />
     </Helmet>
 
 

@@ -43,7 +43,7 @@ export const CalorieCalculator: React.FC = () => {
     name="description"
     content="Calculate your daily calorie needs based on your age, weight, height, and activity level using our free calorie calculator."
   />
-  <link rel="canonical" href="https://thefitcalculator.com/calorie" />
+  <link rel="canonical" href="https://thefitcalculator.com/calorie-calculator" />
 </Helmet>
  {/* <UnitConverter /> */}
     <section id="calorie-calculator" className="bg-white dark:bg-gray-800 p-6 rounded-2xl shadow-xl border border-gray-100 dark:border-gray-700 transition-colors duration-300">
@@ -140,7 +140,7 @@ export const CalorieCalculator: React.FC = () => {
           </div>
 <button
   onClick={() => {
-    const shareText = `My daily calorie need is ${Math.round(result)} calories/day. Check yours at https://thefitcalculator.com/calorie`;
+    const shareText = `My daily calorie need is ${Math.round(result)} calories/day. Check yours at https://thefitcalculator.com/calorie-calculator`;
 
     const isMobile = /Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
 
@@ -162,7 +162,7 @@ export const CalorieCalculator: React.FC = () => {
     {/* WhatsApp */}
     <a
       href={`https://wa.me/?text=${encodeURIComponent(
-        `My daily calorie need is ${Math.round(result)} calories/day. Check yours at https://thefitcalculator.com/calorie`
+        `My daily calorie need is ${Math.round(result)} calories/day. Check yours at https://thefitcalculator.com/calorie-calculator`
       )}`}
       target="_blank"
       rel="noopener noreferrer"
@@ -174,7 +174,7 @@ export const CalorieCalculator: React.FC = () => {
     {/* Telegram */}
     <a
       href={`https://t.me/share/url?text=${encodeURIComponent(
-        `My daily calorie need is ${Math.round(result)} calories/day. Check yours at https://thefitcalculator.com/calorie`
+        `My daily calorie need is ${Math.round(result)} calories/day. Check yours at https://thefitcalculator.com/calorie-calculator`
       )}`}
       target="_blank"
       rel="noopener noreferrer"
@@ -186,7 +186,7 @@ export const CalorieCalculator: React.FC = () => {
     {/* Email */}
     <a
       href={`mailto:?subject=My Daily Calorie Result&body=${encodeURIComponent(
-        `My daily calorie need is ${Math.round(result)} calories/day. Check yours at https://thefitcalculator.com/calorie`
+        `My daily calorie need is ${Math.round(result)} calories/day. Check yours at https://thefitcalculator.com/calorie-calculator`
       )}`}
       className="px-3 py-2 bg-gray-700 text-white rounded-lg text-sm"
     >
@@ -196,7 +196,7 @@ export const CalorieCalculator: React.FC = () => {
     {/* Copy */}
     <button
       onClick={() => {
-        const text = `My daily calorie need is ${Math.round(result)} calories/day. Check yours at https://thefitcalculator.com/calorie`;
+        const text = `My daily calorie need is ${Math.round(result)} calories/day. Check yours at https://thefitcalculator.com/calorie-calculator`;
         navigator.clipboard.writeText(text);
         alert("Copied to clipboard!");
       }}

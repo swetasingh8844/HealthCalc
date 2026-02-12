@@ -41,4 +41,9 @@
    <priority>1.0</priority>
 </url>
 
+<url>
+  <loc>https://thefitcalculator.com/unit-converter</loc>
+   <priority>1.0</priority>
+</url>
+
 </urlset>

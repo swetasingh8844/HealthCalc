@@ -47,7 +47,7 @@ export const IdealWeightCalculator: React.FC = () => {
     name="description"
     content="Find your ideal body weight using our accurate ideal weight calculator based on height, gender, and body frame."
   />
-  <link rel="canonical" href="https://thefitcalculator.com/ideal-weight" />
+  <link rel="canonical" href="https://thefitcalculator.com/ideal-weight-calculator" />
 </Helmet>
  {/* <UnitConverter /> */}
     <section id="ideal-weight-calculator" className="bg-white dark:bg-gray-800 p-6 rounded-2xl shadow-xl border border-gray-100 dark:border-gray-700 transition-colors duration-300">
@@ -141,7 +141,7 @@ export const IdealWeightCalculator: React.FC = () => {
         ? result.toFixed(1) + " kg"
         : (result * 2.20462).toFixed(1) + " lbs";
 
-    const shareText = `My ideal weight is ${weight}. Check yours at https://thefitcalculator.com/ideal-weight`;
+    const shareText = `My ideal weight is ${weight}. Check yours at https://thefitcalculator.com/ideal-weight-calculator`;
 
     const isMobile = /Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
 
@@ -169,7 +169,7 @@ export const IdealWeightCalculator: React.FC = () => {
           unit === UnitSystem.Metric
             ? result.toFixed(1) + " kg"
             : (result * 2.20462).toFixed(1) + " lbs"
-        }. Check yours at https://thefitcalculator.com/ideal-weight`
+        }. Check yours at https://thefitcalculator.com/ideal-weight-calculator`
       )}`}
       target="_blank"
       rel="noopener noreferrer"
@@ -185,7 +185,7 @@ export const IdealWeightCalculator: React.FC = () => {
           unit === UnitSystem.Metric
             ? result.toFixed(1) + " kg"
             : (result * 2.20462).toFixed(1) + " lbs"
-        }. Check yours at https://thefitcalculator.com/ideal-weight`
+        }. Check yours at https://thefitcalculator.com/ideal-weight-calculator`
       )}`}
       target="_blank"
       rel="noopener noreferrer"
@@ -201,7 +201,7 @@ export const IdealWeightCalculator: React.FC = () => {
           unit === UnitSystem.Metric
             ? result.toFixed(1) + " kg"
             : (result * 2.20462).toFixed(1) + " lbs"
-        }. Check yours at https://thefitcalculator.com/ideal-weight`
+        }. Check yours at https://thefitcalculator.com/ideal-weight-calculator`
       )}`}
       className="px-3 py-2 bg-gray-700 text-white rounded-lg text-sm"
     >
@@ -215,7 +215,7 @@ export const IdealWeightCalculator: React.FC = () => {
           unit === UnitSystem.Metric
             ? result.toFixed(1) + " kg"
             : (result * 2.20462).toFixed(1) + " lbs"
-        }. Check yours at https://thefitcalculator.com/ideal-weight`;
+        }. Check yours at https://thefitcalculator.com/ideal-weight-calculator`;
         navigator.clipboard.writeText(text);
         alert("Copied to clipboard!");
       }}

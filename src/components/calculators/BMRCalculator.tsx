@@ -51,7 +51,7 @@ export const BMRCalculator: React.FC = () => {
     name="description"
     content="Use our BMR calculator to estimate your basal metabolic rate and understand how many calories your body needs at rest."
   />
-  <link rel="canonical" href="https://thefitcalculator.com/bmr" />
+  <link rel="canonical" href="https://thefitcalculator.com/bmr-calculator" />
 </Helmet>
  {/* <UnitConverter /> */}
     <section id="bmr-calculator" className="bg-white dark:bg-gray-800 p-6 rounded-2xl shadow-xl border border-gray-100 dark:border-gray-700 transition-colors duration-300">

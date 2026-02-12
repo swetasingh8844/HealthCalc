@@ -20,6 +20,13 @@ export const Home: React.FC = () => {
           content="Calculate your BMI, BMR, Ideal Weight, and daily calorie needs with our accurate health calculators. Get personalized health metrics for a better lifestyle."
         />
         <link rel="canonical" href="https://thefitcalculator.com/" />
+        <meta property="og:title" content="HealthCalculator Pro | BMI, BMR, Calorie & Ideal Weight Calculator" />
+  <meta
+    property="og:description"
+    content="Calculate your BMI, BMR, Ideal Weight, and daily calorie needs with our accurate health calculators."
+  />
+  <meta property="og:url" content="https://thefitcalculator.com/" />
+  <meta property="og:type" content="website" />
       </Helmet>
       {/* Top Ad */}
       {/* <AdPlaceholder slot="top-banner" className="h-[90px]" /> */}
