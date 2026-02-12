@@ -43,21 +43,21 @@ export const IdealWeightCalculator: React.FC = () => {
     <>
     <Helmet>
     
-  <title>Healthcare Pro Ideal Weight Calculator - Find Your Healthy Body Weight</title>
+  <title>Ideal Weight Calculator - Find Your Healthy Body Weight</title>
 
   <meta
     name="description"
     content="Find your ideal body weight using our accurate ideal weight calculator based on height, gender, and body frame."
   />
 
-  <link rel="canonical" href="https://thefitcalculator.com/ideal-weight" />
+  <link rel="canonical" href="https://thefitcalculator.com/ideal-weight-calculator" />
 
   <meta property="og:title" content="Ideal Weight Calculator - Find Your Healthy Body Weight" />
   <meta
     property="og:description"
     content="Find your ideal body weight using our accurate ideal weight calculator based on height, gender, and body frame."
   />
-  <meta property="og:url" content="https://thefitcalculator.com/ideal-weight" />
+  <meta property="og:url" content="https://thefitcalculator.com/ideal-weight-calculator" />
   <meta property="og:type" content="website" />
 </Helmet>
 
