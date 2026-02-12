@@ -12,10 +12,10 @@ export const Header: React.FC<HeaderProps> = ({ isDarkMode, toggleDarkMode }) =>
   return (
     <header className="sticky top-0 z-50 bg-white dark:bg-gray-800 shadow-sm border-b border-gray-100 dark:border-gray-700 transition-colors duration-300">
       <div className="container mx-auto px-4 py-3 flex justify-between items-center">
-        <Link to="/" className="flex items-center gap-2">
-          <div className="w-10 h-10 bg-brand-600 rounded-lg flex items-center justify-center text-white font-black text-xl shadow-md">H</div>
+        {/* <Link to="/" className="flex items-center gap-2"> */}
+          {/* <div className="w-10 h-10 bg-brand-600 rounded-lg flex items-center justify-center text-white font-black text-xl shadow-md">H</div> */}
           <span className="text-xl font-bold text-gray-800 dark:text-white tracking-tight">HealthCalculator <span className="text-brand-600">Pro</span></span>
-        </Link>
+        {/* </Link> */}
 
         {/* Desktop Nav */}
         <nav className="hidden md:flex gap-6 items-center">
