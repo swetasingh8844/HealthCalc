@@ -14,11 +14,11 @@ export const Home: React.FC = () => {
     <div className="container mx-auto px-4 py-8">
       <Helmet>
         <title>HealthCalculator Pro | BMI, BMR, Calorie & Ideal Weight Calculator</title>
+        <link rel="canonical" href="https://thefitcalculator.com/" />
         <meta
           name="description"
           content="Calculate your BMI, BMR, Ideal Weight, and daily calorie needs with our accurate health calculators. Get personalized health metrics for a better lifestyle."
         />
-        <link rel="canonical" href="https://thefitcalculator.com/" />
         <meta property="og:title" content="HealthCalculator Pro | BMI, BMR, Calorie & Ideal Weight Calculator" />
   <meta
     property="og:description"
