@@ -66,7 +66,7 @@ export const UnitConverter: React.FC = () => {
   />
   <meta property="og:url" content="https://thefitcalculator.com/unit-converter" />
   <meta property="og:type" content="website" />
-  <link rel="canonical" href="https://thefitcalculator.com/unit-converterr" />
+  <link rel="canonical" href="https://thefitcalculator.com/unit-converter" />
 </Helmet>
 
       <div className="bg-white dark:bg-gray-800 p-5 rounded-xl shadow-md border border-gray-200 dark:border-gray-700 w-full max-w-xs text-center">
