@@ -84,6 +84,7 @@ const App: React.FC = () => {
             <Route path="/bmr-calculator" element={<BMRCalculator />} />
             <Route path="/ideal-weight-calculator" element={<IdealWeightCalculator />} />
             <Route path="/calorie-calculator" element={<CalorieCalculator />} />
+            <Route path="/unit-converter" element={<UnitConverter />} />
             <Route
               path="/terms"
               element={

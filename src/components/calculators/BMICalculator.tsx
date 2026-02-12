@@ -8,6 +8,8 @@ import { UnitConverter } from '../../components/UnitConverter';
 export const BMICalculator: React.FC = () => {
   const [weight, setWeight] = useState<string>('');
   const [height, setHeight] = useState<string>('');
+  const [showShareOptions, setShowShareOptions] = useState(false);
+
   const [unit, setUnit] = useState<UnitSystem>(UnitSystem.Metric);
   const [result, setResult] = useState<{ bmi: number; category: string; color: string; description: string } | null>(null);
 
@@ -41,7 +43,7 @@ export const BMICalculator: React.FC = () => {
   return (
       <>
     <Helmet>
-      <title>BMI Calculator - Free Online BMI Tool</title>
+      <title>BMI Calculator (Body Mass Index)- Free Online BMI Tool</title>
       <meta
         name="description"
         content="Calculate your Body Mass Index (BMI) instantly with our free online BMI calculator. Supports metric and imperial units."
@@ -120,12 +122,81 @@ export const BMICalculator: React.FC = () => {
             {result.description}
           </p>
           <div className="mt-4 pt-4 border-t border-brand-200 dark:border-brand-800 flex justify-between items-center">
-             <button 
-              onClick={() => alert('Results saved to clipboard!')}
-              className="text-brand-600 dark:text-brand-400 font-bold text-sm hover:underline"
-             >
-               Share Results
-             </button>
+             <button
+      onClick={() => {
+        const shareText = `My BMI is ${result.bmi.toFixed(1)} (${result.category}). Check yours at https://thefitcalculator.com/bmi-calculator`;
+
+        // Detect mobile
+        const isMobile = /Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
+
+        if (isMobile && navigator.share) {
+          // Mobile: open system share sheet
+          navigator.share({
+            title: "My BMI Result",
+            text: shareText
+          }).catch((error) => console.log("Share failed", error));
+        } else {
+          // Desktop: show share options
+          setShowShareOptions(true);
+        }
+      }}
+      className="text-brand-600 dark:text-brand-400 font-bold text-sm hover:underline"
+    >
+      Share Results
+    </button>
+
+{showShareOptions && result && (
+  <div className="mt-3 flex flex-wrap gap-2">
+    {/* WhatsApp */}
+    <a
+      href={`https://wa.me/?text=${encodeURIComponent(
+        `My BMI is ${result.bmi.toFixed(1)} (${result.category}). Check yours at https://thefitcalculator.com/bmi-calculator`
+      )}`}
+      target="_blank"
+      rel="noopener noreferrer"
+      className="px-3 py-2 bg-green-500 text-white rounded-lg text-sm"
+    >
+      WhatsApp
+    </a>
+
+    {/* Telegram */}
+    <a
+      href={`https://t.me/share/url?text=${encodeURIComponent(
+        `My BMI is ${result.bmi.toFixed(1)} (${result.category}). Check yours at https://thefitcalculator.com/bmi-calculator`
+      )}`}
+      target="_blank"
+      rel="noopener noreferrer"
+      className="px-3 py-2 bg-blue-500 text-white rounded-lg text-sm"
+    >
+      Telegram
+    </a>
+
+    {/* Email */}
+    <a
+      href={`mailto:?subject=My BMI Result&body=${encodeURIComponent(
+        `My BMI is ${result.bmi.toFixed(1)} (${result.category}). Check yours at https://thefitcalculator.com/bmi-calculator`
+      )}`}
+      className="px-3 py-2 bg-gray-700 text-white rounded-lg text-sm"
+    >
+      Email
+    </a>
+
+    {/* Copy */}
+    <button
+      onClick={() => {
+        const text = `My BMI is ${result.bmi.toFixed(1)} (${result.category}). Check yours at https://thefitcalculator.com/bmi-calculator`;
+        navigator.clipboard.writeText(text);
+        alert("Copied to clipboard!");
+      }}
+      className="px-3 py-2 bg-gray-500 text-white rounded-lg text-sm"
+    >
+      Copy
+    </button>
+  </div>
+)}
+
+
+
              <span className="text-[10px] text-gray-400 dark:text-gray-500 italic">*Medical Disclaimer: Consult a doctor.</span>
           </div>
         </div>
@@ -141,7 +212,119 @@ export const BMICalculator: React.FC = () => {
   <p>
     While BMI is not a direct measure of body fatness, it provides a reliable indicator for most people. It is used as a screening tool to identify potential weight problems for adults. However, BMI does not take into account muscle mass, bone density, and overall body composition.
   </p>
+  <br></br>
+  <h3 className="text-xl font-bold mb-2">How is BMI Calculated?</h3>
+<p className="mb-3">
+  BMI is calculated using a simple mathematical formula based on your weight and height.
+</p>
+
+<h4 className="text-lg font-semibold mb-2">BMI Formula (Metric System)</h4>
+<p className="mb-3">
+  BMI = Weight (kg) ÷ Height (m²)
+</p>
+
+<p className="mb-3">
+  Since this calculator takes height in centimeters (cm), it automatically converts your height into meters before performing the calculation.
+</p>
+
+<p className="mb-3">
+  <strong>Example:</strong><br />
+  Height: 170 cm (1.70 m)<br />
+  Weight: 65 kg<br />
+  BMI = 65 ÷ (1.70 × 1.70) = 22.49<br />
+  BMI ≈ 22.5
+</p>
+
+<h3 className="text-xl font-bold mb-2">BMI Categories</h3>
+<p className="mb-3">
+  After calculating your BMI, your result falls into one of the following categories:
+</p>
+
+<ul className="list-disc pl-6 mb-3">
+  <li><strong>Below 18.5</strong> – Underweight</li>
+  <li><strong>18.5 – 24.9</strong> – Normal weight</li>
+  <li><strong>25 – 29.9</strong> – Overweight</li>
+  <li><strong>30 and above</strong> – Obese</li>
+</ul>
+
+<h3 className="text-xl font-bold mb-2">Healthy BMI Range</h3>
+<p className="mb-3">
+  A BMI between <strong>18.5 and 24.9</strong> is considered healthy for most adults. Maintaining a healthy BMI can reduce the risk of heart disease, diabetes, high blood pressure, and other health conditions.
+</p>
+
+<h3 className="text-xl font-bold mb-2">Is BMI Accurate?</h3>
+<p className="mb-3">
+  BMI is a useful screening tool, but it does not directly measure body fat. It may not be accurate for athletes or individuals with high muscle mass, as muscle weighs more than fat. For a complete health assessment, other measurements such as waist circumference and body fat percentage may be considered.
+</p>
+
+<h3 className="text-xl font-bold mb-2">Benefits of Using Our BMI Calculator</h3>
+<ul className="list-disc pl-6 mb-3">
+  <li>Instant and accurate results</li>
+  <li>Uses metric system (kg and cm)</li>
+  <li>Free and easy to use</li>
+  <li>Helps track your health status</li>
+</ul>
+
+<h3 className="text-xl font-bold mb-2">Frequently Asked Questions (FAQs)</h3>
+
+<h4 className="text-lg font-semibold mb-1">Is BMI different for men and women?</h4>
+<p className="mb-3">
+  The BMI formula is the same for men and women. However, body fat distribution may differ between genders.
+</p>
+
+<h4 className="text-lg font-semibold mb-1">Can children use this BMI calculator?</h4>
+<p className="mb-3">
+  BMI calculations for children and teenagers are age-specific and use percentile charts. This calculator is designed for adults.
+</p>
+
+<h4 className="text-lg font-semibold mb-1">How often should I check my BMI?</h4>
+<p className="mb-3">
+  You can check your BMI every few months to monitor changes in your weight and overall health.
+</p>
+
+<h3 className="text-xl font-bold mb-2">Conclusion</h3>
+<p className="mb-3">
+  BMI is a simple and effective way to assess whether your weight falls within a healthy range. Use our free BMI calculator to quickly determine your Body Mass Index and take the first step toward better health.
+</p>
+
     </section>
+   <script
+  type="application/ld+json"
+  dangerouslySetInnerHTML={{
+    __html: JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Is BMI different for men and women?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The BMI formula is the same for men and women. However, body fat distribution may differ between genders."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can children use this BMI calculator?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "BMI calculations for children and teenagers are age-specific and use percentile charts. This calculator is designed for adults."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How often should I check my BMI?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "You can check your BMI every few months to monitor changes in your weight and overall health."
+          }
+        }
+      ]
+    })
+  }}
+/>
+
      </>
+     
   );
 };

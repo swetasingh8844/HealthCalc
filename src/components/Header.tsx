@@ -23,10 +23,11 @@ export const Header: React.FC<HeaderProps> = ({ isDarkMode, toggleDarkMode }) =>
           <Link to="/about" className="text-gray-600 dark:text-gray-300 hover:text-brand-600 dark:hover:text-brand-500 font-medium transition">About</Link>
           <Link to="/contact" className="text-gray-600 dark:text-gray-300 hover:text-brand-600 dark:hover:text-brand-500 font-medium transition">Contact</Link>
           <Link to="/privacy-policy" className="text-gray-600 dark:text-gray-300 hover:text-brand-600 dark:hover:text-brand-500 font-medium transition">Privacy</Link>
-          <Link to="/bmi-calculator">BMI Calculator</Link>
-          <Link to="/bmr-calculator">BMR Calculator</Link>
-         <Link to="/ideal-weight-calculator">Ideal Weight</Link>
-          <Link to="/calorie-calculator">Calorie Calculator</Link>
+          <Link to="/bmi-calculator"className="text-gray-600 dark:text-gray-300 hover:text-brand-600 dark:hover:text-brand-500 font-medium transition">BMI Calculator</Link>
+          <Link to="/bmr-calculator" className="text-gray-600 dark:text-gray-300 hover:text-brand-600 dark:hover:text-brand-500 font-medium transition">BMR Calculator</Link>
+         <Link to="/ideal-weight-calculator" className="text-gray-600 dark:text-gray-300 hover:text-brand-600 dark:hover:text-brand-500 font-medium transition">Ideal Weight</Link>
+          <Link to="/calorie-calculator" className="text-gray-600 dark:text-gray-300 hover:text-brand-600 dark:hover:text-brand-500 font-medium transition">Calorie Calculator</Link>
+           <Link to="/unit-converter" className="text-gray-600 dark:text-gray-300 hover:text-brand-600 dark:hover:text-brand-500 font-medium transition">Unit Converter</Link>
           <button 
             onClick={toggleDarkMode}
             className="p-2 rounded-lg bg-gray-100 dark:bg-gray-700 text-gray-600 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-600 transition-colors"
@@ -72,6 +73,11 @@ export const Header: React.FC<HeaderProps> = ({ isDarkMode, toggleDarkMode }) =>
             <Link onClick={() => setIsMenuOpen(false)} to="/about" className="text-gray-600 dark:text-gray-300 font-medium">About</Link>
             <Link onClick={() => setIsMenuOpen(false)} to="/contact" className="text-gray-600 dark:text-gray-300 font-medium">Contact</Link>
             <Link onClick={() => setIsMenuOpen(false)} to="/privacy-policy" className="text-gray-600 dark:text-gray-300 font-medium">Privacy Policy</Link>
+            <Link onClick={() => setIsMenuOpen(false)} to="/bmi-calculator"className="text-gray-600 dark:text-gray-300 font-medium">BMI Calculator</Link>
+          <Link onClick={() => setIsMenuOpen(false)} to="/bmr-calculator"className="text-gray-600 dark:text-gray-300 font-medium">BMR Calculator</Link>
+         <Link onClick={() => setIsMenuOpen(false)} to="/ideal-weight-calculator"className="text-gray-600 dark:text-gray-300 font-medium">Ideal Weight</Link>
+          <Link onClick={() => setIsMenuOpen(false)} to="/calorie-calculator"className="text-gray-600 dark:text-gray-300 font-medium">Calorie Calculator</Link>
+           <Link onClick={() => setIsMenuOpen(false)} to="/unit-converter"className="text-gray-600 dark:text-gray-300 font-medium">Unit Converter</Link>
           </div>
         </div>
       )}

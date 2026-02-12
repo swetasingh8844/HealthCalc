@@ -31,9 +31,9 @@ export const getBMICategory = (bmi: number): { category: string; color: string; 
 
 export const calculateBMR = (gender: Gender, weightKg: number, heightCm: number, age: number): number => {
   if (gender === Gender.Male) {
-    return 88.362 + (13.397 * weightKg) + (4.799 * heightCm) - (5.677 * age);
+    return  (10 * weightKg) + (6.25 * heightCm) - (5 * age) + 5;
   }
-  return 447.593 + (9.247 * weightKg) + (3.098 * heightCm) - (4.330 * age);
+  return  (10 * weightKg) + (6.25 * heightCm) - (5 * age) -161;
 };
 
 export const calculateDailyCalories = (bmr: number, activityLevel: ActivityLevel, goal: WeightGoal): number => {

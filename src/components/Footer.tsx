@@ -21,6 +21,7 @@ export const Footer: React.FC = () => {
               <li><Link to="/bmr-calculator" className="hover:text-brand-500 transition-colors">BMR Calculator</Link></li>
               <li><Link to="/calorie-calculator" className="hover:text-brand-500 transition-colors">Calorie Calculator</Link></li>
               <li><Link to="/ideal-weight-calculator" className="hover:text-brand-500 transition-colors">Ideal Weight</Link></li>
+               <li><Link to="/unit-converter" className="hover:text-brand-500 transition-colors">Unit Converter</Link></li>
             </ul>
           </div>
           <div>
