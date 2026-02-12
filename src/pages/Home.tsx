@@ -12,7 +12,7 @@ import { UnitConverter } from '../components/UnitConverter';
 export const Home: React.FC = () => {
   return (
     <div className="container mx-auto px-4 py-8">
-       {/* Add canonical and meta info here */}
+       {
       <Helmet>
         <title>HealthCalculator Pro | BMI, BMR, Calorie & Ideal Weight Calculator</title>
         <meta
@@ -27,7 +27,7 @@ export const Home: React.FC = () => {
   />
   <meta property="og:url" content="https://thefitcalculator.com/" />
   <meta property="og:type" content="website" />
-      </Helmet>
+      </Helmet>}
       {/* Top Ad */}
       {/* <AdPlaceholder slot="top-banner" className="h-[90px]" /> */}
 
