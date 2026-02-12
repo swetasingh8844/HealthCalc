@@ -41,6 +41,14 @@ export const IdealWeightCalculator: React.FC = () => {
 
   return (
     <>
+    <Helmet>
+  <title>HealthCalculator Pro Ideal Weight Calculator - Find Your Healthy Body Weight</title>
+  <meta
+    name="description"
+    content="Find your ideal body weight using our accurate ideal weight calculator based on height, gender, and body frame."
+  />
+  <link rel="canonical" href="https://thefitcalculator.com/ideal-weight-calculator" />
+</Helmet>
  {/* <UnitConverter /> */}
     <section id="ideal-weight-calculator" className="bg-white dark:bg-gray-800 p-6 rounded-2xl shadow-xl border border-gray-100 dark:border-gray-700 transition-colors duration-300">
       <h2 className="text-2xl font-bold mb-4 text-brand-700 dark:text-brand-500">Ideal Weight Calculator</h2>
