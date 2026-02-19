@@ -139,7 +139,9 @@ export const IdealWeightCalculator: React.FC = () => {
   return (
     <>
       <Helmet>
+        {isCalculatorPage && (
         <title>Ideal Weight Calculator - Find Your Healthy Body Weight Free</title>
+        )}
          {isCalculatorPage && (
     <script
       type="application/ld+json"
