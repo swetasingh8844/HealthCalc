@@ -314,7 +314,7 @@ export const UnitConverter: React.FC = () => {
           </p>
           <div className="grid sm:grid-cols-3 gap-3">
             {[
-              { label: 'cm ↔ inches',       desc: 'Used by BMI, BMR, and ideal weight calculators that ask for height in cm or inches.',                             color: 'border-brand-300 dark:border-brand-700', bg: 'bg-brand-50 dark:bg-brand-900/20',  hColor: 'text-brand-700 dark:text-brand-300' },
+              { label: 'cm ↔ inches',       desc: 'Used by BMI, BMR, and ideal weight calculators that ask for height in cm or inches.',                             color: 'border-brand-300 dark:border-brand-700', bg: 'bg-yellow-50 dark:bg-yellow-900/20',  hColor: 'text-brand-700 dark:text-brand-300' },
               { label: 'cm ↔ feet & inches', desc: "Convert your height in feet and inches (e.g. 5'10\") to centimetres for metric calculators.",                     color: 'border-blue-300 dark:border-blue-700',  bg: 'bg-blue-50 dark:bg-blue-900/20',   hColor: 'text-blue-700 dark:text-blue-300'  },
               { label: 'kg ↔ lbs',           desc: 'Convert your weight between kilograms and pounds to match the unit system your calculator uses.',                  color: 'border-green-300 dark:border-green-700', bg: 'bg-green-50 dark:bg-green-900/20', hColor: 'text-green-700 dark:text-green-300' },
             ].map((item) => (

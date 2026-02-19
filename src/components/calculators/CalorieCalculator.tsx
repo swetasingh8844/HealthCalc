@@ -138,7 +138,7 @@ export const CalorieCalculator: React.FC = () => {
               <span className="text-amber-500 text-sm mt-0.5">💡</span>
               <p className="text-amber-800 dark:text-amber-300 text-xs leading-relaxed">
                 <strong>Don't know your BMR?</strong> Use our{' '}
-                <a href="/bmr-calculator" className="underline text-blue-800 font-bold hover:text-green-600 dark:hover:text-amber-200 transition-colors">
+                <a href="/bmr-calculator" className="underline text-blue-500 font-bold hover:text-green-600 dark:hover:text-amber-200 transition-colors">
                   BMR Calculator
                 </a>{' '}
                 first to get your Basal Metabolic Rate, then enter it below.
