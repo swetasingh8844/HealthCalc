@@ -481,7 +481,7 @@ export const CalorieCalculator: React.FC = () => {
               <span className="w-1 h-5 bg-brand-500 rounded-full inline-block"></span>
               Frequently Asked Questions
             </h2>
-            <p className="text-gray-500 dark:text-gray-400 text-sm mb-5">Click any question to reveal the answer.</p>
+            {/* <p className="text-gray-500 dark:text-gray-400 text-sm mb-5">Click any question to reveal the answer.</p> */}
 
             <div className="space-y-3">
               {faqs.map((faq) => (
@@ -493,20 +493,26 @@ export const CalorieCalculator: React.FC = () => {
         </section>
       </div>
 
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            '@context': 'https://schema.org',
-            '@type': 'FAQPage',
-            mainEntity: faqs.map((f) => ({
-              '@type': 'Question',
-              name: f.question,
-              acceptedAnswer: { '@type': 'Answer', text: f.answer },
-            })),
-          }),
-        }}
-      />
+     <script
+  type="application/ld+json"
+  dangerouslySetInnerHTML={{
+    __html: JSON.stringify({
+      '@context': 'https://schema.org',
+      '@type': 'FAQPage',
+      mainEntity: faqs
+        .filter(f => f.question && f.answer) // remove empty items
+        .map((f) => ({
+          '@type': 'Question',
+          name: f.question,
+          acceptedAnswer: {
+            '@type': 'Answer',
+            text: f.answer.replace(/<[^>]+>/g, ''), // remove HTML
+          },
+        })),
+    }),
+  }}
+/>
+
     </>
   );
 };
