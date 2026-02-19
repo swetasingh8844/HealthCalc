@@ -3,6 +3,7 @@ import { calculateBMR } from '../../../utils/calculations';
 import { UnitSystem, Gender } from '../../../types';
 import { Helmet } from 'react-helmet-async';
 import { UnitConverter } from '../../components/UnitConverter';
+import { useLocation } from "react-router-dom";
 
 // ── Accordion FAQ Item ────────────────────────────────────────────────────────
 const FAQItem: React.FC<{ question: string; answer: string }> = ({ question, answer }) => {
@@ -40,6 +41,8 @@ export const BMRCalculator: React.FC = () => {
   const [unit, setUnit] = useState<UnitSystem>(UnitSystem.Metric);
   const [result, setResult] = useState<number | null>(null);
   const [showShareOptions, setShowShareOptions] = useState(false);
+  const location = useLocation();
+  const isCalculatorPage = location.pathname === "/bmr-calculator";
 
   const handleCalculate = (e: React.FormEvent) => {
     e.preventDefault();
@@ -106,11 +109,29 @@ export const BMRCalculator: React.FC = () => {
         'The most effective way to raise your BMR is to increase your lean muscle mass through regular resistance training, since muscle tissue burns roughly 3 times more calories at rest than fat tissue. Other strategies include eating sufficient protein (which has a higher thermic effect than carbohydrates or fat), staying adequately hydrated, prioritising 7–9 hours of quality sleep per night, and avoiding prolonged very-low-calorie diets that cause your metabolism to down-regulate.',
     },
   ];
+ const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": faqs.map((f) => ({
+    "@type": "Question",
+    "name": f.question,
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": f.answer.replace(/<[^>]+>/g, ""), // removes HTML if any
+    },
+  })),
+};
 
   return (
     <>
       <Helmet>
         <title>BMR Calculator - Calculate Your Basal Metabolic Rate Free</title>
+         {isCalculatorPage && (
+    <script
+      type="application/ld+json"
+      dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+    />
+  )}
         <meta
           name="description"
           content="Calculate your Basal Metabolic Rate (BMR) instantly with our free online BMR calculator. Uses the Mifflin-St Jeor equation. Supports metric and imperial units."
@@ -535,26 +556,6 @@ export const BMRCalculator: React.FC = () => {
 
         </section>
       </div>
-
-      <script
-  type="application/ld+json"
-  dangerouslySetInnerHTML={{
-    __html: JSON.stringify({
-      '@context': 'https://schema.org',
-      '@type': 'FAQPage',
-      mainEntity: faqs
-        .filter(f => f.question && f.answer) // remove empty items
-        .map((f) => ({
-          '@type': 'Question',
-          name: f.question,
-          acceptedAnswer: {
-            '@type': 'Answer',
-            text: f.answer.replace(/<[^>]+>/g, ''), // remove HTML
-          },
-        })),
-    }),
-  }}
-/>
 
     </>
   );

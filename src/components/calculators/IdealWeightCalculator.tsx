@@ -3,6 +3,7 @@ import { calculateIdealWeight } from '../../../utils/calculations';
 import { UnitSystem, Gender } from '../../../types';
 import { Helmet } from 'react-helmet-async';
 import { UnitConverter } from '../../components/UnitConverter';
+import { useLocation } from "react-router-dom";
 
 // ── Accordion FAQ Item ────────────────────────────────────────────────────────
 const FAQItem: React.FC<{ question: string; answer: string }> = ({ question, answer }) => {
@@ -38,7 +39,8 @@ export const IdealWeightCalculator: React.FC = () => {
   const [unit, setUnit] = useState<UnitSystem>(UnitSystem.Metric);
   const [result, setResult] = useState<number | null>(null);
   const [showShareOptions, setShowShareOptions] = useState(false);
-
+   const location = useLocation();
+  const isCalculatorPage = location.pathname === "/ideal-weight-calculator";
   const handleCalculate = (e: React.FormEvent) => {
     e.preventDefault();
     if (!height) return;
@@ -121,11 +123,29 @@ export const IdealWeightCalculator: React.FC = () => {
         'Because body composition varies so widely between individuals, most health professionals prefer to work with a weight range rather than a single ideal number. A common approach is to use the calculated ideal weight as the midpoint and allow ±5 kg (±11 lbs) as an acceptable healthy range. Those at the lower end of the range tend to have a leaner build, while those at the higher end may carry more lean muscle mass. Both can be perfectly healthy depending on individual circumstances.',
     },
   ];
+  const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": faqs.map((f) => ({
+    "@type": "Question",
+    "name": f.question,
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": f.answer.replace(/<[^>]+>/g, ""), // removes HTML if any
+    },
+  })),
+};
 
   return (
     <>
       <Helmet>
         <title>Ideal Weight Calculator - Find Your Healthy Body Weight Free</title>
+         {isCalculatorPage && (
+    <script
+      type="application/ld+json"
+      dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+    />
+  )}
         <meta
           name="description"
           content="Find your ideal body weight instantly with our free online calculator. Based on the Devine formula using height and gender. Supports metric and imperial units."
@@ -522,27 +542,6 @@ export const IdealWeightCalculator: React.FC = () => {
 
         </section>
       </div>
-
-      <script
-  type="application/ld+json"
-  dangerouslySetInnerHTML={{
-    __html: JSON.stringify({
-      '@context': 'https://schema.org',
-      '@type': 'FAQPage',
-      mainEntity: faqs
-        .filter(f => f.question && f.answer) // remove empty items
-        .map((f) => ({
-          '@type': 'Question',
-          name: f.question,
-          acceptedAnswer: {
-            '@type': 'Answer',
-            text: f.answer.replace(/<[^>]+>/g, ''), // remove HTML
-          },
-        })),
-    }),
-  }}
-/>
-
     </>
   );
 };

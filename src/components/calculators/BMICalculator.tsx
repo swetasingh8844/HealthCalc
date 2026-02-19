@@ -3,6 +3,7 @@ import { calculateBMI, getBMICategory } from '../../../utils/calculations';
 import { UnitSystem } from '../../../types';
 import { Helmet } from 'react-helmet-async';
 import { UnitConverter } from '../../components/UnitConverter';
+import { useLocation } from "react-router-dom";
 
 // ── Accordion FAQ Item ────────────────────────────────────────────────────────
 const FAQItem: React.FC<{ question: string; answer: string }> = ({ question, answer }) => {
@@ -38,6 +39,8 @@ export const BMICalculator: React.FC = () => {
   const [showShareOptions, setShowShareOptions] = useState(false);
   const [unit, setUnit] = useState<UnitSystem>(UnitSystem.Metric);
   const [result, setResult] = useState<{ bmi: number; category: string; color: string; description: string } | null>(null);
+   const location = useLocation();
+  const isCalculatorPage = location.pathname === "/bmi-calculator";
 
   const handleCalculate = (e: React.FormEvent) => {
     e.preventDefault();
@@ -107,11 +110,29 @@ export const BMICalculator: React.FC = () => {
         'No — BMI and body fat percentage are two distinct measurements. BMI is calculated purely from your weight and height and gives no direct information about how much of your body is fat versus muscle or bone. Body fat percentage, measured through DEXA scans or bioelectrical impedance, directly measures the proportion of fat in your body — entirely independent of your BMI.',
     },
   ];
+  const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": faqs.map((f) => ({
+    "@type": "Question",
+    "name": f.question,
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": f.answer.replace(/<[^>]+>/g, ""), // removes HTML if any
+    },
+  })),
+};
 
   return (
     <>
       <Helmet>
         <title>BMI Calculator (Body Mass Index) - Free Online BMI Tool</title>
+         {isCalculatorPage && (
+    <script
+      type="application/ld+json"
+      dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+    />
+  )}
         <meta
           name="description"
           content="Calculate your Body Mass Index (BMI) instantly with our free online BMI calculator. Supports metric and imperial units. See your BMI category and personalized health tips."
@@ -528,26 +549,6 @@ export const BMICalculator: React.FC = () => {
 
         </section>
       </div>
-
-     <script
-  type="application/ld+json"
-  dangerouslySetInnerHTML={{
-    __html: JSON.stringify({
-      '@context': 'https://schema.org',
-      '@type': 'FAQPage',
-      mainEntity: faqs
-        .filter(f => f.question && f.answer) // remove empty items
-        .map((f) => ({
-          '@type': 'Question',
-          name: f.question,
-          acceptedAnswer: {
-            '@type': 'Answer',
-            text: f.answer.replace(/<[^>]+>/g, ''), // remove HTML
-          },
-        })),
-    }),
-  }}
-/>
 
     </>
   );

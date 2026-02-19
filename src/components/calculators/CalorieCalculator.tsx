@@ -3,6 +3,8 @@ import { calculateDailyCalories } from '../../../utils/calculations';
 import { ActivityLevel, WeightGoal } from '../../../types';
 import { Helmet } from 'react-helmet-async';
 import { UnitConverter } from '../../components/UnitConverter';
+import { useLocation } from "react-router-dom";
+
 
 // ── Accordion FAQ Item ────────────────────────────────────────────────────────
 const FAQItem: React.FC<{ question: string; answer: string }> = ({ question, answer }) => {
@@ -38,6 +40,9 @@ export const CalorieCalculator: React.FC = () => {
   const [goal, setGoal] = useState<WeightGoal>(WeightGoal.Maintain);
   const [result, setResult] = useState<number | null>(null);
   const [showShareOptions, setShowShareOptions] = useState(false);
+ const location = useLocation();
+  const isCalculatorPage = location.pathname === "/calorie-calculator";
+
 
   const handleCalculate = (e: React.FormEvent) => {
     e.preventDefault();
@@ -101,11 +106,30 @@ export const CalorieCalculator: React.FC = () => {
         'Weight loss plateaus happen because your TDEE decreases as you lose weight and your body adapts to a lower calorie intake. When progress stalls for 2–3 weeks, you have two options: reduce calories by a further 100–200 kcal/day, or increase your activity level to create a larger deficit. Recalculating your BMR and TDEE at your new weight is also recommended every 5–10 kg of weight change, as the numbers will have shifted.',
     },
   ];
+  const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": faqs.map((f) => ({
+    "@type": "Question",
+    "name": f.question,
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": f.answer.replace(/<[^>]+>/g, ""), // removes HTML if any
+    },
+  })),
+};
+
 
   return (
     <>
       <Helmet>
         <title>Calorie Calculator - Calculate Your Daily Calorie Needs Free</title>
+        {isCalculatorPage && (
+    <script
+      type="application/ld+json"
+      dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+    />
+  )}
         <meta
           name="description"
           content="Calculate your daily calorie needs based on your BMR and activity level. Free online calorie calculator for weight loss, maintenance, and muscle gain."
@@ -492,27 +516,6 @@ export const CalorieCalculator: React.FC = () => {
 
         </section>
       </div>
-
-     <script
-  type="application/ld+json"
-  dangerouslySetInnerHTML={{
-    __html: JSON.stringify({
-      '@context': 'https://schema.org',
-      '@type': 'FAQPage',
-      mainEntity: faqs
-        .filter(f => f.question && f.answer) // remove empty items
-        .map((f) => ({
-          '@type': 'Question',
-          name: f.question,
-          acceptedAnswer: {
-            '@type': 'Answer',
-            text: f.answer.replace(/<[^>]+>/g, ''), // remove HTML
-          },
-        })),
-    }),
-  }}
-/>
-
     </>
   );
 };
