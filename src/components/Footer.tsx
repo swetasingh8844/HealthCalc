@@ -8,7 +8,7 @@ export const Footer: React.FC = () => {
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mb-12">
           <div className="col-span-1">
-            <h3 className="text-white text-xl font-bold mb-4">HealthCalculator <span className="text-brand-500">Pro</span></h3>
+            <h3 className="text-white text-xl font-bold mb-4">TheFitCalculator <span className="text-brand-500">Pro</span></h3>
             <p className="text-sm leading-relaxed">
               Your trusted hub for health calculators. We provide science-backed tools to help you track your wellness metrics and plan your health journey.
             </p>
@@ -39,7 +39,7 @@ export const Footer: React.FC = () => {
           <p className="mb-4">
             <strong className="text-white">Medical Disclaimer:</strong> The information provided on this website is for educational purposes only. It is not intended as a substitute for professional medical advice, diagnosis, or treatment. Always seek the advice of your physician.
           </p>
-          <p>&copy; {new Date().getFullYear()} HealthCalculator Pro. All rights reserved.</p>
+          <p>&copy; {new Date().getFullYear()} TheFitCalculator Pro. All rights reserved.</p>
         </div>
       </div>
     </footer>

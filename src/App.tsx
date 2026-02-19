@@ -13,7 +13,7 @@ import {IdealWeightCalculator} from "./components/calculators/IdealWeightCalcula
 import { CalorieCalculator } from './components/calculators/CalorieCalculator';
 import { UnitConverter } from './components/UnitConverter';
 
-
+import { TermsOfService } from './pages/TermsofService'; 
 // Scroll to top on route change
 const ScrollToTop = () => {
   const { pathname } = useLocation();
@@ -25,20 +25,20 @@ const ScrollToTop = () => {
 const Layout = ({ children }: { children: React.ReactNode }) => {
   const location = useLocation();
 
-  const showConverter =
-    location.pathname === "/" ||
-    location.pathname === "/bmi-calculator" ||
-    location.pathname === "/bmr-calculator" ||
-    location.pathname === "/calorie-calculator" ||
-    location.pathname === "/ideal-weight-calculator";
+  // const showConverter =
+  //   location.pathname === "/"
+    // location.pathname === "/bmi-calculator" ||
+    // location.pathname === "/bmr-calculator" ||
+    // location.pathname === "/calorie-calculator" ||
+    // location.pathname === "/ideal-weight-calculator";
 
   return (
     <>
-      {showConverter && (
+      {/* {showConverter && (
         <div className="container mx-auto px-4 py-6">
           <UnitConverter />
         </div>
-      )}
+      )} */}
       {children}
     </>
   );
@@ -85,15 +85,7 @@ const App: React.FC = () => {
             <Route path="/ideal-weight-calculator" element={<IdealWeightCalculator />} />
             <Route path="/calorie-calculator" element={<CalorieCalculator />} />
             <Route path="/unit-converter" element={<UnitConverter />} />
-            <Route
-              path="/terms"
-              element={
-                <div className="container mx-auto p-12">
-                  <h1>Terms of Service</h1>
-                  <p>Standard terms for HealthCalc Pro users...</p>
-                </div>
-              }
-            />
+            <Route path="/terms" element={<TermsOfService />} />
           </Routes>
           </Layout>
         </main>
