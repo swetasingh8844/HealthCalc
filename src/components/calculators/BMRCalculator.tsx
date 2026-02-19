@@ -125,7 +125,9 @@ export const BMRCalculator: React.FC = () => {
   return (
     <>
       <Helmet>
+        {isCalculatorPage && (
         <title>BMR Calculator - Calculate Your Basal Metabolic Rate Free</title>
+        )}
          {isCalculatorPage && (
     <script
       type="application/ld+json"
@@ -424,7 +426,7 @@ export const BMRCalculator: React.FC = () => {
             <p className="text-gray-600 dark:text-gray-300 text-sm leading-relaxed mb-4">
               BMR tells you how many calories your body burns at rest. TDEE (Total Daily Energy Expenditure) tells you how many you actually burn across the full day including activity. To get your TDEE, multiply your BMR by an activity factor:
             </p>
-            <div className="overflow-hidden rounded-xl border border-gray-200 dark:border-gray-700">
+            <div className="overflow-x-auto rounded-xl border border-gray-200 dark:border-gray-700">
               <table className="w-full text-sm">
                 <thead>
                   <tr className="bg-gray-50 dark:bg-gray-700/60">

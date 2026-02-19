@@ -415,7 +415,7 @@ export const IdealWeightCalculator: React.FC = () => {
             <p className="text-gray-600 dark:text-gray-300 text-sm leading-relaxed mb-3">
               Several other formulas are used in medical and research settings. All produce similar but slightly different results:
             </p>
-            <div className="overflow-hidden rounded-xl border border-gray-200 dark:border-gray-700">
+            <div className="overflow-x-auto rounded-xl border border-gray-200 dark:border-gray-700">
               <table className="w-full text-sm">
                 <thead>
                   <tr className="bg-gray-50 dark:bg-gray-700/60">

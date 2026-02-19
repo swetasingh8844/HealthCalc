@@ -123,7 +123,9 @@ export const CalorieCalculator: React.FC = () => {
   return (
     <>
       <Helmet>
+        {isCalculatorPage && (
         <title>Calorie Calculator - Calculate Your Daily Calorie Needs Free</title>
+        )}
         {isCalculatorPage && (
     <script
       type="application/ld+json"
@@ -415,7 +417,7 @@ export const CalorieCalculator: React.FC = () => {
             <p className="text-gray-600 dark:text-gray-300 text-sm leading-relaxed mb-4">
               Once you know your calorie target, the next step is distributing those calories across the three macronutrients. The right split depends on your goal, but a general starting point used by many registered dietitians is:
             </p>
-            <div className="overflow-hidden rounded-xl border border-gray-200 dark:border-gray-700 mb-5">
+           <div className="overflow-x-auto rounded-xl border border-gray-200 dark:border-gray-700">
               <table className="w-full text-sm">
                 <thead>
                   <tr className="bg-gray-50 dark:bg-gray-700/60">
@@ -446,7 +448,7 @@ export const CalorieCalculator: React.FC = () => {
                 </tbody>
               </table>
             </div>
-
+           <br></br>
             <h2 className="text-xl font-bold mb-3 text-gray-900 dark:text-white flex items-center gap-2">
               <span className="w-1 h-5 bg-brand-500 rounded-full inline-block"></span>
               Tips for Healthy Calorie Management

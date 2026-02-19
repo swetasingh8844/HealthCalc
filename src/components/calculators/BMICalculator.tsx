@@ -126,7 +126,9 @@ export const BMICalculator: React.FC = () => {
   return (
     <>
       <Helmet>
+        {isCalculatorPage && (
         <title>BMI Calculator (Body Mass Index) - Free Online BMI Tool</title>
+        )}
          {isCalculatorPage && (
     <script
       type="application/ld+json"
@@ -389,7 +391,7 @@ export const BMICalculator: React.FC = () => {
               BMI Categories (WHO Standard)
             </h2>
             <p className="text-gray-500 dark:text-gray-400 text-sm mb-4">The WHO defines the following BMI ranges for adults aged 18 and over.</p>
-            <div className="overflow-hidden rounded-xl border border-gray-200 dark:border-gray-700">
+           <div className="overflow-x-auto rounded-xl border border-gray-200 dark:border-gray-700">
               <table className="w-full text-sm">
                 <thead>
                   <tr className="bg-gray-50 dark:bg-gray-700/60">
