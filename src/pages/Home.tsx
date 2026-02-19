@@ -14,17 +14,13 @@ export const Home: React.FC = () => {
       <Helmet>
         <title>TheFitCalculator | Free BMI, BMR, Calorie & Ideal Weight Calculator</title>
         <link rel="canonical" href="https://thefitcalculator.com/" />
-        <meta
-          name="description"
-          content="Free online health calculators for BMI, BMR, daily calorie needs, and ideal weight. Science-backed formulas, instant results, metric and imperial units supported."
-        />
+        <meta name="description" content="Free online health calculators for BMI, BMR, daily calorie needs, and ideal weight. Science-backed formulas, instant results, metric and imperial units supported." />
         <meta property="og:title" content="TheFitCalculator | Free BMI, BMR, Calorie & Ideal Weight Calculator" />
         <meta property="og:description" content="Free online health calculators for BMI, BMR, daily calorie needs, and ideal weight. Science-backed formulas, instant results." />
         <meta property="og:url" content="https://thefitcalculator.com/" />
         <meta property="og:type" content="website" />
       </Helmet>
 
-      {/* ── Top Ad Banner ── */}
       {/* <AdPlaceholder slot="top-banner" className="h-[90px]" /> */}
 
       <div className="max-w-7xl mx-auto px-4 py-8">
@@ -41,136 +37,21 @@ export const Home: React.FC = () => {
               Calculate Your Health Metrics{' '}
               <span className="text-brand-200">Instantly</span>
             </h1>
-            <p className="text-brand-100 text-base leading-relaxed mb-6 max-w-xl">
+            <p className="text-brand-100 text-base leading-relaxed max-w-xl">
               Free, science-backed calculators for BMI, BMR, daily calories, and ideal weight.
               No sign-up. No fees. Results in seconds.
             </p>
-
-            {/* Quick nav pills */}
-            {/* <div className="flex flex-wrap gap-2">
-              {[
-                { label: 'BMI Calculator', href: 'bmi-calculator' },
-                { label: 'BMR Calculator', href: 'bmr-calculator' },
-                { label: 'Calorie Calculator', href: 'calorie-calculator' },
-                { label: 'Ideal Weight', href: 'ideal-weight-calculator' },
-              ].map((link) => (
-                <a
-                  key={link.label}
-                  href={link.href}
-                  className="bg-white/15 hover:bg-white/25 text-white text-xs font-semibold px-4 py-2 rounded-full transition-colors border border-white/20"
-                >
-                  {link.label}
-                </a>
-              ))}
-            </div> */}
           </div>
         </div>
 
-        {/* ── Main 2-column layout ── */}
+        {/* ── Main layout ── */}
+        {/* On mobile: sidebar comes FIRST (order-1), calculators SECOND (order-2) */}
+        {/* On desktop (lg): sidebar goes to the right column naturally */}
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
 
-          {/* ── Left: Calculators ── */}
-          <div className="lg:col-span-2 space-y-10">
+          {/* ── Right Sidebar — order-1 on mobile, natural on desktop ── */}
+          <aside className="space-y-6 order-1 lg:order-2 lg:col-start-3">
 
-            <BMICalculator />
-
-            {/* Mid Ad */}
-            {/* <AdPlaceholder slot="mid-1" className="h-[100px]" /> */}
-
-            <BMRCalculator />
-
-            {/* Mid Ad */}
-            {/* <AdPlaceholder slot="mid-2" className="h-[100px]" /> */}
-
-            <CalorieCalculator />
-
-            {/* Mid Ad */}
-            {/* <AdPlaceholder slot="mid-3" className="h-[100px]" /> */}
-
-            <IdealWeightCalculator />
-
-            {/* ── How to use guide ── */}
-            <div className="bg-white dark:bg-gray-800 rounded-2xl shadow-sm border border-gray-100 dark:border-gray-700 p-6">
-              <h2 className="text-xl font-bold mb-1 text-gray-900 dark:text-white flex items-center gap-2">
-                <span className="w-1 h-5 bg-brand-500 rounded-full inline-block"></span>
-                How to Use These Calculators
-              </h2>
-              <p className="text-gray-500 dark:text-gray-400 text-sm mb-5">Follow these steps in order for the most accurate results.</p>
-
-              <div className="space-y-4">
-                {[
-                  {
-                    step: '1',
-                    title: 'Start with BMI',
-                    desc: 'Enter your height and weight to calculate your Body Mass Index. This tells you whether your current weight is within a healthy range for your height.',
-                    color: 'bg-brand-600',
-                  },
-                  {
-                    step: '2',
-                    title: 'Calculate Your BMR',
-                    desc: 'Add your age and gender to find your Basal Metabolic Rate — the calories your body burns at rest. This is the foundation for all calorie planning.',
-                    color: 'bg-blue-500',
-                  },
-                  {
-                    step: '3',
-                    title: 'Find Your Daily Calories (TDEE)',
-                    desc: 'Enter your BMR from step 2 into the Calorie Calculator, select your activity level and goal (lose / maintain / gain), and get your personalised daily calorie target.',
-                    color: 'bg-green-500',
-                  },
-                  {
-                    step: '4',
-                    title: 'Check Your Ideal Weight',
-                    desc: 'Use the Ideal Weight Calculator to see your recommended healthy weight range based on your height and gender using the Devine formula.',
-                    color: 'bg-yellow-500',
-                  },
-                ].map((item) => (
-                  <div key={item.step} className="flex gap-4">
-                    <div className={`flex-shrink-0 w-8 h-8 rounded-full ${item.color} text-white text-sm font-extrabold flex items-center justify-center shadow-sm`}>
-                      {item.step}
-                    </div>
-                    <div>
-                      <p className="font-bold text-sm text-gray-800 dark:text-white mb-0.5">{item.title}</p>
-                      <p className="text-xs text-gray-500 dark:text-gray-400 leading-relaxed">{item.desc}</p>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
-
-            {/* ── Why trust us ── */}
-            <div className="bg-white dark:bg-gray-800 rounded-2xl shadow-sm border border-gray-100 dark:border-gray-700 p-6">
-              <h2 className="text-xl font-bold mb-4 text-gray-900 dark:text-white flex items-center gap-2">
-                <span className="w-1 h-5 bg-brand-500 rounded-full inline-block"></span>
-                Why TheFitCalculator?
-              </h2>
-              <div className="grid sm:grid-cols-3 gap-4">
-                {[
-                  { icon: '🔬', title: 'Science-Backed', desc: 'We use the same WHO, Mifflin-St Jeor, and Devine formulas used by doctors and registered dietitians worldwide.' },
-                  { icon: '🔒', title: 'Private by Design', desc: 'All calculations happen inside your browser. Your height, weight, and age are never sent to any server.' },
-                  { icon: '🆓', title: 'Always Free', desc: 'No subscription, no sign-up, no hidden fees. Every calculator on this site is completely free to use.' },
-                ].map((v) => (
-                  <div key={v.title} className="bg-gray-50 dark:bg-gray-700/40 rounded-xl p-4 border border-gray-200 dark:border-gray-600 text-center">
-                    <div className="text-2xl mb-2">{v.icon}</div>
-                    <p className="font-bold text-sm text-gray-800 dark:text-white mb-1">{v.title}</p>
-                    <p className="text-xs text-gray-500 dark:text-gray-400 leading-relaxed">{v.desc}</p>
-                  </div>
-                ))}
-              </div>
-            </div>
-
-            {/* ── Medical Disclaimer ── */}
-            {/* <div className="bg-amber-50 dark:bg-amber-900/20 border border-amber-200 dark:border-amber-800 rounded-2xl p-5">
-              <p className="text-amber-800 dark:text-amber-300 text-xs leading-relaxed">
-                <strong>Medical Disclaimer:</strong> The calculators on TheFitCalculator are for informational purposes only and are not a substitute for professional medical advice. Always consult a qualified healthcare provider before making changes to your diet, exercise routine, or health plan.
-              </p>
-            </div> */}
-
-          </div>
-
-          {/* ── Right Sidebar ── */}
-          <aside className="space-y-6">
-
-            {/* Sidebar Ad */}
             {/* <AdPlaceholder slot="sidebar-top" className="min-h-[250px] hidden lg:flex" /> */}
 
             {/* Quick Health Tips */}
@@ -197,36 +78,36 @@ export const Home: React.FC = () => {
               <h3 className="text-base font-bold mb-4 text-gray-900 dark:text-white">Our Calculators</h3>
               <div className="space-y-2">
                 {[
-                  { label: 'BMI Calculator', sub: 'Body Mass Index', href: 'bmi-calculator', dot: 'bg-brand-500' },
-                  { label: 'BMR Calculator', sub: 'Basal Metabolic Rate', href: 'bmr-calculator', dot: 'bg-blue-500' },
-                  { label: 'Calorie Calculator', sub: 'Daily TDEE & Goals', href: 'calorie-calculator', dot: 'bg-green-500' },
-                  { label: 'Ideal Weight', sub: 'Devine Formula', href: 'ideal-weight-calculator', dot: 'bg-yellow-500' },
+                  { label: 'BMI Calculator',    sub: 'Body Mass Index',      href: 'bmi-calculator',          dot: 'bg-brand-500'  },
+                  { label: 'BMR Calculator',    sub: 'Basal Metabolic Rate', href: 'bmr-calculator',          dot: 'bg-blue-500'   },
+                  { label: 'Calorie Calculator',sub: 'Daily TDEE & Goals',   href: 'calorie-calculator',      dot: 'bg-green-500'  },
+                  { label: 'Ideal Weight',      sub: 'Devine Formula',       href: 'ideal-weight-calculator', dot: 'bg-yellow-500' },
                 ].map((item) => (
                   <a
                     key={item.label}
                     href={item.href}
-                    className="flex items-center gap-3 p-3 rounded-xl hover:bg-gray-50 dark:hover:bg-yellow-700/50 transition-colors group"
+                    className="flex items-center gap-3 p-3 rounded-xl hover:bg-yellow-50 dark:hover:bg-yellow-700/50 transition-colors group"
                   >
                     <span className={`w-2.5 h-2.5 rounded-full flex-shrink-0 ${item.dot}`} />
                     <div>
                       <p className="text-sm font-semibold text-gray-800 dark:text-gray-100 group-hover:text-brand-600 dark:group-hover:text-brand-400 transition-colors">{item.label}</p>
                       <p className="text-xs text-gray-400 dark:text-gray-500">{item.sub}</p>
                     </div>
-                    <span className="ml-auto text-gray-500 dark:text-brand-600 group-hover:text-red-500 transition-colors text-sm">→</span>
+                    <span className="ml-auto text-gray-300 dark:text-gray-600 group-hover:text-red-500 transition-colors text-sm">→</span>
                   </a>
                 ))}
               </div>
             </div>
 
-            {/* Formula reference */}
+            {/* Formulas */}
             <div className="bg-white dark:bg-gray-800 rounded-2xl border border-gray-200 dark:border-gray-700 shadow-sm p-5">
               <h3 className="text-base font-bold mb-3 text-gray-900 dark:text-white">Formulas We Use</h3>
               <div className="space-y-3">
                 {[
-                  { label: 'BMI', formula: 'Weight (kg) ÷ Height (m)²', source: 'WHO Standard' },
-                  { label: 'BMR', formula: 'Mifflin-St Jeor Equation', source: 'Validated 1990' },
-                  { label: 'Ideal Weight', formula: 'Devine Formula', source: 'Clinical standard' },
-                  { label: 'TDEE', formula: 'BMR × Activity Factor', source: 'Harris-Benedict' },
+                  { label: 'BMI',          formula: 'Weight (kg) ÷ Height (m)²', source: 'WHO Standard'     },
+                  { label: 'BMR',          formula: 'Mifflin-St Jeor Equation',  source: 'Validated 1990'   },
+                  { label: 'Ideal Weight', formula: 'Devine Formula',             source: 'Clinical standard' },
+                  { label: 'TDEE',         formula: 'BMR × Activity Factor',      source: 'Harris-Benedict'  },
                 ].map((item) => (
                   <div key={item.label} className="border-b border-gray-100 dark:border-gray-700 pb-2 last:border-0 last:pb-0">
                     <div className="flex justify-between items-baseline">
@@ -239,14 +120,13 @@ export const Home: React.FC = () => {
               </div>
             </div>
 
-            {/* Sidebar Ad 2 */}
             {/* <AdPlaceholder slot="sidebar-bottom" className="min-h-[250px]" /> */}
 
             {/* Unit Converter link */}
             <div className="bg-brand-50 dark:bg-brand-900/20 border border-brand-200 dark:border-brand-700 rounded-2xl p-5">
               <h3 className="text-sm font-bold text-brand-700 dark:text-brand-300 mb-1">Need to Convert Units?</h3>
               <p className="text-xs text-gray-600 dark:text-gray-400 mb-3 leading-relaxed">
-                Convert cm ↔ ft & inches, kg ↔ lbs instantly before entering your measurements.
+                Convert cm ↔ ft &amp; inches, kg ↔ lbs instantly before entering your measurements.
               </p>
               <a
                 href="/unit-converter"
@@ -260,10 +140,74 @@ export const Home: React.FC = () => {
             </div>
 
           </aside>
+
+          {/* ── Left: Calculators — order-2 on mobile, natural on desktop ── */}
+          <div className="lg:col-span-2 space-y-10 order-2 lg:order-1 lg:col-start-1 lg:row-start-1">
+
+            <BMICalculator />
+            {/* <AdPlaceholder slot="mid-1" className="h-[100px]" /> */}
+
+            <BMRCalculator />
+            {/* <AdPlaceholder slot="mid-2" className="h-[100px]" /> */}
+
+            <CalorieCalculator />
+            {/* <AdPlaceholder slot="mid-3" className="h-[100px]" /> */}
+
+            <IdealWeightCalculator />
+
+            {/* How to use */}
+            <div className="bg-white dark:bg-gray-800 rounded-2xl shadow-sm border border-gray-100 dark:border-gray-700 p-6">
+              <h2 className="text-xl font-bold mb-1 text-gray-900 dark:text-white flex items-center gap-2">
+                <span className="w-1 h-5 bg-brand-500 rounded-full inline-block"></span>
+                How to Use These Calculators
+              </h2>
+              <p className="text-gray-500 dark:text-gray-400 text-sm mb-5">Follow these steps in order for the most accurate results.</p>
+              <div className="space-y-4">
+                {[
+                  { step: '1', title: 'Start with BMI',               color: 'bg-brand-600', desc: 'Enter your height and weight to calculate your Body Mass Index. This tells you whether your current weight is within a healthy range for your height.' },
+                  { step: '2', title: 'Calculate Your BMR',           color: 'bg-blue-500',  desc: 'Add your age and gender to find your Basal Metabolic Rate — the calories your body burns at rest. This is the foundation for all calorie planning.' },
+                  { step: '3', title: 'Find Your Daily Calories (TDEE)', color: 'bg-green-500', desc: 'Enter your BMR from step 2 into the Calorie Calculator, select your activity level and goal (lose / maintain / gain), and get your personalised daily calorie target.' },
+                  { step: '4', title: 'Check Your Ideal Weight',      color: 'bg-yellow-500', desc: 'Use the Ideal Weight Calculator to see your recommended healthy weight range based on your height and gender using the Devine formula.' },
+                ].map((item) => (
+                  <div key={item.step} className="flex gap-4">
+                    <div className={`flex-shrink-0 w-8 h-8 rounded-full ${item.color} text-white text-sm font-extrabold flex items-center justify-center shadow-sm`}>
+                      {item.step}
+                    </div>
+                    <div>
+                      <p className="font-bold text-sm text-gray-800 dark:text-white mb-0.5">{item.title}</p>
+                      <p className="text-xs text-gray-500 dark:text-gray-400 leading-relaxed">{item.desc}</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Why TheFitCalculator */}
+            <div className="bg-white dark:bg-gray-800 rounded-2xl shadow-sm border border-gray-100 dark:border-gray-700 p-6">
+              <h2 className="text-xl font-bold mb-4 text-gray-900 dark:text-white flex items-center gap-2">
+                <span className="w-1 h-5 bg-brand-500 rounded-full inline-block"></span>
+                Why TheFitCalculator?
+              </h2>
+              <div className="grid sm:grid-cols-3 gap-4">
+                {[
+                  { icon: '🔬', title: 'Science-Backed',   desc: 'We use the same WHO, Mifflin-St Jeor, and Devine formulas used by doctors and registered dietitians worldwide.' },
+                  { icon: '🔒', title: 'Private by Design', desc: 'All calculations happen inside your browser. Your height, weight, and age are never sent to any server.' },
+                  { icon: '🆓', title: 'Always Free',       desc: 'No subscription, no sign-up, no hidden fees. Every calculator on this site is completely free to use.' },
+                ].map((v) => (
+                  <div key={v.title} className="bg-gray-50 dark:bg-gray-700/40 rounded-xl p-4 border border-gray-200 dark:border-gray-600 text-center">
+                    <div className="text-2xl mb-2">{v.icon}</div>
+                    <p className="font-bold text-sm text-gray-800 dark:text-white mb-1">{v.title}</p>
+                    <p className="text-xs text-gray-500 dark:text-gray-400 leading-relaxed">{v.desc}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+          </div>
+
         </div>
       </div>
 
-      {/* Footer Ad */}
       {/* <AdPlaceholder slot="footer-banner" className="h-[90px]" /> */}
     </>
   );
