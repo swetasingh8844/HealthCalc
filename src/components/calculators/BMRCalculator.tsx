@@ -132,13 +132,17 @@ export const BMRCalculator: React.FC = () => {
     <script
       type="application/ld+json"
       dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
-    />
-  )}
+       />
+       )}
+        {isCalculatorPage && (
         <meta
           name="description"
           content="Calculate your Basal Metabolic Rate (BMR) instantly with our free online BMR calculator. Uses the Mifflin-St Jeor equation. Supports metric and imperial units."
         />
+        )}
+         {isCalculatorPage && (
         <link rel="canonical" href="https://thefitcalculator.com/bmr-calculator" />
+         )}
       </Helmet>
 
       <div className="max-w-4xl mx-auto px-4 py-8 space-y-6">

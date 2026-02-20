@@ -130,13 +130,17 @@ export const CalorieCalculator: React.FC = () => {
     <script
       type="application/ld+json"
       dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
-    />
-  )}
+        />
+       )}
+        {isCalculatorPage && (
         <meta
           name="description"
           content="Calculate your daily calorie needs based on your BMR and activity level. Free online calorie calculator for weight loss, maintenance, and muscle gain."
         />
+        )}
+         {isCalculatorPage && (
         <link rel="canonical" href="https://thefitcalculator.com/calorie-calculator" />
+         )}
       </Helmet>
 
       <div className="max-w-4xl mx-auto px-4 py-8 space-y-6">

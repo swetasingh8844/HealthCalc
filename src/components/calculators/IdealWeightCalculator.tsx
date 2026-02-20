@@ -143,16 +143,20 @@ export const IdealWeightCalculator: React.FC = () => {
         <title>Ideal Weight Calculator - Find Your Healthy Body Weight Free</title>
         )}
          {isCalculatorPage && (
-    <script
-      type="application/ld+json"
-      dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
-    />
-  )}
+        <script
+         type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+         />
+         )}
+        {isCalculatorPage && (
         <meta
           name="description"
           content="Find your ideal body weight instantly with our free online calculator. Based on the Devine formula using height and gender. Supports metric and imperial units."
         />
+        )}
+         {isCalculatorPage && (
         <link rel="canonical" href="https://thefitcalculator.com/ideal-weight-calculator" />
+         )}
       </Helmet>
 
       <div className="max-w-4xl mx-auto px-4 py-8 space-y-6">

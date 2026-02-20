@@ -130,16 +130,20 @@ export const BMICalculator: React.FC = () => {
         <title>BMI Calculator (Body Mass Index) - Free Online BMI Tool</title>
         )}
          {isCalculatorPage && (
-    <script
+      <script
       type="application/ld+json"
       dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
-    />
-  )}
+       />
+       )}
+        {isCalculatorPage && (
         <meta
           name="description"
           content="Calculate your Body Mass Index (BMI) instantly with our free online BMI calculator. Supports metric and imperial units. See your BMI category and personalized health tips."
         />
+        )}
+         {isCalculatorPage && (
         <link rel="canonical" href="https://thefitcalculator.com/bmi-calculator" />
+         )}
       </Helmet>
 
       <div className="max-w-4xl mx-auto px-4 py-8 space-y-6">
