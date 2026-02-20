@@ -24,7 +24,9 @@ export const Home: React.FC = () => {
       {/* <AdPlaceholder slot="top-banner" className="h-[90px]" /> */}
 
       <div className="max-w-7xl mx-auto px-4 py-8">
-
+        <h1 className="sr-only">
+             Free BMI, BMR, Calorie and Ideal Weight Calculator
+         </h1>
         {/* ── Hero ── */}
         <div className="bg-gradient-to-r from-brand-600 to-brand-700 rounded-2xl px-8 py-12 mb-10 relative overflow-hidden shadow-lg">
           <div className="absolute -top-12 -right-12 w-56 h-56 bg-white/5 rounded-full" />
