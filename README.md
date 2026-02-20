@@ -35,8 +35,8 @@ It helps users instantly calculate BMI, BMR, daily calorie needs, and ideal weig
 
 ## 📸 Screenshots
 
-![Uploading image.png…]()
-![Uploading image.png…]()
+<img width="1755" height="4855" alt="image" src="https://github.com/user-attachments/assets/01d4a8df-467a-46d5-ae46-88eec3d0a662" />
+<img width="1755" height="5448" alt="image" src="https://github.com/user-attachments/assets/82d88994-05c4-4d2e-8e7c-10aacb5f7ff9" />
 
 
 ## Run Locally
