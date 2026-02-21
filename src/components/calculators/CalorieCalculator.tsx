@@ -139,6 +139,13 @@ export const CalorieCalculator: React.FC = () => {
         />
         )}
          {isCalculatorPage && (
+       <meta property="og:title" content="Calorie Calculator – Free TDEE & Daily Calorie Tool" />
+
+        )}
+        {isCalculatorPage && (
+         <meta property="og:description" content="Find your daily calorie needs for weight loss, maintenance, or muscle gain with our fast and accurate calorie calculator." />
+        )}
+         {isCalculatorPage && (
         <link rel="canonical" href="https://thefitcalculator.com/calorie-calculator" />
          )}
       </Helmet>

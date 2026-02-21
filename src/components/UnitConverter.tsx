@@ -66,9 +66,9 @@ export const UnitConverter: React.FC = () => {
   return (
     <>
       <Helmet>
-        <title>Unit Converter — cm to inches, kg to lbs | TheFitCalculator</title>
-        <meta name="description" content="Free unit converter for height and weight. Convert cm to inches, inches to cm, kg to lbs, lbs to kg, and cm to feet & inches instantly." />
-        <meta property="og:title" content="Unit Converter — cm to inches, kg to lbs | TheFitCalculator" />
+        <title>Unit Converter – Convert kg to lbs, cm to Feet & Inches Instantly | TheFitCalculator</title>
+        <meta name="description" content="Free unit converter for height and weight. Convert cm to inches, inches to cm, kg to lbs, lbs to kg, and cm to feet & inches instantly before using BMI, BMR, or calorie calculators." />
+        <meta property="og:title" content="Unit Converter – Height & Weight Conversion Tool | TheFitCalculator" />
         <meta property="og:description" content="Convert cm to inches and kg to lbs instantly. Free online unit converter for health calculations." />
         <meta property="og:url" content="https://thefitcalculator.com/unit-converter" />
         <meta property="og:type" content="website" />

@@ -127,7 +127,7 @@ export const BMICalculator: React.FC = () => {
     <>
       <Helmet>
         {isCalculatorPage && (
-        <title>BMI Calculator (Body Mass Index) - Free Online BMI Tool</title>
+        <title>BMI Calculator (kg & cm) – Free Metric Body Mass Index Calculator Online</title>
         )}
          {isCalculatorPage && (
       <script
@@ -136,10 +136,16 @@ export const BMICalculator: React.FC = () => {
        />
        )}
         {isCalculatorPage && (
-        <meta
-          name="description"
-          content="Calculate your Body Mass Index (BMI) instantly with our free online BMI calculator. Supports metric and imperial units. See your BMI category and personalized health tips."
-        />
+       <meta
+       name="description"
+       content="Free BMI calculator using kg and cm or lbs and feet. Calculate your Body Mass Index instantly, check BMI category, and get personalized health insights with our accurate metric BMI calculator."
+      />
+      )}
+        {isCalculatorPage && (
+      <meta property="og:title" content="BMI Calculator (kg & cm) – Free Metric BMI Calculator" />
+       )}
+        {isCalculatorPage && (
+       <meta property="og:description" content="Calculate BMI instantly using kg & cm or lbs & feet. Free, accurate, and science-backed Body Mass Index calculator." />
         )}
          {isCalculatorPage && (
         <link rel="canonical" href="https://thefitcalculator.com/bmi-calculator" />
@@ -152,7 +158,8 @@ export const BMICalculator: React.FC = () => {
         <div className="text-center pb-2">
           {/* <span className="inline-block bg-brand-50 dark:bg-brand-900/30 text-brand-600 dark:text-brand-400 text-xs font-bold uppercase tracking-widest px-3 py-1 rounded-full mb-3">Free Online Tool</span> */}
           <h1 className="text-3xl font-extrabold text-gray-900 dark:text-white tracking-tight">BMI Calculator for Adults</h1>
-          <p className="text-gray-500 dark:text-gray-400 mt-2 text-sm max-w-lg mx-auto">Enter your weight and height below to instantly calculate your Body Mass Index and find out what your result means for your health.</p>
+          <p className="text-gray-500 dark:text-gray-400 mt-2 text-sm max-w-lg mx-auto">Enter your weight and height below to instantly calculate your Body Mass Index and find out what your result means for your health.  This BMI calculator supports metric units (kg and cm) and imperial units (lbs and feet).
+        If you're searching for a BMI calculator in kg and cm, this tool provides fast and accurate results instantly.</p>
         </div>
 
         {/* ── Calculator Card ── */}

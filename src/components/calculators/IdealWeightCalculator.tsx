@@ -151,8 +151,15 @@ export const IdealWeightCalculator: React.FC = () => {
         {isCalculatorPage && (
         <meta
           name="description"
-          content="Find your ideal body weight instantly with our free online calculator. Based on the Devine formula using height and gender. Supports metric and imperial units."
+          content="Use our free Ideal Weight Calculator to estimate your healthy weight range based on height and gender. Supports kg, cm, lbs, and feet using the Devine formula." 
         />
+        )}
+        {isCalculatorPage && (
+      <meta property="og:title" content="Ideal Weight Calculator – Free Healthy Weight Tool" />
+
+        )}
+        {isCalculatorPage && (
+       <meta property="og:description" content="Estimate your ideal weight based on height and gender using a science-backed formula with instant results." />
         )}
          {isCalculatorPage && (
         <link rel="canonical" href="https://thefitcalculator.com/ideal-weight-calculator" />
@@ -166,6 +173,7 @@ export const IdealWeightCalculator: React.FC = () => {
           {/* <span className="inline-block bg-brand-50 dark:bg-brand-900/30 text-brand-600 dark:text-brand-400 text-xs font-bold uppercase tracking-widest px-3 py-1 rounded-full mb-3">Free Online Tool</span> */}
           <h1 className="text-3xl font-extrabold text-gray-900 dark:text-white tracking-tight">Ideal Weight Calculator</h1>
           <p className="text-gray-500 dark:text-gray-400 mt-2 text-sm max-w-lg mx-auto">Estimate your recommended healthy body weight based on your height and gender using the clinically recognised Devine formula.</p>
+          
         </div>
 
         {/* ── Calculator Card ── */}
