@@ -19,6 +19,8 @@ export const Home: React.FC = () => {
         <meta property="og:description" content="Free online health calculators for BMI, BMR, daily calorie needs, and ideal weight. Science-backed formulas, instant results." />
         <meta property="og:url" content="https://thefitcalculator.com/" />
         <meta property="og:type" content="website" />
+        <meta property="og:image" content="https://thefitcalculator.com/logo1.png" />
+        <meta name="twitter:image" content="https://thefitcalculator.com/logo1.png" />
       </Helmet>
 
       {/* <AdPlaceholder slot="top-banner" className="h-[90px]" /> */}
