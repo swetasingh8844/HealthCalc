@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import { calculateDailyCalories } from '../../../utils/calculations';
 import { ActivityLevel, WeightGoal } from '../../../types';
 import { Helmet } from 'react-helmet-async';
-import { UnitConverter } from '../../components/UnitConverter';
 import { useLocation } from "react-router-dom";
 
 

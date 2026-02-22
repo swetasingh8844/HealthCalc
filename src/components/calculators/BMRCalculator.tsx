@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import { calculateBMR } from '../../../utils/calculations';
 import { UnitSystem, Gender } from '../../../types';
 import { Helmet } from 'react-helmet-async';
-import { UnitConverter } from '../../components/UnitConverter';
 import { useLocation } from "react-router-dom";
 
 // ── Accordion FAQ Item ────────────────────────────────────────────────────────
