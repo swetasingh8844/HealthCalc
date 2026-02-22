@@ -31,7 +31,7 @@
     gtag('js', new Date());
     gtag('config', 'G-FMNLXMESW4');
   </script>
-  <script defer src="https://www.googletagmanager.com/gtag/js?id=G-FMNLXMESW4"></script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-FMNLXMESW4"></script>
 
   <!-- Tailwind CDN kept (needed for component classes) but config is clean -->
   <script src="https://cdn.tailwindcss.com"></script>
@@ -95,14 +95,14 @@
   <!--  AdSense lazy-loaded after page is interactive
        This is the biggest win — removes ~400ms of Total Blocking Time -->
   <script>
-    window.addEventListener('load', function() {
-      var s = document.createElement('script');
-      s.async = true;
-      s.src = 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5054008660817422';
-      s.crossOrigin = 'anonymous';
-      document.body.appendChild(s);
-    });
-  </script>
+  setTimeout(function() {
+    var s = document.createElement('script');
+    s.async = true;
+    s.src = 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5054008660817422';
+    s.crossOrigin = 'anonymous';
+    document.body.appendChild(s);
+  }, 3000); // loads 3 seconds after page starts, not waiting for full load
+</script>
 
   <!--  AMP moved to end of body — not needed for render -->
   <script async custom-element="amp-auto-ads"
