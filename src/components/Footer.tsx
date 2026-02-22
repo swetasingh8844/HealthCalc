@@ -42,6 +42,14 @@ export const Footer: React.FC = () => {
           <p>&copy; {new Date().getFullYear()} TheFitCalculator Pro. All rights reserved.</p>
         </div>
       </div>
+      <div className="flex justify-center mt-4">
+  <a
+    data-pin-do="buttonPin"
+    href="https://www.pinterest.com/pin/create/button/?url=https://thefitcalculator.com&media=https://thefitcalculator.com/logo.png&description=Free health calculators"
+  >
+  </a>
+</div>
+
     </footer>
   );
 };
