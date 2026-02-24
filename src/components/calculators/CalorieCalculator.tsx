@@ -40,7 +40,7 @@ export const CalorieCalculator: React.FC = () => {
   const [result, setResult] = useState<number | null>(null);
   const [showShareOptions, setShowShareOptions] = useState(false);
  const location = useLocation();
-  const isCalculatorPage = location.pathname === "/calorie-calculator";
+  const isCalculatorPage = location.pathname.startsWith("/calorie-calculator");
 
 
   const handleCalculate = (e: React.FormEvent) => {
