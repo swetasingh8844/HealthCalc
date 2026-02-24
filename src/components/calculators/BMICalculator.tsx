@@ -39,7 +39,7 @@ export const BMICalculator: React.FC = () => {
   const [unit, setUnit] = useState<UnitSystem>(UnitSystem.Metric);
   const [result, setResult] = useState<{ bmi: number; category: string; color: string; description: string } | null>(null);
    const location = useLocation();
-  const isCalculatorPage = location.pathname === "/bmi-calculator";
+  const isCalculatorPage = location.pathname.startsWith("/bmi-calculator");
 
   const handleCalculate = (e: React.FormEvent) => {
     e.preventDefault();
