@@ -66,10 +66,10 @@ export const UnitConverter: React.FC = () => {
   return (
     <>
       <Helmet>
-        <title>Unit Converter – Convert kg to lbs, cm to Feet & Inches Instantly | TheFitCalculator</title>
-        <meta name="description" content="Free unit converter for height and weight. Convert cm to inches, inches to cm, kg to lbs, lbs to kg, and cm to feet & inches instantly before using BMI, BMR, or calorie calculators." />
-        <meta property="og:title" content="Unit Converter – Height & Weight Conversion Tool | TheFitCalculator" />
-        <meta property="og:description" content="Convert cm to inches and kg to lbs instantly. Free online unit converter for health calculations." />
+        <title>CM to Feet, Inches & KG to LBS Calculator – Height & Weight Converter | TheFitCalculator</title>
+        <meta name="description" content="Free cm to inches, cm to feet & inches, and kg to lbs calculator. Convert height and weight instantly using our accurate metric to imperial unit converter." />
+        <meta property="og:title" content="CM to Feet, Inches & KG to LBS Calculator – Height & Weight Converter | TheFitCalculator" />
+        <meta property="og:description" content="Free cm to inches, cm to feet & inches, and kg to lbs calculator. Convert height and weight instantly using our accurate metric to imperial unit converter." />
         <meta property="og:url" content="https://thefitcalculator.com/unit-converter" />
         <meta property="og:type" content="website" />
         <link rel="canonical" href="https://thefitcalculator.com/unit-converter" />
@@ -85,7 +85,8 @@ export const UnitConverter: React.FC = () => {
             <span className="inline-block bg-white/15 text-white text-xs font-bold uppercase tracking-widest px-3 py-1 rounded-full mb-3">
               Free Online Tool
             </span>
-            <h1 className="text-3xl font-extrabold text-white tracking-tight mb-2">Unit Converter</h1>
+           <p className="text-xl text-brand-100 font-semibold mb-1">Unit Converter</p>
+            <h1 className="text-3xl font-extrabold text-white tracking-tight mb-2">CM to Feet, Inches & KG to LBS Calculator</h1>
             <p className="text-brand-100 text-sm max-w-lg leading-relaxed">
               Convert between metric and imperial units instantly — cm ↔ inches, cm ↔ feet &amp; inches, and kg ↔ lbs. No sign-up required.
             </p>
