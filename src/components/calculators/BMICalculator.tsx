@@ -126,7 +126,7 @@ export const BMICalculator: React.FC = () => {
     <>
       <Helmet>
         {isCalculatorPage && (
-        <title>BMI Calculator (kg & cm) – Free Metric Body Mass Index Calculator Online</title>
+        <title>Free BMI Calculator (kg & cm) or (lbs & feet) for Female & Male – Metric BMI Calculator India</title>
         )}
          {isCalculatorPage && (
       <script
@@ -137,14 +137,14 @@ export const BMICalculator: React.FC = () => {
         {isCalculatorPage && (
        <meta
        name="description"
-       content="Free BMI calculator using kg and cm or lbs and feet. Calculate your Body Mass Index instantly, check BMI category, and get personalized health insights with our accurate metric BMI calculator."
+       content="Use this free BMI calculator (kg & cm) or (lbs & feet) to check body mass index for female, male, students, and adults in India. Instant metric BMI calculation with chart."
       />
       )}
         {isCalculatorPage && (
-      <meta property="og:title" content="BMI Calculator (kg & cm) – Free Metric BMI Calculator" />
+      <meta property="og:title" content="BMI Calculator (kg & cm) or (lbs & feet) for Female & Male – Metric BMI Calculator India" />
        )}
         {isCalculatorPage && (
-       <meta property="og:description" content="Calculate BMI instantly using kg & cm or lbs & feet. Free, accurate, and science-backed Body Mass Index calculator." />
+       <meta property="og:description" content="Use this free BMI calculator (kg & cm) or (lbs & feet) to check body mass index for female, male, students, and adults in India. Instant metric BMI calculation with chart." />
         )}
          {isCalculatorPage && (
         <link rel="canonical" href="https://thefitcalculator.com/bmi-calculator" />
