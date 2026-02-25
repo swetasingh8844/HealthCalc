@@ -156,7 +156,7 @@ export const BMRCalculator: React.FC = () => {
         {/* ── Page Title ── */}
         <div className="text-center pb-2">
           {/* <span className="inline-block bg-brand-50 dark:bg-brand-900/30 text-brand-600 dark:text-brand-400 text-xs font-bold uppercase tracking-widest px-3 py-1 rounded-full mb-3">Free Online Tool</span> */}
-          <h1 className="text-3xl font-extrabold text-gray-900 dark:text-white tracking-tight"> BMR Calculator (Basal Metabolic Rate)</h1>
+          <h1 className="text-3xl font-extrabold text-gray-900 dark:text-white tracking-tight"> BMR Calculator – Calculate Your Basal Metabolic Rate</h1>
           <p className="text-gray-500 dark:text-gray-400 mt-2 text-sm max-w-lg mx-auto">Use this BMR calculator to estimate how many calories your body burns at rest.
     It supports both metric (kg, cm) and imperial (lbs, feet) units and uses the
     Mifflin-St Jeor equation for accurate results. If you're searching for a BMR
