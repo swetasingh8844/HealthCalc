@@ -74,7 +74,7 @@
 
   <!--  AdSense lazy-loaded after page is interactive
        This is the biggest win — removes ~400ms of Total Blocking Time -->
-  <script>
+  <!-- <script>
   setTimeout(function() {
     var s = document.createElement('script');
     s.async = true;
@@ -82,7 +82,11 @@
     s.crossOrigin = 'anonymous';
     document.body.appendChild(s);
   }, 3000); // loads 3 seconds after page starts, not waiting for full load
-</script>
+</script> -->
+   <script async
+    src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5054008660817422"
+    crossorigin="anonymous">
+  </script>
 
   <!--  AMP moved to end of body — not needed for render -->
   <script async custom-element="amp-auto-ads"
