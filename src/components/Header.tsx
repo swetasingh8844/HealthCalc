@@ -28,6 +28,7 @@ export const Header: React.FC<HeaderProps> = ({ isDarkMode, toggleDarkMode }) =>
          <Link to="/ideal-weight-calculator" className="text-gray-600 dark:text-gray-300 hover:text-brand-600 dark:hover:text-brand-500 font-medium transition">Ideal Weight</Link>
           <Link to="/calorie-calculator" className="text-gray-600 dark:text-gray-300 hover:text-brand-600 dark:hover:text-brand-500 font-medium transition">Calorie Calculator</Link>
            <Link to="/unit-converter" className="text-gray-600 dark:text-gray-300 hover:text-brand-600 dark:hover:text-brand-500 font-medium transition">Unit Converter</Link>
+          <Link to="/shop">Shop</Link>
           <button 
             onClick={toggleDarkMode}
             className="p-2 rounded-lg bg-gray-100 dark:bg-gray-700 text-gray-600 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-600 transition-colors"

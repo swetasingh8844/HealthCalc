@@ -12,6 +12,7 @@ import {BMRCalculator} from "./components/calculators/BMRCalculator";
 import {IdealWeightCalculator} from "./components/calculators/IdealWeightCalculator";
 import { CalorieCalculator } from './components/calculators/CalorieCalculator';
 import { UnitConverter } from './components/UnitConverter';
+import ShopPage from "./pages/ShopPage";
 
 import { TermsOfService } from './pages/TermsofService'; 
 // Scroll to top on route change
@@ -86,6 +87,7 @@ const App: React.FC = () => {
             <Route path="/calorie-calculator" element={<CalorieCalculator />} />
             <Route path="/unit-converter" element={<UnitConverter />} />
             <Route path="/terms" element={<TermsOfService />} />
+             <Route path="/shop" element={<ShopPage />} />
           </Routes>
           </Layout>
         </main>
