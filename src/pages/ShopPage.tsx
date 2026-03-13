@@ -37,9 +37,44 @@ const products = [
     rating: "4.1 / 5",
     link: "https://amzn.to/47EHc1O",
   },
+  {
+    name: "Foam Roller",
+    category: "Yoga",
+    image: "/images/roller2.jpeg",
+    description: "Foam Roller for Back, Neck & Knee Pain Relief.",
+    rating: "4.0 / 5",
+    link: "https://amzn.to/4bIhoUU",
+  },
+  {
+    name: "Foam Roller",
+    category: "Yoga",
+    image: "/images/roller1.jpeg",
+    description: "Foam Roller Multicolour For Deep Tissue Massage",
+    rating: "5 / 5",
+    link: "https://amzn.to/4bquPHY",
+  },
+   {
+    name: "Water bottle",
+    category: "Tracking",
+    image: "/images/bottle.jpg",
+    description: "24 Hours Hot and Cold Water Bottle",
+    rating: "",
+    link: "https://amzn.to/417Gczy",
+    // badge: "Best Seller",
+  },
+
+  {
+    name: "Water bottle",
+    category: "Tracking",
+    image: "/images/bottle1.jpg",
+    description: "Stainless Steel Water Bottle.",
+    rating:"",
+    link: "https://amzn.to/4lsTUq7",
+    // badge: "Best Seller",
+  },
 ];
 
-const categories = ["All", "Cardio", "Strength", "Yoga"];
+const categories = ["All", "Cardio", "Strength", "Yoga", "Tracking"];
 
 const ShopPage = () => {
   const [active, setActive] = useState("All");

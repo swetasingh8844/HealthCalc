@@ -18,6 +18,9 @@ import CalorieGuide from './pages/blog/Calorieguide';
 
 import { TermsOfService } from './pages/TermsofService'; 
 import BMIArticle from './pages/blog/BMIArticle';
+import BMRvsTDEE from './pages/blog/bmrvstdee';
+import BodyFatPercentage from './pages/blog/Bodyfatpercentage';
+import WeightLossGuide from './pages/blog/Weightlossguide ';
 // Scroll to top on route change
 const ScrollToTop = () => {
   const { pathname } = useLocation();
@@ -94,6 +97,9 @@ const App: React.FC = () => {
              <Route path="/blog" element={<BlogIndex/>}/>
             <Route path="/blog/bmi-india-guide" element={<BMIArticle/>}/> 
             <Route path="/blog/calorie-intake-guide" element={<CalorieGuide />} />
+            <Route path="/blog/bmr-vs-tdee" element={<BMRvsTDEE />} />
+            <Route path="/blog/body-fat-percentage" element={<BodyFatPercentage/>} />
+            <Route path="/blog/weight-loss-without-starving" element={<WeightLossGuide/>} />
           </Routes>
           </Layout>
         </main>
