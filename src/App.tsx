@@ -13,8 +13,11 @@ import {IdealWeightCalculator} from "./components/calculators/IdealWeightCalcula
 import { CalorieCalculator } from './components/calculators/CalorieCalculator';
 import { UnitConverter } from './components/UnitConverter';
 import ShopPage from "./pages/ShopPage";
+import BlogIndex from './pages/blog/BlogIndex';
+import CalorieGuide from './pages/blog/Calorieguide';
 
 import { TermsOfService } from './pages/TermsofService'; 
+import BMIArticle from './pages/blog/BMIArticle';
 // Scroll to top on route change
 const ScrollToTop = () => {
   const { pathname } = useLocation();
@@ -88,6 +91,9 @@ const App: React.FC = () => {
             <Route path="/unit-converter" element={<UnitConverter />} />
             <Route path="/terms" element={<TermsOfService />} />
              <Route path="/shop" element={<ShopPage />} />
+             <Route path="/blog" element={<BlogIndex/>}/>
+            <Route path="/blog/bmi-india-guide" element={<BMIArticle/>}/> 
+            <Route path="/blog/calorie-intake-guide" element={<CalorieGuide />} />
           </Routes>
           </Layout>
         </main>
