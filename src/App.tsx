@@ -20,11 +20,8 @@ import { TermsOfService } from './pages/TermsofService';
 import BMIArticle from './pages/blog/BMIArticle';
 import BMRvsTDEE from './pages/blog/bmrvstdee';
 import BodyFatPercentage from './pages/blog/Bodyfatpercentage';
-<<<<<<< HEAD
-import WeightLossGuide from './pages/blog/Weightlossguide ';
-=======
 import WeightLossGuide from './pages/blog/WeightLossGuide';
->>>>>>> 1500b08 (done)
+
 // Scroll to top on route change
 const ScrollToTop = () => {
   const { pathname } = useLocation();
