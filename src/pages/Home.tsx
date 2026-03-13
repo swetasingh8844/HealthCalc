@@ -103,7 +103,6 @@ export const Home: React.FC = () => {
                 ))}
               </div>
             </div>
-
             {/* Formulas */}
             <div className="bg-white dark:bg-gray-800 rounded-2xl border border-gray-200 dark:border-gray-700 shadow-sm p-5">
               <h3 className="text-base font-bold mb-3 text-gray-900 dark:text-white">Formulas We Use</h3>
