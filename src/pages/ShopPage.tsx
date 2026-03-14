@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Helmet } from "react-helmet-async";
 import ProductCard from "../components/ProductCard";
 
 const products = [
@@ -9,7 +10,6 @@ const products = [
     description: "Adjustable skipping rope for fat burning workouts.",
     rating: "4.0 / 5",
     link: "https://amzn.to/40YJchJ",
-    // badge: "Best Seller",
   },
   {
     name: "Resistance Band Set",
@@ -18,7 +18,6 @@ const products = [
     description: "5 level resistance bands for full body workouts.",
     rating: "4.1 / 5",
     link: "https://amzn.to/4ryoFvt",
-    // badge: "Popular",
   },
   {
     name: "Resistance Band Set",
@@ -27,7 +26,6 @@ const products = [
     description: "5 level resistance bands for full body workouts.",
     rating: "4.5 / 5",
     link: "https://amzn.to/4rwQS5V",
-    // badge: "Popular",
   },
   {
     name: "Yoga Mat",
@@ -53,24 +51,21 @@ const products = [
     rating: "5 / 5",
     link: "https://amzn.to/4bquPHY",
   },
-   {
+  {
     name: "Water bottle",
     category: "Tracking",
     image: "/images/bottle.jpg",
     description: "24 Hours Hot and Cold Water Bottle",
     rating: "",
     link: "https://amzn.to/417Gczy",
-    // badge: "Best Seller",
   },
-
   {
     name: "Water bottle",
     category: "Tracking",
     image: "/images/bottle1.jpg",
     description: "Stainless Steel Water Bottle.",
-    rating:"",
+    rating: "",
     link: "https://amzn.to/4lsTUq7",
-    // badge: "Best Seller",
   },
 ];
 
@@ -86,6 +81,15 @@ const ShopPage = () => {
 
   return (
     <>
+      <Helmet>
+        <title>Shop Fitness Equipment – TheFitCalculator</title>
+        <meta
+          name="description"
+          content="Shop curated fitness equipment for every workout — skipping ropes, resistance bands, yoga mats, foam rollers, water bottle and more. Hand-picked gear for home and gym workouts."
+        />
+        <link rel="canonical" href="https://thefitcalculator.com/shop" />
+      </Helmet>
+
       <style>{`
         @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@300;400;500&display=swap');
 
