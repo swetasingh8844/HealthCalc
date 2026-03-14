@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
-
+const isCalorieGuidePage = location.pathname === "/blog/calorie-intake-guide";
 const CalorieGuide: React.FC = () => {
 
   const scrollTo = (id: string) => {
@@ -25,10 +25,49 @@ const CalorieGuide: React.FC = () => {
   return (
     <>
       <Helmet>
-        <title>Calorie Intake Guide for Weight Loss in India – TheFitCalculator</title>
-        <meta name="description" content="How many calories do Indians actually need? Hidden calories in dal, roti and chai, smart food swaps, a sample Indian meal plan, and how to lose weight without starving." />
-        <link rel="canonical" href="https://thefitcalculator.com/blog/calorie-intake-guide" />
-      </Helmet>
+  {isCalorieGuidePage && (
+    <title>
+      Calorie Intake Guide for Weight Loss in India – TheFitCalculator
+    </title>
+  )}
+
+  {isCalorieGuidePage && (
+    <meta
+      name="description"
+      content="How many calories do Indians actually need? Hidden calories in dal, roti and chai, smart food swaps, a sample Indian meal plan, and how to lose weight without starving."
+    />
+  )}
+
+  {isCalorieGuidePage && (
+    <link
+      rel="canonical"
+      href="https://thefitcalculator.com/blog/calorie-intake-guide"
+    />
+  )}
+
+  {isCalorieGuidePage && (
+    <meta
+      property="og:title"
+      content="Calorie Intake Guide for Weight Loss in India – TheFitCalculator"
+    />
+  )}
+
+  {isCalorieGuidePage && (
+    <meta
+      property="og:description"
+      content="Learn how many calories Indians need daily, hidden calories in common foods, and how to lose weight with a balanced Indian diet."
+    />
+  )}
+
+  {isCalorieGuidePage && (
+    <meta
+      property="og:url"
+      content="https://thefitcalculator.com/blog/calorie-intake-guide"
+    />
+  )}
+
+  {isCalorieGuidePage && <meta property="og:type" content="article" />}
+</Helmet>
 
       <style>{`html { scroll-padding-top: 80px; }`}</style>
 

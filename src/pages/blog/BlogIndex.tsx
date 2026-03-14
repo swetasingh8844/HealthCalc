@@ -75,6 +75,10 @@ const BlogIndex: React.FC = () => {
         <title>Health & Fitness Blog – TheFitCalculator</title>
         <meta name="description" content="Science-backed articles/blog on BMI, calories, BMR, and healthy weight management for Indians. Expert health education from TheFitCalculator." />
         <link rel="canonical" href="https://thefitcalculator.com/blog" />
+        <meta property="og:title" content="Health & Fitness Blog – TheFitCalculator" />
+        <meta property="og:description" content="Science-backed articles/blog on BMI, calories, BMR, and healthy weight management for Indians. Expert health education from TheFitCalculator." />
+        <meta property="og:url" content="https://thefitcalculator.com/blog" />
+        <meta property="og:type" content="article" />
       </Helmet>
 
       <div className="max-w-4xl mx-auto px-4 py-8 space-y-8">

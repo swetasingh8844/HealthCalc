@@ -88,6 +88,10 @@ const ShopPage = () => {
           content="Shop curated fitness equipment for every workout — skipping ropes, resistance bands, yoga mats, foam rollers, water bottle and more. Hand-picked gear for home and gym workouts."
         />
         <link rel="canonical" href="https://thefitcalculator.com/shop" />
+         <meta property="og:title" content="Shop Fitness Equipment – TheFitCalculator" />
+        <meta property="og:description" content="Shop curated fitness equipment for every workout — skipping ropes, resistance bands, yoga mats, foam rollers, water bottle and more. Hand-picked gear for home and gym workouts." />
+        <meta property="og:url" content="https://thefitcalculator.com/shop" />
+        <meta property="og:type" content="website" />
       </Helmet>
 
       <style>{`

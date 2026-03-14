@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
-
+const isBMIBlogPage = location.pathname === "/blog/bmi-india-guide";
 const BMIArticle: React.FC = () => {
 
   const scrollTo = (id: string) => {
@@ -24,10 +24,49 @@ const BMIArticle: React.FC = () => {
   return (
     <>
       <Helmet>
-        <title>BMI in India: What Your Number Really Means for South Asians – TheFitCalculator</title>
-        <meta name="description" content="Why standard BMI ranges may not be accurate for Indians. Learn about South Asian BMI thresholds, visceral fat risks, and what to do after you know your BMI." />
-        <link rel="canonical" href="https://thefitcalculator.com/blog/bmi-india-guide" />
-      </Helmet>
+  {isBMIBlogPage && (
+    <title>
+      BMI in India: What Your Number Really Means for South Asians – TheFitCalculator
+    </title>
+  )}
+
+  {isBMIBlogPage && (
+    <meta
+      name="description"
+      content="Why standard BMI ranges may not be accurate for Indians. Learn about South Asian BMI thresholds, visceral fat risks, and what to do after you know your BMI."
+    />
+  )}
+
+  {isBMIBlogPage && (
+    <link
+      rel="canonical"
+      href="https://thefitcalculator.com/blog/bmi-india-guide"
+    />
+  )}
+
+  {isBMIBlogPage && (
+    <meta
+      property="og:title"
+      content="BMI in India: What Your Number Really Means for South Asians – TheFitCalculator"
+    />
+  )}
+
+  {isBMIBlogPage && (
+    <meta
+      property="og:description"
+      content="Why BMI ranges may not be accurate for Indians and South Asians."
+    />
+  )}
+
+  {isBMIBlogPage && (
+    <meta
+      property="og:url"
+      content="https://thefitcalculator.com/blog/bmi-india-guide"
+    />
+  )}
+
+  {isBMIBlogPage && <meta property="og:type" content="article" />}
+</Helmet>
 
       {/* Add scroll-padding so sticky header doesn't cover the heading */}
       <style>{`html { scroll-padding-top: 80px; }`}</style>

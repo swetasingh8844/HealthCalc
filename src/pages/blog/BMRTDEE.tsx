@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
-
+const isBMRvsTDEEPage = location.pathname === "/blog/bmr-vs-tdee";
 const BMRvsTDEE: React.FC = () => {
 
   const scrollTo = (id: string) => {
@@ -24,10 +24,49 @@ const BMRvsTDEE: React.FC = () => {
   return (
     <>
       <Helmet>
-        <title>BMR vs TDEE — What's the Difference? – TheFitCalculator</title>
-        <meta name="description" content="BMR and TDEE explained clearly. Learn what Basal Metabolic Rate and Total Daily Energy Expenditure mean, how they're calculated, and how to use them to reach your weight goal." />
-        <link rel="canonical" href="https://thefitcalculator.com/blog/bmr-vs-tdee" />
-      </Helmet>
+  {isBMRvsTDEEPage && (
+    <title>
+      BMR vs TDEE — What's the Difference? – TheFitCalculator
+    </title>
+  )}
+
+  {isBMRvsTDEEPage && (
+    <meta
+      name="description"
+      content="BMR and TDEE explained clearly. Learn what Basal Metabolic Rate and Total Daily Energy Expenditure mean, how they're calculated, and how to use them to reach your weight goal."
+    />
+  )}
+
+  {isBMRvsTDEEPage && (
+    <link
+      rel="canonical"
+      href="https://thefitcalculator.com/blog/bmr-vs-tdee"
+    />
+  )}
+
+  {isBMRvsTDEEPage && (
+    <meta
+      property="og:title"
+      content="BMR vs TDEE — What's the Difference? – TheFitCalculator"
+    />
+  )}
+
+  {isBMRvsTDEEPage && (
+    <meta
+      property="og:description"
+      content="Understand the difference between BMR and TDEE and how they help manage calories, metabolism, and weight goals."
+    />
+  )}
+
+  {isBMRvsTDEEPage && (
+    <meta
+      property="og:url"
+      content="https://thefitcalculator.com/blog/bmr-vs-tdee"
+    />
+  )}
+
+  {isBMRvsTDEEPage && <meta property="og:type" content="article" />}
+</Helmet>
 
       <style>{`html { scroll-padding-top: 80px; }`}</style>
 

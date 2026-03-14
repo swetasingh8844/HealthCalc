@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
-
+const isWeightLossPage = location.pathname === "/blog/weight-loss-without-starving";
 const WeightLossGuide: React.FC = () => {
 
   const scrollTo = (id: string) => {
@@ -24,10 +24,49 @@ const WeightLossGuide: React.FC = () => {
   return (
     <>
       <Helmet>
-        <title>How to Lose Weight Without Starving Yourself – TheFitCalculator</title>
-        <meta name="description" content="Why crash diets fail, how to create a calorie deficit without hunger, filling Indian foods for weight loss, and a sustainable approach to losing fat without restriction." />
-        <link rel="canonical" href="https://thefitcalculator.com/blog/weight-loss-without-starving" />
-      </Helmet>
+  {isWeightLossPage && (
+    <title>
+      How to Lose Weight Without Starving Yourself – TheFitCalculator
+    </title>
+  )}
+
+  {isWeightLossPage && (
+    <meta
+      name="description"
+      content="Why crash diets fail, how to create a calorie deficit without hunger, filling Indian foods for weight loss, and a sustainable approach to losing fat without restriction."
+    />
+  )}
+
+  {isWeightLossPage && (
+    <link
+      rel="canonical"
+      href="https://thefitcalculator.com/blog/weight-loss-without-starving"
+    />
+  )}
+
+  {isWeightLossPage && (
+    <meta
+      property="og:title"
+      content="How to Lose Weight Without Starving Yourself – TheFitCalculator"
+    />
+  )}
+
+  {isWeightLossPage && (
+    <meta
+      property="og:description"
+      content="Learn sustainable weight loss strategies, avoid crash diets, and discover filling Indian foods that help you lose fat without feeling hungry."
+    />
+  )}
+
+  {isWeightLossPage && (
+    <meta
+      property="og:url"
+      content="https://thefitcalculator.com/blog/weight-loss-without-starving"
+    />
+  )}
+
+  {isWeightLossPage && <meta property="og:type" content="article" />}
+</Helmet>
 
       <style>{`html { scroll-padding-top: 80px; }`}</style>
 

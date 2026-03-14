@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
-
+const isBodyFatPage = location.pathname === "/blog/body-fat-percentage";
 const BodyFatPercentage: React.FC = () => {
 
   const scrollTo = (id: string) => {
@@ -23,10 +23,49 @@ const BodyFatPercentage: React.FC = () => {
   return (
     <>
       <Helmet>
-        <title>Healthy Body Fat Percentage by Age and Gender – TheFitCalculator</title>
-        <meta name="description" content="What is a healthy body fat percentage for your age and gender? Learn the ranges, how to measure body fat at home, and how it differs for Indians." />
-        <link rel="canonical" href="https://thefitcalculator.com/blog/body-fat-percentage" />
-      </Helmet>
+  {isBodyFatPage && (
+    <title>
+      Healthy Body Fat Percentage by Age and Gender – TheFitCalculator
+    </title>
+  )}
+
+  {isBodyFatPage && (
+    <meta
+      name="description"
+      content="What is a healthy body fat percentage for your age and gender? Learn the ranges, how to measure body fat at home, and how it differs for Indians."
+    />
+  )}
+
+  {isBodyFatPage && (
+    <link
+      rel="canonical"
+      href="https://thefitcalculator.com/blog/body-fat-percentage"
+    />
+  )}
+
+  {isBodyFatPage && (
+    <meta
+      property="og:title"
+      content="Healthy Body Fat Percentage by Age and Gender – TheFitCalculator"
+    />
+  )}
+
+  {isBodyFatPage && (
+    <meta
+      property="og:description"
+      content="Discover healthy body fat percentage ranges by age and gender and learn how to measure and improve your body composition."
+    />
+  )}
+
+  {isBodyFatPage && (
+    <meta
+      property="og:url"
+      content="https://thefitcalculator.com/blog/body-fat-percentage"
+    />
+  )}
+
+  {isBodyFatPage && <meta property="og:type" content="article" />}
+</Helmet>
 
       <style>{`html { scroll-padding-top: 80px; }`}</style>
 
