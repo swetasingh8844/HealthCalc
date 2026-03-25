@@ -155,27 +155,49 @@ export const Header: React.FC<HeaderProps> = ({ isDarkMode, toggleDarkMode }) =>
           <DarkToggle />
         </div>
 
-        {/* Mobile right */}
-        <div className="flex items-center gap-2 xl:hidden ml-auto">
-          <LanguageTranslator />
-          <DarkToggle />
-          <button
-            onClick={() => setIsMenuOpen(o => !o)}
-            className="p-1.5 text-gray-600 dark:text-gray-300 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors shrink-0"
-            aria-label="Toggle menu"
-          >
-            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2}
-                d={isMenuOpen ? 'M6 18L18 6M6 6l12 12' : 'M4 6h16M4 12h16M4 18h16'} />
-            </svg>
-          </button>
-        </div>
-      </div>
+       {/* Mobile right */}
+<div className="flex items-center gap-2 xl:hidden ml-auto min-w-0">
+
+  {/* Language */}
+  <div className="max-w-[90px] truncate">
+    <LanguageTranslator />
+  </div>
+
+  {/* Dark Mode */}
+  <div className="shrink-0">
+    <DarkToggle />
+  </div>
+
+  {/* Menu Button */}
+  <button
+    onClick={() => setIsMenuOpen(o => !o)}
+    className="p-2 text-gray-600 dark:text-gray-300 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors shrink-0"
+    aria-label="Toggle menu"
+  >
+    <svg
+      className="w-5 h-5"
+      fill="none"
+      stroke="currentColor"
+      viewBox="0 0 24 24"
+    >
+      <path
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth={2}
+        d={isMenuOpen
+          ? 'M6 18L18 6M6 6l12 12'
+          : 'M4 6h16M4 12h16M4 18h16'}
+      />
+    </svg>
+  </button>
+
+</div>
+</div>
 
       {/* Mobile Menu */}
       {isMenuOpen && (
         <div className="xl:hidden bg-white dark:bg-gray-900 border-t border-gray-100 dark:border-gray-800 max-h-[80vh] overflow-y-auto">
-          <div className="px-3 py-4 flex flex-col gap-3">
+          <div className="max-w-screen-sm mx-auto px-3 py-3 flex flex-col gap-2">
 
             {/* Main nav links — 2 column grid */}
             <div>
@@ -193,10 +215,10 @@ export const Header: React.FC<HeaderProps> = ({ isDarkMode, toggleDarkMode }) =>
                   { to: '/fitness-news',   label: '📰 News' },
                 ].map(link => (
                   <Link key={link.to} to={link.to}
-                    className={`px-3 py-2.5 rounded-xl text-sm font-semibold transition text-center ${
+                    className={`px-3 py-3 rounded-lg text-sm sm:text-base font-medium transition break-words whitespace-normal${
                       location.pathname === link.to
                         ? 'bg-brand-50 dark:bg-brand-900/30 text-brand-600 dark:text-brand-400'
-                        : 'text-gray-600 dark:text-gray-300 bg-gray-50 dark:bg-gray-800 hover:bg-brand-50 dark:hover:bg-brand-900/20'
+                        : 'text-gray-600 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-800'
                     }`}
                   >
                     {link.label}
