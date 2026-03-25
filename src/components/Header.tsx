@@ -152,21 +152,43 @@ export const Header: React.FC<HeaderProps> = ({ isDarkMode, toggleDarkMode }) =>
           <DarkToggle />
         </div>
 
-        {/* Mobile: language + dark + hamburger */}
-        <div className="flex items-center gap-3 xl:hidden ml-auto">
-          <LanguageTranslator />
-          <DarkToggle />
-          <button
-            onClick={() => setIsMenuOpen(o => !o)}
-            className="p-1.5 text-gray-600 dark:text-gray-300 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors"
-            aria-label="Toggle menu"
-          >
-            <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2}
-                d={isMenuOpen ? 'M6 18L18 6M6 6l12 12' : 'M4 6h16M4 12h16M4 18h16'} />
-            </svg>
-          </button>
-        </div>
+       {/* Mobile right */}
+<div className="flex items-center gap-2 xl:hidden ml-auto min-w-0">
+
+  {/* Language */}
+  <div className="max-w-[90px] truncate">
+    <LanguageTranslator />
+  </div>
+
+  {/* Dark Mode */}
+  <div className="shrink-0">
+    <DarkToggle />
+  </div>
+
+  {/* Menu Button */}
+  <button
+    onClick={() => setIsMenuOpen(o => !o)}
+    className="p-2 text-gray-600 dark:text-gray-300 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors shrink-0"
+    aria-label="Toggle menu"
+  >
+    <svg
+      className="w-5 h-5"
+      fill="none"
+      stroke="currentColor"
+      viewBox="0 0 24 24"
+    >
+      <path
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth={2}
+        d={isMenuOpen
+          ? 'M6 18L18 6M6 6l12 12'
+          : 'M4 6h16M4 12h16M4 18h16'}
+      />
+    </svg>
+  </button>
+
+</div>
       </div>
 
       {/* Mobile Menu */}
