@@ -2,7 +2,28 @@ import React, { useState } from 'react';
 import { calculateBMR } from '../../../utils/calculations';
 import { UnitSystem, Gender } from '../../../types';
 import { Helmet } from 'react-helmet-async';
-import { useLocation } from "react-router-dom";
+import { Link, useLocation } from 'react-router-dom';
+import { ArrowLeft } from 'lucide-react';
+
+const PageHeader: React.FC<{ title: string; subtitle: string }> = ({ title, subtitle }) => (
+  <header className="bg-white/80 dark:bg-gray-900/80 backdrop-blur-md border-b border-gray-100 dark:border-gray-800 sticky top-0 z-40">
+    <div className="max-w-7xl mx-auto px-4 h-20 flex items-center justify-between">
+      <Link to="/" className="group flex items-center gap-3 text-gray-500 hover:text-brand-600 transition-all">
+        <div className="w-9 h-9 rounded-full bg-gray-50 dark:bg-gray-800 flex items-center justify-center group-hover:bg-brand-50 dark:group-hover:bg-brand-900/30 transition-colors">
+          <ArrowLeft className="w-4 h-4" />
+        </div>
+        <span className="font-bold text-l uppercase tracking-widest">Home</span>
+      </Link>
+
+      <div className="flex flex-col items-center">
+        <p className="text-xl font-black text-gray-900 dark:text-white uppercase tracking-tighter leading-none">{title}</p>
+        <span className="text-[10px] font-bold text-brand-600 dark:text-brand-400 uppercase tracking-[0.3em]">{subtitle}</span>
+      </div>
+
+      {/* <div className="w-[72px]" /> */}
+    </div>
+  </header>
+);
 
 // ── Accordion FAQ Item ────────────────────────────────────────────────────────
 const FAQItem: React.FC<{ question: string; answer: string }> = ({ question, answer }) => {
@@ -151,6 +172,9 @@ export const BMRCalculator: React.FC = () => {
          )}
       </Helmet>
 
+     <div className="min-h-screen bg-white dark:bg-gray-950">
+      <PageHeader title="BMR" subtitle="Calculator" />
+ 
       <div className="max-w-4xl mx-auto px-4 py-8 space-y-6">
 
         {/* ── Page Title ── */}
@@ -360,7 +384,7 @@ export const BMRCalculator: React.FC = () => {
               What is BMR?
             </h2>
             <p className="text-gray-600 dark:text-gray-300 text-sm leading-relaxed mb-4">
-              Basal Metabolic Rate (BMR) is the number of calories your body needs to sustain its essential biological functions while at complete rest — things like breathing, blood circulation, maintaining body temperature, and cell repair. Think of it as the energy cost of simply being alive. Even if you spent the entire day lying still without moving, your body would still burn this many calories.
+              Basal Metabolic Rate (BMR) is the number of calories your body burns just to stay alive. This includes things like breathing, keeping your heart beating, maintaining your body temperature, and repairing cells. You do not need to do anything for this to happen. Even if you stayed in bed and did not move at all for the entire day, your body would still burn this many calories just to keep you going.
             </p>
 
             <h2 className="text-xl font-bold mt-5 mb-3 text-gray-900 dark:text-white flex items-center gap-2">
@@ -368,7 +392,7 @@ export const BMRCalculator: React.FC = () => {
               Why is BMR Important?
             </h2>
             <p className="text-gray-600 dark:text-gray-300 text-sm leading-relaxed mb-4">
-              Your BMR is the foundation of your entire daily calorie budget. Every weight management strategy — whether you are trying to lose fat, build muscle, or simply maintain your current weight — starts with knowing your BMR. Without it, calorie targets are little more than guesswork. Knowing your BMR also helps you understand why your energy needs change as you age, gain or lose muscle, or change your activity level.
+             BMR is the starting point for everything related to your weight. Whether you want to lose fat, build muscle, or just stay the same weight, you need to know your BMR first. Without it you are just guessing how much to eat. Knowing your BMR also helps you understand why your body needs more or less food as you get older, lose or gain muscle, or become more or less active.
             </p>
 
             <h2 className="text-xl font-bold mt-5 mb-3 text-gray-900 dark:text-white flex items-center gap-2">
@@ -509,11 +533,11 @@ export const BMRCalculator: React.FC = () => {
             </p>
             <ul className="space-y-2">
               {[
-                'Build lean muscle through regular resistance training — muscle tissue burns more calories at rest than fat',
-                'Eat adequate protein at every meal — protein has a higher thermic effect than carbs or fat, meaning your body burns more calories digesting it',
-                'Stay hydrated — even mild dehydration can slow metabolism',
-                'Get 7–9 hours of quality sleep per night — sleep deprivation lowers metabolic rate and disrupts appetite hormones',
-                'Avoid prolonged very-low-calorie diets — they cause your body to down-regulate metabolism as a survival response',
+                'Build muscle by doing strength exercises regularly — muscle burns more calories than fat even when you are resting',
+              'Eat enough protein at every meal — your body actually burns more calories digesting protein than it does digesting carbs or fat',
+            'Drink enough water — even being slightly dehydrated can slow your metabolism down',
+            'Sleep 7 to 9 hours every night — bad sleep slows your metabolism and messes with the hormones that control hunger',
+             'Do not eat too little for too long — when you crash diet, your body slows down your metabolism to save energy',
               ].map((item) => (
                 <li key={item}  className="text-sm text-gray-600 dark:text-gray-300 list-disc ml-5">
                   {item}
@@ -570,6 +594,7 @@ export const BMRCalculator: React.FC = () => {
           </div>
 
         </section>
+      </div>
       </div>
 
     </>

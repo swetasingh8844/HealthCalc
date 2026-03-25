@@ -1,5 +1,27 @@
 import React, { useState } from 'react';
 import { Helmet } from 'react-helmet-async';
+import { Link, useLocation } from 'react-router-dom';
+import { ArrowLeft } from 'lucide-react';
+
+const PageHeader: React.FC<{ title: string; subtitle: string }> = ({ title, subtitle }) => (
+  <header className="bg-white/80 dark:bg-gray-900/80 backdrop-blur-md border-b border-gray-100 dark:border-gray-800 sticky top-0 z-40">
+    <div className="max-w-7xl mx-auto px-4 h-20 flex items-center justify-between">
+      <Link to="/" className="group flex items-center gap-3 text-gray-500 hover:text-brand-600 transition-all">
+        <div className="w-9 h-9 rounded-full bg-gray-50 dark:bg-gray-800 flex items-center justify-center group-hover:bg-brand-50 dark:group-hover:bg-brand-900/30 transition-colors">
+          <ArrowLeft className="w-4 h-4" />
+        </div>
+        <span className="font-bold text-l uppercase tracking-widest">Home</span>
+      </Link>
+
+      <div className="flex flex-col items-center">
+        <p className="text-xl font-black text-gray-900 dark:text-white uppercase tracking-tighter leading-none">{title}</p>
+        <span className="text-[10px] font-bold text-brand-600 dark:text-brand-400 uppercase tracking-[0.3em]">{subtitle}</span>
+      </div>
+
+      {/* <div className="w-[72px]" /> */}
+    </div>
+  </header>
+);
 
 export const UnitConverter: React.FC = () => {
   const [height, setHeight] = useState('');
@@ -75,6 +97,9 @@ export const UnitConverter: React.FC = () => {
         <link rel="canonical" href="https://thefitcalculator.com/unit-converter" />
       </Helmet>
 
+       <div className="min-h-screen bg-white dark:bg-gray-950">
+      <PageHeader title="Unit" subtitle="Converter" />
+ 
       <div className="max-w-4xl mx-auto px-4 py-8 space-y-6">
 
         {/* ── Page Title ── */}
@@ -326,9 +351,7 @@ export const UnitConverter: React.FC = () => {
             ))}
           </div>
         </div>
-
-        
-
+        </div>
       </div>
     </>
   );

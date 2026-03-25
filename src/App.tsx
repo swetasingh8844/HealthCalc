@@ -15,12 +15,20 @@ import { UnitConverter } from './components/UnitConverter';
 import ShopPage from "./pages/ShopPage";
 import BlogIndex from './pages/blog/BlogIndex';
 import CalorieGuide from './pages/blog/Calorieguide';
+import VideosPage from './pages/Videospage';
 
 import { TermsOfService } from './pages/TermsofService'; 
 import BMIArticle from './pages/blog/BMIArticle';
 import BMRvsTDEE from './pages/blog/BMRTDEE';
 import BodyFatPercentage from './pages/blog/Bodyfatpercentage';
 import WeightLossGuide from './pages/blog/WeightLossGuide';
+import { WaterIntakeCalculator } from './components/calculators/Waterintakecalculator';
+import { WeightLossCalculator } from './components/calculators/Weightlosscalculator';
+import { BodyFatCalculator } from './components/calculators/Bodyfatcalculator';
+import { ProteinIntakeCalculator } from './components/calculators/Proteinintakecalculator';
+import { LifeExpectancyCalculator } from './components/calculators/Lifeexpectancycalculator';
+import FitnessGuidesPage from './pages/FitnessGuidesPages';
+import HealthNewsPage from './pages/HealthNewsPage';
 
 // Scroll to top on route change
 const ScrollToTop = () => {
@@ -94,13 +102,21 @@ const App: React.FC = () => {
             <Route path="/calorie-calculator" element={<CalorieCalculator />} />
             <Route path="/unit-converter" element={<UnitConverter />} />
             <Route path="/terms" element={<TermsOfService />} />
-             <Route path="/shop" element={<ShopPage />} />
-             <Route path="/blog" element={<BlogIndex/>}/>
-            <Route path="/blog/bmi-india-guide" element={<BMIArticle/>}/> 
-            <Route path="/blog/calorie-intake-guide" element={<CalorieGuide />} />
-            <Route path="/blog/bmr-vs-tdee" element={<BMRvsTDEE />} />
-            <Route path="/blog/body-fat-percentage" element={<BodyFatPercentage/>} />
-            <Route path="/blog/weight-loss-without-starving" element={<WeightLossGuide/>} />
+             <Route path="/fitness-shop" element={<ShopPage />} />
+             <Route path="/fitness-blog" element={<BlogIndex/>}/>
+            <Route path="/fitness-blog/bmi-india-guide" element={<BMIArticle/>}/> 
+            <Route path="/fitness-blog/calorie-intake-guide" element={<CalorieGuide />} />
+            <Route path="/fitness-blog/bmr-vs-tdee" element={<BMRvsTDEE />} />
+            <Route path="/fitness-blog/body-fat-percentage" element={<BodyFatPercentage/>} />
+            <Route path="/fitness-blog/weight-loss-without-starving" element={<WeightLossGuide/>} />
+            <Route path="/fitness-reels" element={<VideosPage />} />
+            <Route path="/water-intake-calculator" element={<WaterIntakeCalculator />} />
+            <Route path="/weight-loss-calculator" element={<WeightLossCalculator />} />
+            <Route path="/body-fat-calculator" element={<BodyFatCalculator />} />
+            <Route path="/protein-intake-calculator" element={<ProteinIntakeCalculator />} />
+            <Route path="/life-expectancy-calculator" element={<LifeExpectancyCalculator />} />
+            <Route path="/fitness-guide-videos" element={<FitnessGuidesPage />} />
+            <Route path="/fitness-news" element={<HealthNewsPage />} />
           </Routes>
           </Layout>
         </main>
@@ -112,4 +128,3 @@ const App: React.FC = () => {
 };
 
 export default App;  
-

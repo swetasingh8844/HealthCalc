@@ -1,7 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
-const isBMRvsTDEEPage = location.pathname === "/blog/bmr-vs-tdee";
+import { ArrowLeft } from 'lucide-react';
+const isBMRvsTDEEPage = location.pathname === "/fitness-blog/bmr-vs-tdee";
 const BMRvsTDEE: React.FC = () => {
 
   const scrollTo = (id: string) => {
@@ -24,53 +25,51 @@ const BMRvsTDEE: React.FC = () => {
   return (
     <>
       <Helmet>
-  {isBMRvsTDEEPage && (
     <title>
       BMR vs TDEE — What's the Difference? – TheFitCalculator
     </title>
-  )}
-
-  {isBMRvsTDEEPage && (
     <meta
       name="description"
       content="BMR and TDEE explained clearly. Learn what Basal Metabolic Rate and Total Daily Energy Expenditure mean, how they're calculated, and how to use them to reach your weight goal."
     />
-  )}
-
-  {isBMRvsTDEEPage && (
     <link
       rel="canonical"
-      href="https://thefitcalculator.com/blog/bmr-vs-tdee"
+      href="https://thefitcalculator.com/fitness-blog/bmr-vs-tdee"
     />
-  )}
-
-  {isBMRvsTDEEPage && (
     <meta
       property="og:title"
       content="BMR vs TDEE — What's the Difference? – TheFitCalculator"
     />
-  )}
-
-  {isBMRvsTDEEPage && (
     <meta
       property="og:description"
       content="Understand the difference between BMR and TDEE and how they help manage calories, metabolism, and weight goals."
     />
-  )}
-
-  {isBMRvsTDEEPage && (
     <meta
       property="og:url"
-      content="https://thefitcalculator.com/blog/bmr-vs-tdee"
+      content="https://thefitcalculator.com/fitness-blog/bmr-vs-tdee"
     />
-  )}
-
-  {isBMRvsTDEEPage && <meta property="og:type" content="article" />}
+  <meta property="og:type" content="article" />
 </Helmet>
 
-      <style>{`html { scroll-padding-top: 80px; }`}</style>
-
-      <div className="max-w-4xl mx-auto px-4 py-8">
+      <div className="min-h-screen bg-white dark:bg-gray-950">
+      
+              {/* Header */}
+              <header className="bg-white/80 dark:bg-gray-900/80 backdrop-blur-md border-b border-gray-100 dark:border-gray-800 sticky top-0 z-40">
+                <div className="max-w-7xl mx-auto px-4 h-20 flex items-center justify-between">
+                  <Link to="/fitness-blog" className="group flex items-center gap-3 text-gray-500 hover:text-brand-600 transition-all">
+                    <div className="w-9 h-9 rounded-full bg-gray-50 dark:bg-gray-800 flex items-center justify-center group-hover:bg-brand-50 dark:group-hover:bg-brand-900/30 transition-colors">
+                      <ArrowLeft className="w-4 h-4" />
+                    </div>
+                    <span className="font-bold text-l uppercase tracking-widest">Blog Page</span>
+                  </Link>
+      
+                  <div className="flex flex-col items-center">
+                    <h1 className="text-xl font-black text-gray-900 dark:text-white uppercase tracking-tighter leading-none">Fitness</h1>
+                    <span className="text-[10px] font-bold text-brand-600 dark:text-brand-400 uppercase tracking-[0.3em]">Blog</span>
+                  </div>
+                </div>
+              </header>
+       <div className="max-w-6xl mx-auto px-4 py-8">
         <div className="flex gap-8 items-start">
 
           {/* MAIN CONTENT */}
@@ -85,7 +84,7 @@ const BMRvsTDEE: React.FC = () => {
                 BMR vs TDEE — What's the Difference and Why It Matters
               </h1>
               <div className="flex flex-wrap items-center gap-4 py-3 border-t border-b border-gray-100 dark:border-gray-700 text-xs text-gray-400">
-                <span>✍️ Sweta Singh</span>
+                {/* <span>✍️ Sweta Singh</span> */}
                 <span>🕐 7 min read</span>
                 <span>📖 ~1,600 words</span>
               </div>
@@ -330,7 +329,7 @@ const BMRvsTDEE: React.FC = () => {
                 Why This Matters Specifically for Indians
               </h2>
               <p>
-                Research on South Asian populations has found that Indians tend to have a lower BMR relative to body weight compared to Western populations — partly due to lower muscle mass and the "thin-fat" body composition pattern discussed in the <Link to="/blog/bmi-india-guide" className="text-brand-600 dark:text-brand-400 font-semibold hover:underline">BMI India guide</Link>.
+                Research on South Asian populations has found that Indians tend to have a lower BMR relative to body weight compared to Western populations — partly due to lower muscle mass and the "thin-fat" body composition pattern discussed in the <Link to="/fitness-blog/bmi-india-guide" className="text-brand-600 dark:text-brand-400 font-semibold hover:underline">BMI India guide</Link>.
               </p>
               <div className="grid sm:grid-cols-2 gap-3">
                 {[
@@ -375,6 +374,10 @@ const BMRvsTDEE: React.FC = () => {
                   <Link to="/calorie-calculator" className="text-xs font-bold px-3 py-1.5 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-600 text-brand-600 dark:text-brand-400 rounded-lg hover:bg-gray-50 transition">Calorie Calculator</Link>
                   <Link to="/bmi-calculator" className="text-xs font-bold px-3 py-1.5 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-600 text-brand-600 dark:text-brand-400 rounded-lg hover:bg-gray-50 transition">BMI Calculator</Link>
                   <Link to="/ideal-weight-calculator" className="text-xs font-bold px-3 py-1.5 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-600 text-brand-600 dark:text-brand-400 rounded-lg hover:bg-gray-50 transition">Ideal Weight</Link>
+                 <Link to="/water-intake-calculator" className="text-xs font-bold px-3 py-1.5 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-600 text-brand-600 dark:text-brand-400 rounded-lg hover:bg-gray-50 transition">Water Intake Calculator</Link>
+                  <Link to="/weight-loss-calculator" className="text-xs font-bold px-3 py-1.5 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-600 text-brand-600 dark:text-brand-400 rounded-lg hover:bg-gray-50 transition">Weight Loss Calculator</Link>
+                   <Link to="/body-fat-calculator" className="text-xs font-bold px-3 py-1.5 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-600 text-brand-600 dark:text-brand-400 rounded-lg hover:bg-gray-50 transition">Body Fat Calculator</Link>
+                   <Link to="/protein-intake-calculator" className="text-xs font-bold px-3 py-1.5 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-600 text-brand-600 dark:text-brand-400 rounded-lg hover:bg-gray-50 transition">Protein Intake Calculator</Link>
                 </div>
               </div>
 
@@ -396,10 +399,10 @@ const BMRvsTDEE: React.FC = () => {
               <h3 className="font-bold text-gray-900 dark:text-white mb-3">Related Articles</h3>
               <div className="grid sm:grid-cols-2 gap-3">
                 {[
-                  { to: '/blog/calorie-intake-guide', title: 'Calorie Intake Guide for Weight Loss in India' },
-                  { to: '/blog/bmi-india-guide', title: 'BMI in India: What Your Number Really Means' },
-                  { to: '/blog/body-fat-percentage', title: 'Healthy Body Fat % by Age & Gender' },
-                  { to: '/blog/weight-loss-without-starving', title: 'Lose Weight Without Starving' },
+                  { to: '/fitness-blog/calorie-intake-guide', title: 'Calorie Intake Guide for Weight Loss in India' },
+                  { to: '/fitness-blog/bmi-india-guide', title: 'BMI in India: What Your Number Really Means' },
+                  { to: '/fitness-blog/body-fat-percentage', title: 'Healthy Body Fat % by Age & Gender' },
+                  { to: '/fitness-blog/weight-loss-without-starving', title: 'Lose Weight Without Starving' },
                 ].map((a) => (
                   <Link key={a.to} to={a.to} className="bg-white dark:bg-gray-800 border border-gray-100 dark:border-gray-700 rounded-xl p-3 text-sm font-medium text-gray-700 dark:text-gray-300 hover:border-brand-400 hover:text-brand-600 dark:hover:text-brand-400 transition flex items-center justify-between gap-2">
                     {a.title} <span className="text-brand-500 flex-shrink-0">→</span>
@@ -407,7 +410,7 @@ const BMRvsTDEE: React.FC = () => {
                 ))}
               </div>
             </div>
-
+            
           </article>
 
           {/* STICKY SIDEBAR */}
@@ -431,7 +434,7 @@ const BMRvsTDEE: React.FC = () => {
               </ul>
             </div>
           </aside>
-
+         </div>
         </div>
       </div>
     </>

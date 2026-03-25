@@ -1,8 +1,27 @@
 
 import React, { useState } from 'react';
 import { Helmet } from 'react-helmet-async';
+import { Link, useLocation } from 'react-router-dom';
+import { ArrowLeft } from 'lucide-react';
+const PageHeader: React.FC<{ title: string; subtitle: string }> = ({ title, subtitle }) => (
+  <header className="bg-white/80 dark:bg-gray-900/80 backdrop-blur-md border-b border-gray-100 dark:border-gray-800 sticky top-0 z-40">
+    <div className="max-w-7xl mx-auto px-4 h-20 flex items-center justify-between">
+      <Link to="/" className="group flex items-center gap-3 text-gray-500 hover:text-brand-600 transition-all">
+        <div className="w-9 h-9 rounded-full bg-gray-50 dark:bg-gray-800 flex items-center justify-center group-hover:bg-brand-50 dark:group-hover:bg-brand-900/30 transition-colors">
+          <ArrowLeft className="w-4 h-4" />
+        </div>
+        <span className="font-bold text-l uppercase tracking-widest">Home</span>
+      </Link>
 
+      <div className="flex flex-col items-center">
+        <p className="text-xl font-black text-gray-900 dark:text-white uppercase tracking-tighter leading-none">{title}</p>
+        <span className="text-[10px] font-bold text-brand-600 dark:text-brand-400 uppercase tracking-[0.3em]">{subtitle}</span>
+      </div>
 
+      {/* <div className="w-[72px]" /> */}
+    </div>
+  </header>
+);
 export const About: React.FC = () => (
   <>
     <Helmet>
@@ -14,8 +33,10 @@ export const About: React.FC = () => (
       <link rel="canonical" href="https://thefitcalculator.com/about" />
     </Helmet>
 
-    <div className="max-w-4xl mx-auto px-4 py-12 space-y-8">
-
+   <div className="min-h-screen bg-white dark:bg-gray-950">
+      <PageHeader title="About" subtitle="Our Mission" />
+ 
+      <div className="max-w-5xl mx-auto px-4 py-10 space-y-8">
       {/* ── Hero ── */}
       <div className="bg-gradient-to-r from-brand-600 to-brand-700 rounded-2xl px-8 py-12 text-center shadow-lg overflow-hidden relative">
         {/* decorative circles */}
@@ -29,7 +50,7 @@ export const About: React.FC = () => (
           Health Clarity for Everyone
         </h1>
         <p className="text-brand-100 text-base leading-relaxed max-w-xl mx-auto">
-          TheFitCalculator offers free and reliable health calculators built on established scientific methods. The goal is to make health information easy to access for everyone, no matter their background or budget, so they can better understand their body and make informed choices about their wellbeing.
+          TheFitCalculator offers free and reliable health calculators built on established scientific methods. We also have fitness reels, yoga and meditation guide youtube videos, daily health news, and a curated fitness shop. The goal is to make health information easy to access for everyone, so they can better understand their body and make informed choices about their wellbeing.
         </p>
       </div>
 
@@ -87,6 +108,54 @@ export const About: React.FC = () => (
               bg: 'bg-yellow-50 dark:bg-yellow-900/20',
               hColor: 'text-yellow-700 dark:text-yellow-300',
             },
+             {
+    title: 'Water Intake Calculator',
+    desc: 'Find out exactly how much water your body needs daily based on your weight and activity level.',
+    href: '/water-intake-calculator',
+    color: 'border-cyan-300 dark:border-cyan-700',
+    bg: 'bg-cyan-50 dark:bg-cyan-900/20',
+    hColor: 'text-cyan-700 dark:text-cyan-300',
+  },
+  {
+    title: 'Weight Loss Calculator',
+    desc: 'Plan your calorie deficit and get a realistic timeline to reach your target weight safely.',
+    href: '/weight-loss-calculator',
+    color: 'border-rose-300 dark:border-rose-700',
+    bg: 'bg-rose-50 dark:bg-rose-900/20',
+    hColor: 'text-rose-700 dark:text-rose-300',
+  },
+             {
+    title: 'Body Fat Calculator',
+    desc: 'Estimate your body fat percentage using the US Navy method and BMI method.',
+    href: '/body-fat-calculator',
+    color: 'border-purple-300 dark:border-purple-700',
+    bg: 'bg-purple-50 dark:bg-purple-900/20',
+    hColor: 'text-purple-700 dark:text-purple-300',
+  },
+  {
+    title: 'Protein Intake Calculator',
+    desc: 'Calculate how much protein your body needs daily for your goals — muscle gain, weight loss, or maintenance.',
+    href: '/protein-intake-calculator',
+    color: 'border-orange-300 dark:border-orange-700',
+    bg: 'bg-orange-50 dark:bg-orange-900/20',
+    hColor: 'text-orange-700 dark:text-orange-300',
+  },
+            {
+    title: 'Life Expectancy Calculator',
+    desc: 'Get a science-backed estimate of your longevity based on your lifestyle and health factors.',
+    href: '/life-expectancy-calculator',
+    color: 'border-teal-300 dark:border-teal-700',
+    bg: 'bg-teal-50 dark:bg-teal-900/20',
+    hColor: 'text-teal-700 dark:text-teal-300',
+  },
+  {
+    title: 'Unit Converter',
+    desc: 'Convert kg to lbs, cm to feet and inches, and more — instantly before entering your measurements.',
+    href: '/unit-converter',
+    color: 'border-gray-300 dark:border-gray-600',
+    bg: 'bg-gray-50 dark:bg-gray-800/50',
+    hColor: 'text-gray-700 dark:text-gray-300',
+  },
           ].map((tool) => (
             <a
               key={tool.title}
@@ -113,7 +182,7 @@ export const About: React.FC = () => (
             {
               icon: '🔬',
               title: 'Science-Backed',
-              desc: 'Every formula we use is drawn from peer-reviewed research and clinical standards — not guesswork or trends.',
+              desc: 'Every calculator uses formulas trusted by doctors and dietitians worldwide — WHO, Mifflin-St Jeor, Devine, and Harris-Benedict.',
             },
             {
               icon: '🆓',
@@ -139,6 +208,7 @@ export const About: React.FC = () => (
       </div>
 
     </div>
+    </div>
   </>
 );
 
@@ -153,255 +223,271 @@ export const PrivacyPolicy: React.FC = () => (
       <link rel="canonical" href="https://thefitcalculator.com/privacy-policy" />
     </Helmet>
 
-    <div className="max-w-4xl mx-auto px-4 py-12 space-y-6">
+    <div className="min-h-screen bg-white dark:bg-gray-950">
+      <PageHeader title="Privacy" subtitle="Policy" />
 
-      {/* ── Header ── */}
-      <div className="bg-gradient-to-r from-brand-600 to-brand-700 rounded-2xl px-8 py-10 relative overflow-hidden">
-        <div className="absolute -top-8 -right-8 w-40 h-40 bg-white/5 rounded-full" />
-        <div className="absolute -bottom-8 -left-8 w-32 h-32 bg-white/5 rounded-full" />
-        {/* <span className="inline-block bg-white/15 text-white text-xs font-bold uppercase tracking-widest px-3 py-1 rounded-full mb-3">Legal</span> */}
-        <h1 className="text-3xl font-extrabold text-white tracking-tight mb-2">Privacy Policy</h1>
-        <p className="text-brand-100 text-sm">
-  Last updated:{" "}
-  <strong className="text-white">
-    {new Date().toLocaleDateString("en-GB", {
-      day: "numeric",
-      month: "long",
-      year: "numeric",
-    })}
-  </strong>
+      <div className="max-w-4xl mx-auto px-4 py-10 space-y-6">
+
+        {/* Header Banner */}
+        <div className="bg-gradient-to-r from-brand-600 to-brand-700 rounded-2xl px-8 py-10 relative overflow-hidden">
+          <div className="absolute -top-8 -right-8 w-40 h-40 bg-white/5 rounded-full" />
+          <div className="absolute -bottom-8 -left-8 w-32 h-32 bg-white/5 rounded-full" />
+          <h1 className="text-3xl font-extrabold text-white tracking-tight mb-2">Privacy Policy</h1>
+          <p className="text-brand-100 text-sm">
+  Last updated:{' '}
+  <strong className="text-white">24 March 2026</strong>
 </p>
-
-      </div>
-
-      {/* ── Intro ── */}
-      <div className="bg-white dark:bg-gray-800 rounded-2xl shadow-sm border border-gray-100 dark:border-gray-700 p-6">
-        <h2 className="text-xl font-bold mb-3 text-gray-900 dark:text-white flex items-center gap-2">
-          <span className="w-1 h-5 bg-brand-500 rounded-full inline-block"></span>
-          Overview
-        </h2>
-        <p className="text-gray-600 dark:text-gray-300 text-sm leading-relaxed mb-3">
-          Welcome to <strong className="text-gray-800 dark:text-gray-100">TheFitCalculator</strong> ("we", "our", or "us"), accessible at{' '}
-          <a href="https://thefitcalculator.com" className="text-brand-600 dark:text-brand-400 hover:underline font-medium">
-            https://thefitcalculator.com
-          </a>
-          . This Privacy Policy explains how we collect, use, and protect information when you visit our website and use our free online health calculators.
-        </p>
-        <p className="text-gray-600 dark:text-gray-300 text-sm leading-relaxed">
-          We are committed to protecting your privacy. Please read this policy carefully. By using our website, you agree to the practices described in this document. If you do not agree with any part of this policy, please discontinue use of the site.
-        </p>
-      </div>
-
-      {/* ── Calculator Data ── */}
-      <div className="bg-white dark:bg-gray-800 rounded-2xl shadow-sm border border-gray-100 dark:border-gray-700 p-6">
-        <h2 className="text-xl font-bold mb-3 text-gray-900 dark:text-white flex items-center gap-2">
-          <span className="w-1 h-5 bg-brand-500 rounded-full inline-block"></span>
-          Calculator Inputs — No Data Stored
-        </h2>
-       <p className="text-gray-600 dark:text-gray-300 text-sm leading-relaxed mb-3">
-  All calculations on TheFitCalculator, including BMI, BMR, daily calorie needs, and ideal weight, run <strong className="text-gray-800 dark:text-gray-100">directly in your browser</strong>. This means your inputs are processed on your device, helping keep your personal data private while still giving you quick and accurate results.
-</p>
-
-        <ul className="space-y-2 mb-3">
-          {[
-            'Your height, weight, age, gender, and any other inputs are never transmitted to our servers.',
-            'We do not store any personal health information in a database.',
-            'No account, login, or registration is required to use any of our calculators.',
-            'When you close or refresh your browser, all calculator inputs are cleared and permanently discarded.',
-          ].map((item) => (
-            <li key={item} className="text-sm text-gray-600 dark:text-gray-300 list-disc ml-5 marker:text-gray">
-              {item}
-            </li>
-          ))}
-        </ul>
-        <p className="text-gray-600 dark:text-gray-300 text-sm leading-relaxed">
-          Your health data belongs to you. We have designed our platform specifically so that sensitive personal measurements never leave your own device.
-        </p>
-      </div>
-
-      {/* ── Information We Collect ── */}
-      <div className="bg-white dark:bg-gray-800 rounded-2xl shadow-sm border border-gray-100 dark:border-gray-700 p-6">
-        <h2 className="text-xl font-bold mb-3 text-gray-900 dark:text-white flex items-center gap-2">
-          <span className="w-1 h-5 bg-brand-500 rounded-full inline-block"></span>
-          Information We May Collect
-        </h2>
-        <p className="text-gray-600 dark:text-gray-300 text-sm leading-relaxed mb-4">
-          While we do not collect your health data, we may automatically collect certain non-personal, anonymous information when you visit our website. This includes:
-        </p>
-        <div className="grid sm:grid-cols-2 gap-3">
-          {[
-            { label: 'Log Data', desc: 'Your browser type, operating system, referring URLs, pages visited, and the date and time of your visit — collected automatically by web servers.' },
-            { label: 'Device Information', desc: 'General information about the device you use to access the site, such as screen size and browser version, used to optimise the layout.' },
-            { label: 'Usage Data', desc: 'Aggregated, anonymous data about which calculators are used most frequently, helping us improve and prioritise new features.' },
-            { label: 'Cookies & Local Storage', desc: 'Small files stored in your browser to remember functional preferences such as your selected colour mode (light or dark).' },
-          ].map((item) => (
-            <div key={item.label} className="p-3 rounded-xl border-l-4 border-brand-300 dark:border-brand-700 bg-gray-50 dark:bg-gray-700/40">
-              <p className="text-sm font-bold text-gray-800 dark:text-white mb-0.5">{item.label}</p>
-              <p className="text-xs text-gray-500 dark:text-gray-400 leading-relaxed">{item.desc}</p>
-            </div>
-          ))}
         </div>
-      </div>
 
-      {/* ── Cookies ── */}
-      <div className="bg-white dark:bg-gray-800 rounded-2xl shadow-sm border border-gray-100 dark:border-gray-700 p-6">
-        <h2 className="text-xl font-bold mb-3 text-gray-900 dark:text-white flex items-center gap-2">
-          <span className="w-1 h-5 bg-brand-500 rounded-full inline-block"></span>
-          Cookies Policy
-        </h2>
-        <p className="text-gray-600 dark:text-gray-300 text-sm leading-relaxed mb-4">
-          Cookies are small text files placed on your device by a website. We use cookies for the following purposes:
-        </p>
-       <div className="overflow-x-auto rounded-xl border border-gray-200 dark:border-gray-700">
-          <table className="w-full text-sm">
-            <thead>
-              <tr className="bg-gray-50 dark:bg-gray-700/60">
-                <th className="px-4 py-3 text-left text-xs font-bold uppercase tracking-wider text-gray-500 dark:text-gray-400">Type</th>
-                <th className="px-4 py-3 text-left text-xs font-bold uppercase tracking-wider text-gray-500 dark:text-gray-400">Purpose</th>
-                <th className="px-4 py-3 text-left text-xs font-bold uppercase tracking-wider text-gray-500 dark:text-gray-400">Provider</th>
-              </tr>
-            </thead>
-            <tbody className="divide-y divide-gray-100 dark:divide-gray-700">
-              {[
-                { type: 'Functional', purpose: 'Remembering your light/dark mode preference', provider: 'TheFitCalculator', dot: 'bg-green-400' },
-                { type: 'Analytics', purpose: 'Understanding how visitors interact with the site (page views, session duration, traffic sources)', provider: 'Google Analytics', dot: 'bg-blue-400' },
-                // { type: 'Advertising', purpose: 'Displaying relevant ads to support free access to our tools', provider: 'Google AdSense', dot: 'bg-yellow-400' },
-              ].map((row) => (
-                <tr key={row.type} className="hover:bg-gray-50 dark:hover:bg-gray-700/30 transition-colors">
-                  <td className="px-4 py-3 font-semibold text-gray-700 dark:text-gray-200">
-                    <span className="flex items-center gap-2">
-                      <span className={`w-2 h-2 rounded-full flex-shrink-0 ${row.dot}`}></span>
-                      {row.type}
-                    </span>
-                  </td>
-                  <td className="px-4 py-3 text-gray-600 dark:text-gray-300 text-xs">{row.purpose}</td>
-                  <td className="px-4 py-3 text-gray-500 dark:text-gray-400 text-xs font-medium">{row.provider}</td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
+        {/* Overview */}
+        <div className="bg-white dark:bg-gray-800 rounded-2xl shadow-sm border border-gray-100 dark:border-gray-700 p-6">
+          <h2 className="text-xl font-bold mb-3 text-gray-900 dark:text-white flex items-center gap-2">
+            <span className="w-1 h-5 bg-brand-500 rounded-full inline-block" />
+            Overview
+          </h2>
+          <p className="text-gray-600 dark:text-gray-300 text-sm leading-relaxed mb-2">
+            Welcome to <strong className="text-gray-800 dark:text-gray-100">TheFitCalculator</strong> (
+            <a href="https://thefitcalculator.com" className="text-brand-600 dark:text-brand-400 hover:underline">
+              https://thefitcalculator.com
+            </a>
+            ). Your privacy is important to us. This Privacy Policy explains what information we collect, how we use it, and how we keep it safe.
+          </p>
+          <p className="text-gray-600 dark:text-gray-300 text-sm leading-relaxed">
+            By using this website, you agree to the terms of this Privacy Policy.
+          </p>
         </div>
-        <p className="text-gray-500 dark:text-gray-400 text-xs mt-3 leading-relaxed">
-          You can control or disable cookies through your browser settings at any time. Please note that disabling certain cookies may affect the functionality of this website.
-        </p>
+
+        {/* 1. No Personal Data Storage */}
+        <div className="bg-white dark:bg-gray-800 rounded-2xl shadow-sm border border-gray-100 dark:border-gray-700 p-6">
+          <h2 className="text-xl font-bold mb-3 text-gray-900 dark:text-white flex items-center gap-2">
+            <span className="w-1 h-5 bg-brand-500 rounded-full inline-block" />
+            1. No Personal Data Storage
+          </h2>
+          <p className="text-gray-600 dark:text-gray-300 text-sm leading-relaxed mb-3">
+            All calculations on TheFitCalculator are performed directly in your browser.
+          </p>
+          <ul className="space-y-2 mb-3">
+            {[
+              'We do not store, collect, or transmit your personal health data.',
+              'Inputs like height, weight, age, etc. remain on your device.',
+              'No login or account is required.',
+            ].map((item) => (
+              <li key={item} className="text-sm text-gray-600 dark:text-gray-300 list-disc ml-5">
+                {item}
+              </li>
+            ))}
+          </ul>
+          <p className="text-gray-600 dark:text-gray-300 text-sm leading-relaxed">
+            This means your personal data stays completely private.
+          </p>
+        </div>
+
+        {/* 2. Information We May Collect */}
+        <div className="bg-white dark:bg-gray-800 rounded-2xl shadow-sm border border-gray-100 dark:border-gray-700 p-6">
+          <h2 className="text-xl font-bold mb-3 text-gray-900 dark:text-white flex items-center gap-2">
+            <span className="w-1 h-5 bg-brand-500 rounded-full inline-block" />
+            2. Information We May Collect
+          </h2>
+          <p className="text-gray-600 dark:text-gray-300 text-sm leading-relaxed mb-3">
+            We may collect non-personal, anonymous data automatically, such as:
+          </p>
+          <div className="grid grid-cols-2 gap-3 mb-3">
+            {[
+              { label: 'Browser', desc: 'Browser type and version.' },
+              { label: 'Pages Visited', desc: 'Pages visited and time spent.' },
+              { label: 'Device Info', desc: 'Device type and screen size.' },
+              { label: 'Usage Patterns', desc: 'General usage patterns for improving tools.' },
+            ].map((item) => (
+              <div key={item.label} className="p-3 rounded-xl border-l-4 border-brand-300 dark:border-brand-700 bg-gray-50 dark:bg-gray-700/40">
+                <p className="text-sm font-bold text-gray-800 dark:text-white mb-0.5">{item.label}</p>
+                <p className="text-xs text-gray-500 dark:text-gray-400 leading-relaxed">{item.desc}</p>
+              </div>
+            ))}
+          </div>
+          <p className="text-gray-600 dark:text-gray-300 text-sm leading-relaxed">
+            This data helps us improve user experience and website performance.
+          </p>
+        </div>
+
+        {/* 3. Cookies */}
+        <div className="bg-white dark:bg-gray-800 rounded-2xl shadow-sm border border-gray-100 dark:border-gray-700 p-6">
+          <h2 className="text-xl font-bold mb-3 text-gray-900 dark:text-white flex items-center gap-2">
+            <span className="w-1 h-5 bg-brand-500 rounded-full inline-block" />
+            3. Cookies
+          </h2>
+          <p className="text-gray-600 dark:text-gray-300 text-sm leading-relaxed mb-3">
+            We use cookies to enhance your experience. Types of cookies:
+          </p>
+          <ul className="space-y-2 mb-3">
+            {[
+              'Functional cookies – to remember preferences like dark/light mode.',
+              'Analytics cookies – to understand website usage.',
+              'Advertising cookies – used by third-party ad partners.',
+            ].map((item) => (
+              <li key={item} className="text-sm text-gray-600 dark:text-gray-300 list-disc ml-5">
+                {item}
+              </li>
+            ))}
+          </ul>
+          <p className="text-gray-600 dark:text-gray-300 text-sm leading-relaxed">
+            You can disable cookies anytime in your browser settings.
+          </p>
+        </div>
+
+        {/* 4. Advertising Partners */}
+        <div className="bg-white dark:bg-gray-800 rounded-2xl shadow-sm border border-gray-100 dark:border-gray-700 p-6">
+          <h2 className="text-xl font-bold mb-3 text-gray-900 dark:text-white flex items-center gap-2">
+            <span className="w-1 h-5 bg-brand-500 rounded-full inline-block" />
+            4. Advertising Partners
+          </h2>
+          <p className="text-gray-600 dark:text-gray-300 text-sm leading-relaxed mb-3">
+            We may use third-party advertising networks to display ads on our website. These ad networks may:
+          </p>
+          <ul className="space-y-2 mb-3">
+            {[
+              'Use cookies and similar tracking technologies.',
+              'Show ads based on your interests and browsing behavior.',
+              'Collect anonymous usage data such as device type, browser, and pages visited.',
+            ].map((item) => (
+              <li key={item} className="text-sm text-gray-600 dark:text-gray-300 list-disc ml-5">
+                {item}
+              </li>
+            ))}
+          </ul>
+          <p className="text-gray-600 dark:text-gray-300 text-sm leading-relaxed">
+            We do not control how these third-party ad networks collect or use your data. We recommend reviewing their respective privacy policies for more information.
+          </p>
+        </div>
+
+        {/* 5. Amazon Affiliate Disclosure */}
+        <div className="bg-white dark:bg-gray-800 rounded-2xl shadow-sm border border-gray-100 dark:border-gray-700 p-6">
+          <h2 className="text-xl font-bold mb-3 text-gray-900 dark:text-white flex items-center gap-2">
+            <span className="w-1 h-5 bg-brand-500 rounded-full inline-block" />
+            5. Amazon Affiliate Disclosure
+          </h2>
+          <p className="text-gray-600 dark:text-gray-300 text-sm leading-relaxed mb-3">
+            TheFitCalculator participates in the <strong className="text-gray-800 dark:text-gray-100">Amazon Associates Program</strong>, an affiliate advertising program.
+          </p>
+          <ul className="space-y-2 mb-3">
+            {[
+              'Some links on our website are affiliate links.',
+              'If you click and make a purchase, we may earn a commission.',
+              'There is no extra cost to you.',
+            ].map((item) => (
+              <li key={item} className="text-sm text-gray-600 dark:text-gray-300 list-disc ml-5">
+                {item}
+              </li>
+            ))}
+          </ul>
+          <p className="text-gray-600 dark:text-gray-300 text-sm leading-relaxed">
+            This helps us keep our tools free for users.
+          </p>
+        </div>
+
+        {/* 6. External Links */}
+        <div className="bg-white dark:bg-gray-800 rounded-2xl shadow-sm border border-gray-100 dark:border-gray-700 p-6">
+          <h2 className="text-xl font-bold mb-3 text-gray-900 dark:text-white flex items-center gap-2">
+            <span className="w-1 h-5 bg-brand-500 rounded-full inline-block" />
+            6. External Links
+          </h2>
+          <p className="text-gray-600 dark:text-gray-300 text-sm leading-relaxed mb-3">
+            Our website may contain links to third-party websites. We are not responsible for:
+          </p>
+          <ul className="space-y-2 mb-3">
+            {[
+              'Content on external websites.',
+              'Their privacy practices.',
+            ].map((item) => (
+              <li key={item} className="text-sm text-gray-600 dark:text-gray-300 list-disc ml-5">
+                {item}
+              </li>
+            ))}
+          </ul>
+          <p className="text-gray-600 dark:text-gray-300 text-sm leading-relaxed">
+            We recommend reading their privacy policies before interacting with them.
+          </p>
+        </div>
+
+        {/* 7. Children's Information */}
+        <div className="bg-white dark:bg-gray-800 rounded-2xl shadow-sm border border-gray-100 dark:border-gray-700 p-6">
+          <h2 className="text-xl font-bold mb-3 text-gray-900 dark:text-white flex items-center gap-2">
+            <span className="w-1 h-5 bg-brand-500 rounded-full inline-block" />
+            7. Children's Information
+          </h2>
+          <p className="text-gray-600 dark:text-gray-300 text-sm leading-relaxed mb-3">
+            TheFitCalculator is designed for a general audience and can be used by individuals of all ages.
+          </p>
+          <ul className="space-y-2 mb-3">
+            {[
+              'We do not knowingly collect personal data from children under 13.',
+              'All calculations run locally and no data is stored.',
+            ].map((item) => (
+              <li key={item} className="text-sm text-gray-600 dark:text-gray-300 list-disc ml-5">
+                {item}
+              </li>
+            ))}
+          </ul>
+          <p className="text-gray-600 dark:text-gray-300 text-sm leading-relaxed">
+            If you believe a child has provided personal information, please{' '}
+            <a href="/contact" className="underline text-brand-500">contact us</a> and we will take appropriate action.
+          </p>
+        </div>
+
+        {/* 8. Data Protection */}
+        <div className="bg-white dark:bg-gray-800 rounded-2xl shadow-sm border border-gray-100 dark:border-gray-700 p-6">
+          <h2 className="text-xl font-bold mb-3 text-gray-900 dark:text-white flex items-center gap-2">
+            <span className="w-1 h-5 bg-brand-500 rounded-full inline-block" />
+            8. Data Protection
+          </h2>
+          <p className="text-gray-600 dark:text-gray-300 text-sm leading-relaxed">
+            We take reasonable steps to protect your information. However, no method of transmission over the internet is 100% secure.
+          </p>
+        </div>
+
+        {/* 9. Changes */}
+        <div className="bg-white dark:bg-gray-800 rounded-2xl shadow-sm border border-gray-100 dark:border-gray-700 p-6">
+          <h2 className="text-xl font-bold mb-3 text-gray-900 dark:text-white flex items-center gap-2">
+            <span className="w-1 h-5 bg-brand-500 rounded-full inline-block" />
+            9. Changes to This Policy
+          </h2>
+          <p className="text-gray-600 dark:text-gray-300 text-sm leading-relaxed mb-3">
+            We may update this Privacy Policy from time to time.
+          </p>
+          <ul className="space-y-2">
+            {[
+              'Updates will be posted on this page.',
+              'The "Last updated" date will be revised.',
+            ].map((item) => (
+              <li key={item} className="text-sm text-gray-600 dark:text-gray-300 list-disc ml-5">
+                {item}
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        {/* 10. Contact */}
+        <div className="bg-white dark:bg-gray-800 rounded-2xl shadow-sm border border-gray-100 dark:border-gray-700 p-6">
+          <h2 className="text-xl font-bold mb-3 text-gray-900 dark:text-white flex items-center gap-2">
+            <span className="w-1 h-5 bg-brand-500 rounded-full inline-block" />
+            10. Contact Us
+          </h2>
+          <p className="text-gray-600 dark:text-gray-300 text-sm leading-relaxed">
+            If you have any questions about this Privacy Policy, please{' '}
+            <a href="/contact" className="text-brand-600 dark:text-brand-400 hover:underline font-bold">
+              contact us here
+            </a>.
+          </p>
+        </div>
+
+        {/* Consent */}
+        <div className="bg-brand-50 dark:bg-brand-900/20 border border-brand-200 dark:border-brand-700 rounded-2xl p-5 text-center">
+          <p className="text-brand-700 dark:text-brand-300 text-sm font-bold mb-1">Consent</p>
+          <p className="text-brand-600 dark:text-brand-400 text-sm leading-relaxed">
+            By using our website, you consent to this Privacy Policy.
+          </p>
+        </div>
+
       </div>
-
-      {/* ── Google Analytics & AdSense ── */}
-      <div className="bg-white dark:bg-gray-800 rounded-2xl shadow-sm border border-gray-100 dark:border-gray-700 p-6">
-        <h2 className="text-xl font-bold mb-3 text-gray-900 dark:text-white flex items-center gap-2">
-          <span className="w-1 h-5 bg-brand-500 rounded-full inline-block"></span>
-          Third-Party Services
-        </h2>
-
-        <h3 className="text-base font-bold text-gray-800 dark:text-gray-100 mb-2">Google Analytics</h3>
-        <p className="text-gray-600 dark:text-gray-300 text-sm leading-relaxed mb-4">
-          We use Google Analytics to collect anonymous, aggregated information about how visitors use our website — such as which pages are visited most often, how long people spend on each page, and where visitors come from. This data helps us understand and improve our site. Google Analytics does not allow us to identify individual users. You can opt out of Google Analytics tracking by installing the{' '}
-          <a href="https://tools.google.com/dlpage/gaoptout" target="_blank" rel="noopener noreferrer" className="text-brand-600 dark:text-brand-400 hover:underline">
-            Google Analytics Opt-out Browser Add-on
-          </a>
-          .
-        </p>
-
-        
-      </div>
-
-      {/* ── How We Use Information ── */}
-      <div className="bg-white dark:bg-gray-800 rounded-2xl shadow-sm border border-gray-100 dark:border-gray-700 p-6">
-        <h2 className="text-xl font-bold mb-3 text-gray-900 dark:text-white flex items-center gap-2">
-          <span className="w-1 h-5 bg-brand-500 rounded-full inline-block"></span>
-          How We Use the Information We Collect
-        </h2>
-        <p className="text-gray-600 dark:text-gray-300 text-sm leading-relaxed mb-3">
-          The anonymous, non-personal information we collect is used solely for the following purposes:
-        </p>
-        <ul className="space-y-2">
-          {[
-            'To monitor and analyse website traffic and usage patterns to improve the site experience',
-            'To understand which calculators and content are most useful to visitors',
-            'To maintain and improve the performance, security, and reliability of the website',
-            // 'To display relevant advertisements through Google AdSense to support free access to our tools',
-            'To remember your functional preferences (such as light or dark mode)',
-          ].map((item) => (
-            <li key={item} className="text-sm text-gray-600 dark:text-gray-300 list-disc ml-5 marker:text-gray">
-              {item}
-            </li>
-          ))}
-        </ul>
-        <p className="text-gray-600 dark:text-gray-300 text-sm leading-relaxed mt-3">
-          We do <strong className="text-gray-800 dark:text-gray-100">not</strong> sell, rent, trade, or otherwise transfer any information about our users to third parties for their marketing purposes.
-        </p>
-      </div>
-
-      {/* ── Children's Privacy ── */}
-      <div className="bg-white dark:bg-gray-800 rounded-2xl shadow-sm border border-gray-100 dark:border-gray-700 p-6">
-        <h2 className="text-xl font-bold mb-3 text-gray-900 dark:text-white flex items-center gap-2">
-          <span className="w-1 h-5 bg-brand-500 rounded-full inline-block"></span>
-          Children's Privacy
-        </h2>
-        <p className="text-gray-600 dark:text-gray-300 text-sm leading-relaxed">
-          TheFitCalculator is intended for use by adults aged 18 and over. Our calculators are not designed for use by children under the age of 13. We do not knowingly collect any personal information from children. If you believe a child has provided personal information through our website, please contact us immediately at{' '}
-          <a href="/contact" className="underline text-brand-500">Contact Us
-    </a>{' '}
-          and we will take steps to remove that information.
-        </p>
-      </div>
-
-      {/* ── External Links ── */}
-      <div className="bg-white dark:bg-gray-800 rounded-2xl shadow-sm border border-gray-100 dark:border-gray-700 p-6">
-        <h2 className="text-xl font-bold mb-3 text-gray-900 dark:text-white flex items-center gap-2">
-          <span className="w-1 h-5 bg-brand-500 rounded-full inline-block"></span>
-          External Links
-        </h2>
-        <p className="text-gray-600 dark:text-gray-300 text-sm leading-relaxed">
-          Our website may contain links to third-party websites for reference or informational purposes. These external sites are not operated by us and we have no control over their content or privacy practices. We encourage you to review the privacy policy of any third-party website you visit. The inclusion of a link does not imply our endorsement of that site.
-        </p>
-      </div>
-
-      {/* ── Your Rights ── */}
-      <div className="bg-white dark:bg-gray-800 rounded-2xl shadow-sm border border-gray-100 dark:border-gray-700 p-6">
-        <h2 className="text-xl font-bold mb-3 text-gray-900 dark:text-white flex items-center gap-2">
-          <span className="w-1 h-5 bg-brand-500 rounded-full inline-block"></span>
-          Your Rights
-        </h2>
-        <p className="text-gray-600 dark:text-gray-300 text-sm leading-relaxed mb-3">
-          Depending on your location, you may have certain rights regarding your personal data. Since TheFitCalculator does not collect or store personal health information, most of these rights are not directly applicable to our calculator inputs. However, with respect to any non-personal data collected through analytics and advertising cookies, you have the right to:
-        </p>
-        <ul className="space-y-2">
-  {[
-    'Opt out of Google Analytics tracking via the browser add-on or your browser settings',
-    'Disable all non-essential cookies via your browser preferences',
-    <>
-      Request information about any data we may hold-{" "}
-      <a
-        href="/contact"
-        className="underline text-brand-500"
-      >
-       Contact Us
-      </a>
-    </>
-  ].map((item, index) => (
-    <li
-      key={index}
-      className="text-sm text-gray-600 dark:text-gray-300 list-disc ml-5"
-    >
-      {item}
-    </li>
-  ))}
-</ul>
-
-      </div>
-
-      {/* ── Changes ── */}
-      <div className="bg-white dark:bg-gray-800 rounded-2xl shadow-sm border border-gray-100 dark:border-gray-700 p-6">
-        <h2 className="text-xl font-bold mb-3 text-gray-900 dark:text-white flex items-center gap-2">
-          <span className="w-1 h-5 bg-brand-500 rounded-full inline-block"></span>
-          Changes to This Privacy Policy
-        </h2>
-        <p className="text-gray-600 dark:text-gray-300 text-sm leading-relaxed">
-          We may update this Privacy Policy from time to time to reflect changes in our practices, technology, or legal requirements. When we do, we will update the "Last updated" date at the top of this page. We encourage you to review this page periodically to stay informed about how we are protecting your information. Continued use of the website after any changes constitutes your acceptance of the updated policy.
-        </p>
-      </div>
-
     </div>
   </>
 );
@@ -443,7 +529,10 @@ export const ContactUs: React.FC = () => {
         <link rel="canonical" href="https://thefitcalculator.com/contact" />
       </Helmet>
 
-      <div className="max-w-4xl mx-auto px-4 py-8 space-y-6">
+       <div className="min-h-screen bg-white dark:bg-gray-950">
+        <PageHeader title="Contact" subtitle="Get in Touch" />
+ 
+        <div className="max-w-5xl mx-auto px-4 py-10 space-y-6">
 
         {/* ── Hero ── */}
         <div className="bg-gradient-to-r from-brand-600 to-brand-700 rounded-2xl px-8 py-10 relative overflow-hidden shadow-lg">
@@ -455,8 +544,7 @@ export const ContactUs: React.FC = () => {
             </span>
             <h1 className="text-3xl font-extrabold text-white tracking-tight mb-2">Contact Us</h1>
             <p className="text-brand-100 text-sm max-w-lg leading-relaxed">
-              Have a question about one of our calculators, spotted a bug, or want to suggest a new feature?
-              We read every message and aim to reply within 48 hours.
+              Got a question about any of our calculators? Found something that is not working? Want to suggest something new? Send us a message. We read every single one and usually reply within 48 hours.
             </p>
           </div>
         </div>
@@ -647,6 +735,7 @@ export const ContactUs: React.FC = () => {
 
         </div>
 
+      </div>
       </div>
     </>
   );

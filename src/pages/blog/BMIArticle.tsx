@@ -1,7 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
-const isBMIBlogPage = location.pathname === "/blog/bmi-india-guide";
+import { ArrowLeft } from 'lucide-react';
+const isBMIBlogPage = location.pathname === "/fitness-blog/bmi-india-guide";
 const BMIArticle: React.FC = () => {
 
   const scrollTo = (id: string) => {
@@ -24,54 +25,52 @@ const BMIArticle: React.FC = () => {
   return (
     <>
       <Helmet>
-  {isBMIBlogPage && (
     <title>
       BMI in India: What Your Number Really Means for South Asians – TheFitCalculator
     </title>
-  )}
-
-  {isBMIBlogPage && (
     <meta
       name="description"
       content="Why standard BMI ranges may not be accurate for Indians. Learn about South Asian BMI thresholds, visceral fat risks, and what to do after you know your BMI."
     />
-  )}
-
-  {isBMIBlogPage && (
     <link
       rel="canonical"
-      href="https://thefitcalculator.com/blog/bmi-india-guide"
+      href="https://thefitcalculator.com/fitness-blog/bmi-india-guide"
     />
-  )}
-
-  {isBMIBlogPage && (
     <meta
       property="og:title"
       content="BMI in India: What Your Number Really Means for South Asians – TheFitCalculator"
     />
-  )}
-
-  {isBMIBlogPage && (
     <meta
       property="og:description"
       content="Why BMI ranges may not be accurate for Indians and South Asians."
     />
-  )}
-
-  {isBMIBlogPage && (
     <meta
       property="og:url"
-      content="https://thefitcalculator.com/blog/bmi-india-guide"
+      content="https://thefitcalculator.com/fitness-blog/bmi-india-guide"
     />
-  )}
-
-  {isBMIBlogPage && <meta property="og:type" content="article" />}
+ <meta property="og:type" content="article" />
 </Helmet>
 
       {/* Add scroll-padding so sticky header doesn't cover the heading */}
-      <style>{`html { scroll-padding-top: 80px; }`}</style>
-
-      <div className="max-w-4xl mx-auto px-4 py-8">
+      <div className="min-h-screen bg-white dark:bg-gray-950">
+      
+              {/* Header */}
+              <header className="bg-white/80 dark:bg-gray-900/80 backdrop-blur-md border-b border-gray-100 dark:border-gray-800 sticky top-0 z-40">
+                <div className="max-w-7xl mx-auto px-4 h-20 flex items-center justify-between">
+                  <Link to="/fitness-blog" className="group flex items-center gap-3 text-gray-500 hover:text-brand-600 transition-all">
+                    <div className="w-9 h-9 rounded-full bg-gray-50 dark:bg-gray-800 flex items-center justify-center group-hover:bg-brand-50 dark:group-hover:bg-brand-900/30 transition-colors">
+                      <ArrowLeft className="w-4 h-4" />
+                    </div>
+                    <span className="font-bold text-l uppercase tracking-widest">Blog Page</span>
+                  </Link>
+      
+                  <div className="flex flex-col items-center">
+                    <h1 className="text-xl font-black text-gray-900 dark:text-white uppercase tracking-tighter leading-none">Fitness</h1>
+                    <span className="text-[10px] font-bold text-brand-600 dark:text-brand-400 uppercase tracking-[0.3em]">Blog</span>
+                  </div>
+                </div>
+              </header>
+       <div className="max-w-6xl mx-auto px-4 py-8">
         <div className="flex gap-8 items-start">
 
           {/* MAIN CONTENT */}
@@ -86,7 +85,7 @@ const BMIArticle: React.FC = () => {
                 BMI in India: What Your Number Really Means for South Asians
               </h1>
               <div className="flex flex-wrap items-center gap-4 py-3 border-t border-b border-gray-100 dark:border-gray-700 text-xs text-gray-400">
-                <span>✍️ Sweta Singh</span>
+                {/* <span>✍️ Sweta Singh</span> */}
                 <span>🕐 8 min read</span>
                 <span>📖 ~1,800 words</span>
               </div>
@@ -101,7 +100,7 @@ const BMIArticle: React.FC = () => {
             <div className="space-y-6 text-gray-600 dark:text-gray-300 text-sm leading-relaxed">
 
               <p>
-                Most Indians have calculated their BMI at some point — but the result can be misleading. The standard BMI chart was not built with South Asian bodies in mind, and relying on it alone may give a false sense of security about your health.
+               Most Indians have checked their BMI at some point — but the number can be confusing. The standard BMI chart was not made keeping Indian bodies in mind. So if you rely on it alone, you might think your health is fine when it actually may not be.
               </p>
 
               {/* Section 1 */}
@@ -109,7 +108,7 @@ const BMIArticle: React.FC = () => {
                 Where BMI Came From
               </h2>
               <p>
-                BMI was invented in the 1830s by Belgian statistician Adolphe Quetelet — not a doctor — using data from European men. In the 1970s, it was adopted as a global health screening tool. The problem is that it was never tested on South Asian populations, yet it became the worldwide standard.
+                BMI was created in the 1830s by a Belgian mathematician named Adolphe Quetelet. He was not a doctor. He made it using data from European men only. In the 1970s, doctors started using it as a health tool worldwide. The problem is nobody tested it on South Asian people before making it a global standard. But it became one anyway.
               </p>
               <div className="bg-amber-50 dark:bg-amber-900/20 border-l-4 border-amber-500 rounded-lg p-4 text-sm">
                 <strong className="text-amber-800 dark:text-amber-300">Worth knowing:</strong> The BMI cutoffs most doctors still use today are based entirely on 19th-century European data.
@@ -120,7 +119,7 @@ const BMIArticle: React.FC = () => {
                 Why the Standard Numbers Are Wrong for Indians
               </h2>
               <p>
-                Research across India and South Asia has consistently found that Indians develop type 2 diabetes, hypertension, and heart disease at lower BMI values than Western populations. The World Health Organization acknowledged this in 2004 and recommended lower cut-off points for Asian countries. The ICMR now uses revised thresholds in Indian health guidelines.
+               Studies done across India and South Asia have found that Indians tend to get type 2 diabetes, high blood pressure, and heart disease even when their BMI is lower than what is considered risky for Western people. The World Health Organization noticed this in 2004 and said Asian countries should use lower BMI cut-off numbers. India's own health body, the ICMR, now follows different BMI thresholds in its guidelines.
               </p>
 
               <div className="grid grid-cols-3 gap-3">
@@ -145,10 +144,10 @@ const BMIArticle: React.FC = () => {
                 The "Thin-Fat" Problem
               </h2>
               <p>
-                South Asians tend to carry more body fat relative to muscle at any given BMI value — particularly visceral fat, which wraps around internal organs. This pattern is sometimes called the "thin-fat" phenotype: a person looks slim or has a normal BMI while carrying enough internal fat to meaningfully raise metabolic disease risk.
-              </p>
+                South Asians tend to carry more body fat compared to muscle, even when their BMI looks normal. A lot of this fat sits around the internal organs — this is called visceral fat. This is where the term "thin-fat" comes from. A person can look slim and have a normal BMI but still have enough fat inside their body to cause serious health problems.
+               </p>
               <p>
-                Visceral fat is dangerous because it releases inflammatory compounds directly into the bloodstream, raising the risk of insulin resistance, fatty liver disease, and cardiovascular disease — all independently of overall body weight.
+              Visceral fat is harmful because it releases harmful substances directly into the blood. This raises the risk of insulin resistance, fatty liver, and heart disease — even in people who do not look overweight at all.
               </p>
 
               {/* Section 4 */}
@@ -225,6 +224,10 @@ const BMIArticle: React.FC = () => {
                   <Link to="/bmr-calculator" className="text-xs font-bold px-3 py-1.5 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-600 text-brand-600 dark:text-brand-400 rounded-lg hover:bg-gray-50 transition">BMR Calculator</Link>
                   <Link to="/calorie-calculator" className="text-xs font-bold px-3 py-1.5 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-600 text-brand-600 dark:text-brand-400 rounded-lg hover:bg-gray-50 transition">Calorie Calculator</Link>
                   <Link to="/ideal-weight-calculator" className="text-xs font-bold px-3 py-1.5 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-600 text-brand-600 dark:text-brand-400 rounded-lg hover:bg-gray-50 transition">Ideal Weight</Link>
+                  <Link to="/water-intake-calculator" className="text-xs font-bold px-3 py-1.5 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-600 text-brand-600 dark:text-brand-400 rounded-lg hover:bg-gray-50 transition">Water Intake Calculator</Link>
+                  <Link to="/weight-loss-calculator" className="text-xs font-bold px-3 py-1.5 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-600 text-brand-600 dark:text-brand-400 rounded-lg hover:bg-gray-50 transition">Weight Loss Calculator</Link>
+                  <Link to="/body-fat-calculator" className="text-xs font-bold px-3 py-1.5 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-600 text-brand-600 dark:text-brand-400 rounded-lg hover:bg-gray-50 transition">Body Fat Calculator</Link>
+                  <Link to="/protein-intake-calculator" className="text-xs font-bold px-3 py-1.5 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-600 text-brand-600 dark:text-brand-400 rounded-lg hover:bg-gray-50 transition">Protein Intake Calculator</Link>
                 </div>
               </div>
 
@@ -246,10 +249,10 @@ const BMIArticle: React.FC = () => {
               <h3 className="font-bold text-gray-900 dark:text-white mb-3">Related Articles</h3>
               <div className="grid sm:grid-cols-2 gap-3">
                 {[
-                  { to: '/blog/calorie-intake-guide', title: 'Calorie Intake Guide for Weight Loss in India' },
-                  { to: '/blog/bmr-vs-tdee', title: "BMR vs TDEE — What's the Difference?" },
-                  { to: '/blog/body-fat-percentage', title: 'Healthy Body Fat % by Age & Gender' },
-                  { to: '/blog/weight-loss-without-starving', title: 'Lose Weight Without Starving' },
+                  { to: '/fitness-blog/calorie-intake-guide', title: 'Calorie Intake Guide for Weight Loss in India' },
+                  { to: '/fitness-blog/bmr-vs-tdee', title: "BMR vs TDEE — What's the Difference?" },
+                  { to: '/fitness-blog/body-fat-percentage', title: 'Healthy Body Fat % by Age & Gender' },
+                  { to: '/fitness-blog/weight-loss-without-starving', title: 'Lose Weight Without Starving' },
                 ].map((a) => (
                   <Link key={a.to} to={a.to} className="bg-white dark:bg-gray-800 border border-gray-100 dark:border-gray-700 rounded-xl p-3 text-sm font-medium text-gray-700 dark:text-gray-300 hover:border-brand-400 hover:text-brand-600 dark:hover:text-brand-400 transition flex items-center justify-between gap-2">
                     {a.title} <span className="text-brand-500 flex-shrink-0">→</span>
@@ -284,6 +287,7 @@ const BMIArticle: React.FC = () => {
           </aside>
 
         </div>
+      </div>
       </div>
     </>
   );

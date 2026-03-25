@@ -2,8 +2,28 @@ import React, { useState } from 'react';
 import { calculateBMI, getBMICategory } from '../../../utils/calculations';
 import { UnitSystem } from '../../../types';
 import { Helmet } from 'react-helmet-async';
-import { useLocation } from "react-router-dom";
+import { Link, useLocation } from 'react-router-dom';
+import { ArrowLeft } from 'lucide-react';
 
+const PageHeader: React.FC<{ title: string; subtitle: string }> = ({ title, subtitle }) => (
+  <header className="bg-white/80 dark:bg-gray-900/80 backdrop-blur-md border-b border-gray-100 dark:border-gray-800 sticky top-0 z-40">
+    <div className="max-w-7xl mx-auto px-4 h-20 flex items-center justify-between">
+      <Link to="/" className="group flex items-center gap-3 text-gray-500 hover:text-brand-600 transition-all">
+        <div className="w-9 h-9 rounded-full bg-gray-50 dark:bg-gray-800 flex items-center justify-center group-hover:bg-brand-50 dark:group-hover:bg-brand-900/30 transition-colors">
+          <ArrowLeft className="w-4 h-4" />
+        </div>
+        <span className="font-bold text-l uppercase tracking-widest">Home</span>
+      </Link>
+
+      <div className="flex flex-col items-center">
+        <p className="text-xl font-black text-gray-900 dark:text-white uppercase tracking-tighter leading-none">{title}</p>
+        <span className="text-[10px] font-bold text-brand-600 dark:text-brand-400 uppercase tracking-[0.3em]">{subtitle}</span>
+      </div>
+
+      {/* <div className="w-[72px]" /> */}
+    </div>
+  </header>
+);
 // ── Accordion FAQ Item ────────────────────────────────────────────────────────
 const FAQItem: React.FC<{ question: string; answer: string }> = ({ question, answer }) => {
   const [open, setOpen] = useState(false);
@@ -151,6 +171,9 @@ export const BMICalculator: React.FC = () => {
          )}
       </Helmet>
 
+      <div className="min-h-screen bg-white dark:bg-gray-950">
+      <PageHeader title="BMI" subtitle="Calculator" />
+ 
       <div className="max-w-4xl mx-auto px-4 py-8 space-y-6">
 
         {/* ── Page Title ── */}
@@ -325,7 +348,7 @@ export const BMICalculator: React.FC = () => {
               What is BMI?
             </h2>
             <p className="text-gray-600 dark:text-gray-300 text-sm leading-relaxed">
-              Body Mass Index (BMI) is a simple numerical value calculated from your weight and height, used worldwide to screen for weight categories that may lead to health problems. It is defined as your weight in kilograms divided by the square of your height in metres (kg/m²). While BMI is not a diagnostic tool on its own, it serves as a reliable and accessible first step in identifying potential weight-related health risks for most adults.
+            BMI is a number you get from your height and weight. It is used all over the world to get a rough idea of whether your weight might be causing health problems. You calculate it by dividing your weight in kilograms by your height in metres squared. BMI alone cannot tell you if you are sick or not. But it is a quick and easy first step to check if your weight might be putting your health at risk.
             </p>
 
             <h2 className="text-xl font-bold mt-5 mb-3 text-gray-900 dark:text-white flex items-center gap-2">
@@ -372,7 +395,7 @@ export const BMICalculator: React.FC = () => {
               Is BMI Accurate?
             </h2>
             <p className="text-gray-600 dark:text-gray-300 text-sm leading-relaxed mb-4">
-              BMI is a useful screening tool, but it has real limitations at the individual level. It does not distinguish between fat mass and lean muscle mass — a muscular athlete may register as "overweight" despite having very low body fat. For a more complete assessment, consider waist circumference, waist-to-hip ratio, and body fat percentage alongside BMI.
+             BMI is helpful but it does not tell the full story. The biggest problem is that it cannot tell the difference between fat and muscle. A person who works out a lot and has a lot of muscle can show up as overweight on BMI even though they are actually very healthy. So do not rely on BMI alone. Also check your waist size, waist-to-hip ratio, and body fat percentage to get a better picture of your health.
             </p>
 
             <h2 className="text-xl font-bold mb-3 text-gray-900 dark:text-white flex items-center gap-2">
@@ -561,7 +584,7 @@ export const BMICalculator: React.FC = () => {
 
         </section>
       </div>
-
+      </div>
     </>
   );
 };

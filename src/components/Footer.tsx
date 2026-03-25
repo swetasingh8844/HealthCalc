@@ -27,6 +27,11 @@ export const Footer: React.FC = () => {
               <li><Link to="/bmr-calculator" className="hover:text-brand-500 transition-colors">BMR Calculator</Link></li>
               <li><Link to="/calorie-calculator" className="hover:text-brand-500 transition-colors">Calorie Calculator</Link></li>
               <li><Link to="/ideal-weight-calculator" className="hover:text-brand-500 transition-colors">Ideal Weight</Link></li>
+              <li><Link to="/water-intake-calculator" className="hover:text-brand-500 transition-colors">Water Intake Calculator</Link></li>
+              <li><Link to="/weight-loss-calculator" className="hover:text-brand-500 transition-colors">Weight Loss Calculator</Link></li>
+              <li><Link to="/body-fat-calculator" className="hover:text-brand-500 transition-colors">Body Fat Calculator</Link></li>
+               <li><Link to="/protein-intake-calculator" className="hover:text-brand-500 transition-colors">Protein Intake Calculator</Link></li>
+              <li><Link to="/life-expectancy-calculator" className="hover:text-brand-500 transition-colors">Life Expectancy Calculator</Link></li>
               <li><Link to="/unit-converter" className="hover:text-brand-500 transition-colors">Unit Converter</Link></li>
             </ul>
           </div>
@@ -46,8 +51,11 @@ export const Footer: React.FC = () => {
           <div>
             <h4 className="text-white font-bold mb-3">Resources</h4>
             <ul className="space-y-2 text-sm">
-              <li><Link to="/blog" className="hover:text-brand-500 transition-colors">📝 Blog</Link></li>
-              <li><Link to="/shop" className="hover:text-brand-500 transition-colors">🛒 Shop</Link></li>
+              <li><Link to="/fitness-blog" className="hover:text-brand-500 transition-colors">📝 Blog</Link></li>
+              <li><Link to="/fitness-shop" className="hover:text-brand-500 transition-colors">🛒 Shop</Link></li>
+              <li><Link to="/fitness-guide-videos" className="hover:text-brand-500 transition-colors">🎬 Fitness Videos</Link></li>
+              <li><Link to="/fitness-reels" className="hover:text-brand-500 transition-colors">🎞️ FitReels</Link></li>
+              <li><Link to="/fitness-news" className="hover:text-brand-500 transition-colors">📰 Fitness News</Link></li>
             </ul>
           </div>
 
