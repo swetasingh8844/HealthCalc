@@ -224,13 +224,12 @@ const LanguageTranslator: React.FC = () => {
 
       {/* Trigger button */}
       <button
-        onClick={() => setOpen(o => !o)}
-        className="flex items-center gap-2 bg-white dark:bg-white/10 backdrop-blur-sm px-3 py-1.5 rounded-full border border-gray-200 dark:border-white/20 hover:bg-gray-50 dark:hover:bg-white/20 transition-all shadow-sm min-w-[160px]"
-      >
+  onClick={() => setOpen(o => !o)}
+  className="flex items-center gap-1 bg-white dark:bg-white/10 px-2 py-1 rounded-full border border-gray-200 dark:border-white/20 hover:bg-gray-50 dark:hover:bg-white/20 transition-all shadow-sm w-auto max-w-[110px] sm:max-w-[140px]"
+>
         <Languages className="w-4 h-4 text-brand-600 dark:text-brand-400 shrink-0" />
-       <span className="flex-1 text-left font-bold text-gray-700 dark:text-white truncate"
-  style={{ fontSize: 'clamp(9px, 1.8vw, 12px)' }}>
-  {selectedLang ? selectedLang.label : 'Language'}
+       <span className="flex-1 text-left font-semibold text-gray-700 dark:text-white truncate text-[10px] sm:text-xs">
+  {selectedLang ? selectedLang.label : 'Lang'}
 </span>
         {selected ? (
           <X
@@ -244,7 +243,7 @@ const LanguageTranslator: React.FC = () => {
 
       {/* Dropdown */}
       {open && (
-        <div className="absolute top-full mt-2 right-0 w-64 bg-white dark:bg-gray-900 rounded-2xl shadow-2xl border border-gray-100 dark:border-gray-800 z-[99999] overflow-hidden">
+       <div className="absolute top-full mt-2 z-[99999] overflow-hidden bg-white dark:bg-gray-900 rounded-2xl shadow-2xl border border-gray-100 dark:border-gray-800 w-[90vw] max-w-xs sm:w-64 left-1/2 sm:left-auto right-0 sm:right-0 -translate-x-1/2 sm:translate-x-0 max-h-[70vh]">
 
           {/* Search bar */}
           <div className="p-3 border-b border-gray-100 dark:border-gray-800">
@@ -256,7 +255,7 @@ const LanguageTranslator: React.FC = () => {
                 value={search}
                 onChange={e => setSearch(e.target.value)}
                 placeholder="Search language..."
-                className="flex-1 text-xs bg-transparent text-gray-700 dark:text-white placeholder-gray-400 outline-none font-medium"
+               className="flex-1 text-[11px] bg-transparent text-gray-700 dark:text-white placeholder-gray-400 outline-none"
               />
               {search && (
                 <button onClick={() => setSearch('')}>
