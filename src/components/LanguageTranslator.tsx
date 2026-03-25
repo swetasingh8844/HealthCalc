@@ -244,7 +244,8 @@ const LanguageTranslator: React.FC = () => {
 
       {/* Dropdown */}
       {open && (
-        <div className="absolute top-full mt-2 right-0 w-64 bg-white dark:bg-gray-900 rounded-2xl shadow-2xl border border-gray-100 dark:border-gray-800 z-[99999] overflow-hidden">
+        <div className="absolute top-full mt-2 z-[9999]
+left-1/2 -translate-x-1/2 sm:left-auto sm:right-0 sm:translate-x-0 w-[90vw] max-w-xs sm:w-64 bg-white dark:bg-gray-900 rounded-2xl shadow-2xl border border-gray-100 dark:border-gray-800 z-[99999] overflow-visible">
 
           {/* Search bar */}
           <div className="p-3 border-b border-gray-100 dark:border-gray-800">
