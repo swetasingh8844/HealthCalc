@@ -153,7 +153,7 @@ export const Header: React.FC<HeaderProps> = ({ isDarkMode, toggleDarkMode }) =>
         </div>
 
         {/* Mobile: language + dark + hamburger */}
-        <div className="flex items-center gap-2 xl:hidden ml-auto">
+        <div className="flex items-center gap-1 xl:hidden ml-auto">
           <LanguageTranslator />
           <DarkToggle />
           <button
