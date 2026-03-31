@@ -225,12 +225,12 @@ const LanguageTranslator: React.FC = () => {
       {/* Trigger button */}
       <button
         onClick={() => setOpen(o => !o)}
-        className="flex items-center gap-2 bg-white dark:bg-white/10 backdrop-blur-sm px-3 py-1.5 rounded-full border border-gray-200 dark:border-white/20 hover:bg-gray-50 dark:hover:bg-white/20 transition-all shadow-sm min-w-[160px]"
+       className="flex items-center gap-1.5 bg-white dark:bg-white/10 backdrop-blur-sm px-2 py-1 rounded-full border border-gray-200 dark:border-white/20 hover:bg-gray-50 dark:hover:bg-white/20 transition-all shadow-sm max-w-[110px] w-auto"
       >
         <Languages className="w-4 h-4 text-brand-600 dark:text-brand-400 shrink-0" />
        <span className="flex-1 text-left font-bold text-gray-700 dark:text-white truncate"
-  style={{ fontSize: 'clamp(9px, 1.8vw, 12px)' }}>
-  {selectedLang ? selectedLang.label : 'Language'}
+  style={{ fontSize: 'clamp(8px, 2vw, 11px)' }}>
+  {selectedLang ? selectedLang.label : 'Lang'}
 </span>
         {selected ? (
           <X
