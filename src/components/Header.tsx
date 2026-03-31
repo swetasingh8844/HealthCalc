@@ -70,12 +70,13 @@ export const Header: React.FC<HeaderProps> = ({ isDarkMode, toggleDarkMode }) =>
 
   return (
     <header className="sticky top-0 z-50 bg-white dark:bg-gray-900 shadow-sm border-b border-gray-100 dark:border-gray-800 transition-colors duration-300">
-     <div className="w-full max-w-screen-xl mx-auto px-3 py-2 flex flex-col xl:flex-row xl:items-center gap-2">
+      <div className="max-w-screen-3xl mx-auto px-8 h-24 flex items-center gap-2.5">
+        <LanguageTranslator />
         {/* Logo */}
-        <Link to="/" className="text-lg sm:text-xl font-black text-gray-900 dark:text-white tracking-tight shrink-0 mr-6">
+        <Link to="/" className="text-2xl font-black text-gray-900 dark:text-white tracking-tight shrink-0 mr-6">
           TheFit<span className="text-brand-600">Calculator</span>
         </Link>
-          <LanguageTranslator />
+
         {/* Desktop Nav */}
        <nav className="hidden xl:flex items-center gap-0.5 flex-1 min-w-0 overflow-x-auto scrollbar-none">
 
@@ -107,7 +108,7 @@ export const Header: React.FC<HeaderProps> = ({ isDarkMode, toggleDarkMode }) =>
   {isCalcDropdownOpen && (
    <div
   style={{ top: calcPos.top, left: calcPos.left }}
-  className="fixed w-64 bg-white dark:bg-gray-800 border border-gray-100 dark:border-gray-700 rounded-2xl shadow-xl z-[50]"
+  className="fixed w-64 bg-white dark:bg-gray-800 border border-gray-100 dark:border-gray-700 rounded-2xl shadow-xl z-[99999]"
 >
       <div className="p-2">
         {calculators.map(calc => (
@@ -151,86 +152,65 @@ export const Header: React.FC<HeaderProps> = ({ isDarkMode, toggleDarkMode }) =>
           <DarkToggle />
         </div>
 
-       {/* Mobile: language + dark + hamburger */}
-       <div className="flex items-center gap-1 xl:hidden ml-auto max-w-[55%] overflow-hidden">
-
-  {/* Language */}
-  {/* <div className="w-[70px] shrink-0 overflow-hidden">
-    <LanguageTranslator />
-  </div> */}
-
-  {/* Dark Mode */}
-  <div className="shrink-0">
-    <DarkToggle />
-  </div>
-
-  {/* Menu */}
-  <button
-    onClick={() => setIsMenuOpen(o => !o)}
-    className="p-1.5 shrink-0 text-gray-600 dark:text-gray-300 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700"
-  >
-    <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2}
-        d={isMenuOpen
-          ? 'M6 18L18 6M6 6l12 12'
-          : 'M4 6h16M4 12h16M4 18h16'}
-      />
-    </svg>
-  </button>
-
-</div>
+        {/* Mobile: language + dark + hamburger */}
+        <div className="flex items-center gap-3 xl:hidden ml-auto">
+          <DarkToggle />
+          <button
+            onClick={() => setIsMenuOpen(o => !o)}
+            className="p-1.5 text-gray-600 dark:text-gray-300 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors"
+            aria-label="Toggle menu"
+          >
+            <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2}
+                d={isMenuOpen ? 'M6 18L18 6M6 6l12 12' : 'M4 6h16M4 12h16M4 18h16'} />
+            </svg>
+          </button>
+        </div>
       </div>
 
       {/* Mobile Menu */}
-      {/* Mobile Menu */}
       {isMenuOpen && (
-        <div className="xl:hidden bg-white dark:bg-gray-900 border-t border-gray-100 dark:border-gray-800 max-h-[80vh] overflow-y-auto">
-          <div className="px-3 py-3 flex flex-col gap-3">
+        <div className="xl:hidden bg-white dark:bg-gray-900 border-t border-gray-100 dark:border-gray-800">
+          <div className="max-w-screen-2xl mx-auto px-4 py-3 flex flex-col gap-1">
 
-            {/* Pages — 2 col grid */}
-            <div>
-              <p className="text-[10px] font-black uppercase tracking-widest text-gray-400 px-1 mb-1.5">Pages</p>
-              <div className="grid grid-cols-2 gap-1.5">
-                {[
-                  { to: '/',               label: '🏠 Home' },
-                  { to: '/about',          label: 'ℹ️ About' },
-                  { to: '/contact',        label: '✉️ Contact' },
-                  { to: '/privacy-policy', label: '🔒 Privacy' },
-                  { to: '/fitness-blog',   label: '📝 Blog' },
-                  { to: '/fitness-shop',   label: '🛒 Shop' },
-                  { to: '/fitness-reels',  label: '🎞️ FitReels' },
-                  { to: '/fitness-guide-videos', label: '🎬 Fitness' },
-                  { to: '/fitness-news',   label: '📰 News' },
-                ].map(link => (
-                  <Link key={link.to} to={link.to}
-                    className={`px-3 py-2 rounded-xl text-xs font-semibold transition text-center ${
-                      location.pathname === link.to
-                        ? 'bg-brand-50 dark:bg-brand-900/30 text-brand-600 dark:text-brand-400'
-                        : 'text-gray-600 dark:text-gray-300 bg-gray-50 dark:bg-gray-800 hover:bg-brand-50 dark:hover:bg-brand-900/20'
-                    }`}
-                  >
-                    {link.label}
-                  </Link>
-                ))}
-              </div>
-            </div>
+            {[
+              { to: '/',               label: 'Home' },
+              { to: '/about',          label: 'About' },
+              { to: '/contact',        label: 'Contact' },
+              { to: '/privacy-policy', label: 'Privacy Policy' },
+              { to: '/fitness-blog',           label: '📝 Blog' },
+              { to: '/fitness-shop',           label: '🛒 Shop' },
+              { to: '/fitness-reels',         label: '🎬 FitReels' },
+              { to: '/fitness-guide-videos',  label: '🏋️ Fitness Videos' },
+              { to: '/fitness-news',   label: '📰 Fitness News' },
+            ].map(link => (
+              <Link key={link.to} to={link.to}
+                className={`px-3 py-3 rounded-lg text-base font-medium transition ${
+                  location.pathname === link.to
+                    ? 'bg-brand-50 dark:bg-brand-900/30 text-brand-600 dark:text-brand-400'
+                    : 'text-gray-600 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-800'
+                }`}
+              >
+                {link.label}
+              </Link>
+            ))}
 
-            {/* Calculators — 2 col grid */}
-            <div>
-              <p className="text-[10px] font-black uppercase tracking-widest text-gray-400 px-1 mb-1.5">🧮 Calculators</p>
-              <div className="grid grid-cols-2 gap-1.5">
+            {/* Calculators */}
+            <div className="mt-2">
+              <p className="text-xs font-black uppercase tracking-widest text-gray-400 px-3 mb-1.5">🧮 Calculators</p>
+              <div className="bg-gray-50 dark:bg-gray-800 rounded-xl overflow-hidden divide-y divide-gray-100 dark:divide-gray-700">
                 {calculators.map(calc => (
                   <Link key={calc.to} to={calc.to}
-                    className={`flex items-center gap-2 px-3 py-2 rounded-xl transition ${
+                    className={`flex items-center gap-3 px-3 py-2.5 transition ${
                       location.pathname === calc.to
                         ? 'bg-brand-50 dark:bg-brand-900/30 text-brand-700 dark:text-brand-300'
-                        : 'text-gray-600 dark:text-gray-300 bg-gray-50 dark:bg-gray-800 hover:bg-brand-50 dark:hover:bg-brand-900/20'
+                        : 'text-gray-600 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700'
                     }`}
                   >
-                    <span className="text-sm shrink-0">{calc.icon}</span>
-                    <div className="min-w-0">
-                      <p className="text-xs font-semibold leading-tight truncate">{calc.label}</p>
-                      <p className="text-[10px] text-gray-400 truncate">{calc.desc}</p>
+                    <span>{calc.icon}</span>
+                    <div>
+                      <p className="text-base font-semibold">{calc.label}</p>
+                      <p className="text-sm text-gray-400">{calc.desc}</p> 
                     </div>
                   </Link>
                 ))}
