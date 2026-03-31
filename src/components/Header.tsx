@@ -71,7 +71,7 @@ export const Header: React.FC<HeaderProps> = ({ isDarkMode, toggleDarkMode }) =>
   return (
     <header className="sticky top-0 z-50 bg-white dark:bg-gray-900 shadow-sm border-b border-gray-100 dark:border-gray-800 transition-colors duration-300">
       <div className="max-w-screen-3xl mx-auto px-8 h-24 flex items-center gap-2.5">
-        <LanguageTranslator />
+        {/* <LanguageTranslator /> */}
         {/* Logo */}
         <Link to="/" className="text-2xl font-black text-gray-900 dark:text-white tracking-tight shrink-0 mr-6">
           TheFit<span className="text-brand-600">Calculator</span>
@@ -154,6 +154,7 @@ export const Header: React.FC<HeaderProps> = ({ isDarkMode, toggleDarkMode }) =>
 
         {/* Mobile: language + dark + hamburger */}
         <div className="flex items-center gap-3 xl:hidden ml-auto">
+           <LanguageTranslator />
           <DarkToggle />
           <button
             onClick={() => setIsMenuOpen(o => !o)}
