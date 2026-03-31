@@ -244,14 +244,27 @@ const isShopPage = location.pathname === '/fitness-shop';
     <>
 <Helmet>
   {isShopPage && (
-    <>
       <title>Shop Fitness Equipment – TheFitCalculator</title>
+  )}
+  {isShopPage && (
       <meta name="description" content="Shop curated fitness equipment for every workout — resistance bands, yoga mats, foam rollers, water bottles and more." />
+  )}  
+  {isShopPage && (
       <link rel="canonical" href="https://thefitcalculator.com/fitness-shop" />
+  )}
+  {isShopPage && (  
       <meta property="og:title" content="Shop Fitness Equipment – TheFitCalculator" />
+  )} 
+  {isShopPage && (  
       <meta property="og:description" content="Shop curated fitness equipment for every workout — resistance bands, yoga mats, foam rollers, water bottles and more." />
+  )}
+  {isShopPage && (  
       <meta property="og:url" content="https://thefitcalculator.com/fitness-shop" />
+  )}
+  {isShopPage && (  
       <meta property="og:type" content="website" />
+  )}
+  {isShopPage && (  
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
@@ -283,7 +296,6 @@ const isShopPage = location.pathname === '/fitness-shop';
           })
         }}
       />
-    </>
   )}
 </Helmet>
 

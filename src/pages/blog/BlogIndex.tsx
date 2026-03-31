@@ -76,14 +76,22 @@ const BlogIndex: React.FC = () => {
     <>
       <Helmet>
   {isBlogPage && (
-    <>
-      <title>Health & Fitness Blog – TheFitCalculator</title>
-      <meta name="description" content="Science-backed articles/blog on BMI, calories, BMR, and healthy weight management for Indians. Expert health education from TheFitCalculator." />
-      <link rel="canonical" href="https://thefitcalculator.com/fitness-blog" />
-      <meta property="og:title" content="Health & Fitness Blog – TheFitCalculator" />
-      <meta property="og:description" content="Science-backed articles/blog on BMI, calories, BMR, and healthy weight management for Indians. Expert health education from TheFitCalculator." />
-      <meta property="og:url" content="https://thefitcalculator.com/fitness-blog" />
-    </>
+    <title>Health & Fitness Blog – TheFitCalculator</title>
+  )}
+  {isBlogPage && (
+    <meta name="description" content="Science-backed articles/blog on BMI, calories, BMR, and healthy weight management for Indians. Expert health education from TheFitCalculator." />
+  )}  
+  {isBlogPage && ( 
+    <link rel="canonical" href="https://thefitcalculator.com/fitness-blog" />
+  )}
+  {isBlogPage && (
+    <meta property="og:title" content="Health & Fitness Blog – TheFitCalculator" />
+  )}
+  {isBlogPage && ( 
+    <meta property="og:description" content="Science-backed articles/blog on BMI, calories, BMR, and healthy weight management for Indians. Expert health education from TheFitCalculator." />
+  )}
+  {isBlogPage && (
+    <meta property="og:url" content="https://thefitcalculator.com/fitness-blog" />
   )}
 </Helmet>
 

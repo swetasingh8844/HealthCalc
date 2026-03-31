@@ -93,14 +93,22 @@ const isNewsPage = location.pathname === '/fitness-news';
     <>
       <Helmet>
   {isNewsPage && (
-    <>
       <title>Latest Health & Fitness News | TheFitCalculator</title>
+  )}  
+  {isNewsPage && (
       <meta name="description" content="Stay updated with the latest health studies, fitness tips, and wellness news. Science-backed information to help you live a healthier life." />
+  )} 
+  {isNewsPage && (  
       <link rel="canonical" href="https://thefitcalculator.com/fitness-news" />
+  )} 
+  {isNewsPage && ( 
       <meta property="og:title" content="Latest Health & Fitness News | TheFitCalculator" />
+  )}
+  {isNewsPage && (
       <meta property="og:description" content="Stay updated with the latest health studies, fitness tips, and wellness news. Science-backed information to help you live a healthier life." />
-      <meta property="og:url" content="https://thefitcalculator.com/fitness-news" />
-    </>
+  )}  
+  {isNewsPage && ( 
+    <meta property="og:url" content="https://thefitcalculator.com/fitness-news" />
   )}
 </Helmet>
 

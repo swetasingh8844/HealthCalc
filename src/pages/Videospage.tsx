@@ -124,15 +124,30 @@ const isReelsPage = location.pathname === '/fitness-reels';
     <>
       <Helmet>
   {isReelsPage && (
-    <>
       <title>Fitness Reels – TheFitCalculator</title>
+  )}
+   {isReelsPage && (
       <meta name="description" content="Watch short fitness reels on BMI, BMR, calorie tracking, and healthy weight management from TheFitCalculator." />
+  )}
+  {isReelsPage && (
       <link rel="canonical" href="https://thefitcalculator.com/fitness-reels" />
+  )} 
+   {isReelsPage && (  
       <meta property="og:title" content="Fitness Reels – TheFitCalculator" />
+   )}  
+    {isReelsPage && (
       <meta property="og:description" content="Watch short fitness reels on workout tips and healthy weight management." />
+    )}  
+   {isReelsPage && (
       <meta property="og:url" content="https://thefitcalculator.com/fitness-reels" />
+   )}  
+    {isReelsPage && (
       <meta property="og:type" content="video.other" />
+    )}
+     {isReelsPage && ( 
       <meta property="og:image" content="https://thefitcalculator.com/images/reel1.jpeg" />
+     )} 
+    {isReelsPage && (
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
@@ -166,8 +181,7 @@ const isReelsPage = location.pathname === '/fitness-reels';
           })
         }}
       />
-    </>
-  )}
+      )}
 </Helmet>
 
        <div className="min-h-screen bg-white dark:bg-gray-950">

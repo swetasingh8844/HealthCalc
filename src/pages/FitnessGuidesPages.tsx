@@ -229,14 +229,22 @@ const isFitnessGuidePage = location.pathname === '/fitness-guide-videos';
     <>
      <Helmet>
   {isFitnessGuidePage && (
-    <>
       <title>Fitness Guides - Yoga Asanas, Meditation & Exercise | TheFitCalculator</title>
+  )}
+  {isFitnessGuidePage && (
       <meta name="description" content="Explore our aesthetic fitness guides for yoga asanas, meditation and exercise. Downloadable routines and video demonstrations for your health journey." />
+  )}
+  {isFitnessGuidePage && (
       <link rel="canonical" href="https://thefitcalculator.com/fitness-guide-videos" />
+  )}
+  {isFitnessGuidePage && (
       <meta property="og:title" content="Fitness Guides - Yoga Asanas, Meditation & Exercise | TheFitCalculator" />
+  )}  
+  {isFitnessGuidePage && ( 
       <meta property="og:description" content="Explore our aesthetic fitness guides for yoga asanas, meditation and exercise. Downloadable routines and video demonstrations for your health journey." />
+  )} 
+  {isFitnessGuidePage && (  
       <meta property="og:url" content="https://thefitcalculator.com/fitness-guide-videos" />
-    </>
   )}
 </Helmet>
 

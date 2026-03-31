@@ -331,10 +331,18 @@ export const LifeExpectancyCalculator: React.FC = () => {
   return (
     <>
       <Helmet>
-        {isCalculatorPage && <title>Free Life Expectancy Calculator – Estimate Your Lifespan Based on Lifestyle</title>}
-        {isCalculatorPage && <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />}
-        {isCalculatorPage && <meta name="description" content="Estimate your life expectancy based on age, gender, smoking, exercise, diet, BMI, stress, sleep, and medical history. Free longevity calculator with personalised health insights." />}
-        {isCalculatorPage && <link rel="canonical" href="https://thefitcalculator.com/life-expectancy-calculator" />}
+        {isCalculatorPage && (
+          <title>Free Life Expectancy Calculator – Estimate Your Lifespan Based on Lifestyle</title>
+        )}
+        {isCalculatorPage && (
+          <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
+        )}
+        {isCalculatorPage && (
+          <meta name="description" content="Estimate your life expectancy based on age, gender, smoking, exercise, diet, BMI, stress, sleep, and medical history. Free longevity calculator with personalised health insights." />
+        )}
+        {isCalculatorPage && (
+          <link rel="canonical" href="https://thefitcalculator.com/life-expectancy-calculator" />
+        )}
         {isCalculatorPage && (
         <meta property="og:title" content="Free Life Expectancy Calculator – Estimate Your Lifespan Based on Lifestyle" />
         )}

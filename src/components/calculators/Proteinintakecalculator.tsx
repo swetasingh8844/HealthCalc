@@ -235,10 +235,18 @@ export const ProteinIntakeCalculator: React.FC = () => {
   return (
     <>
       <Helmet>
-        {isCalculatorPage && <title>Free Protein Intake Calculator – Daily Protein Needs by Weight & Goal</title>}
-        {isCalculatorPage && <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />}
-        {isCalculatorPage && <meta name="description" content="Calculate your daily protein intake based on body weight, activity level, and fitness goal. Free protein calculator for muscle gain, fat loss, athletes, and healthy ageing." />}
-        {isCalculatorPage && <link rel="canonical" href="https://thefitcalculator.com/protein-intake-calculator" />}
+        {isCalculatorPage && (
+          <title>Free Protein Intake Calculator – Daily Protein Needs by Weight & Goal</title>
+        )}
+        {isCalculatorPage && (
+          <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
+        )}
+        {isCalculatorPage && (
+          <meta name="description" content="Calculate your daily protein intake based on body weight, activity level, and fitness goal. Free protein calculator for muscle gain, fat loss, athletes, and healthy ageing." />
+        )}
+        {isCalculatorPage && (
+          <link rel="canonical" href="https://thefitcalculator.com/protein-intake-calculator" />
+        )}
         {isCalculatorPage && (
         <meta property="og:title" content="Free Protein Intake Calculator – Daily Protein Needs by Weight & Goal" />
         )}

@@ -269,10 +269,18 @@ export const BodyFatCalculator: React.FC = () => {
   return (
     <>
       <Helmet>
-        {isCalculatorPage && <title>Free Body Fat Percentage Calculator – US Navy & BMI Method for Men & Women</title>}
-        {isCalculatorPage && <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />}
-        {isCalculatorPage && <meta name="description" content="Calculate your body fat percentage using the US Navy method or BMI-based formula. Free body fat calculator for men and women with category, fat mass, and lean mass results." />}
-        {isCalculatorPage && <link rel="canonical" href="https://thefitcalculator.com/body-fat-calculator" />}
+        {isCalculatorPage && (
+          <title>Free Body Fat Percentage Calculator – US Navy & BMI Method for Men & Women</title>
+        )}
+        {isCalculatorPage && (
+          <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
+        )}
+        {isCalculatorPage && (
+          <meta name="description" content="Calculate your body fat percentage using the US Navy method or BMI-based formula. Free body fat calculator for men and women with category, fat mass, and lean mass results." />
+        )}
+        {isCalculatorPage && (
+          <link rel="canonical" href="https://thefitcalculator.com/body-fat-calculator" />
+        )}
         {isCalculatorPage && (
         <meta property="og:title" content="Free Body Fat Percentage Calculator – US Navy & BMI Method for Men & Women" />
         )}
