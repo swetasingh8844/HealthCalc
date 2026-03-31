@@ -70,12 +70,12 @@ export const Header: React.FC<HeaderProps> = ({ isDarkMode, toggleDarkMode }) =>
 
   return (
     <header className="sticky top-0 z-50 bg-white dark:bg-gray-900 shadow-sm border-b border-gray-100 dark:border-gray-800 transition-colors duration-300">
-     <div className="w-full max-w-screen-xl mx-auto px-3 h-16 flex items-center gap-2 overflow-hidden">
+     <div className="w-full max-w-screen-xl mx-auto px-3 py-2 flex flex-col xl:flex-row xl:items-center gap-2">
         {/* Logo */}
         <Link to="/" className="text-lg sm:text-xl font-black text-gray-900 dark:text-white tracking-tight shrink-0 mr-6">
           TheFit<span className="text-brand-600">Calculator</span>
         </Link>
-
+          <LanguageTranslator />
         {/* Desktop Nav */}
        <nav className="hidden xl:flex items-center gap-0.5 flex-1 min-w-0 overflow-x-auto scrollbar-none">
 
@@ -151,13 +151,13 @@ export const Header: React.FC<HeaderProps> = ({ isDarkMode, toggleDarkMode }) =>
           <DarkToggle />
         </div>
 
-        {/* Mobile: language + dark + hamburger */}
+       {/* Mobile: language + dark + hamburger */}
        <div className="flex items-center gap-1 xl:hidden ml-auto max-w-[55%] overflow-hidden">
 
   {/* Language */}
-  <div className="w-[70px] shrink-0 overflow-hidden">
+  {/* <div className="w-[70px] shrink-0 overflow-hidden">
     <LanguageTranslator />
-  </div>
+  </div> */}
 
   {/* Dark Mode */}
   <div className="shrink-0">
