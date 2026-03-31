@@ -70,7 +70,7 @@ export const Header: React.FC<HeaderProps> = ({ isDarkMode, toggleDarkMode }) =>
 
   return (
     <header className="sticky top-0 z-50 bg-white dark:bg-gray-900 shadow-sm border-b border-gray-100 dark:border-gray-800 transition-colors duration-300">
-      <div className="max-w-screen-3xl mx-auto px-8 h-24 flex items-center gap-2.5">
+      <div className="w-full max-w-screen-xl mx-auto px-3 py-2 flex flex-col xl:flex-row xl:items-center gap-2">
         {/* Logo */}
         <Link to="/" className="text-2xl font-black text-gray-900 dark:text-white tracking-tight shrink-0 mr-6">
           TheFit<span className="text-brand-600">Calculator</span>
