@@ -170,48 +170,55 @@ export const Header: React.FC<HeaderProps> = ({ isDarkMode, toggleDarkMode }) =>
       </div>
 
       {/* Mobile Menu */}
+      {/* Mobile Menu */}
       {isMenuOpen && (
-        <div className="xl:hidden bg-white dark:bg-gray-900 border-t border-gray-100 dark:border-gray-800">
-          <div className="max-w-screen-2xl mx-auto px-4 py-3 flex flex-col gap-1">
+        <div className="xl:hidden bg-white dark:bg-gray-900 border-t border-gray-100 dark:border-gray-800 max-h-[80vh] overflow-y-auto">
+          <div className="px-3 py-3 flex flex-col gap-3">
 
-            {[
-              { to: '/',               label: 'Home' },
-              { to: '/about',          label: 'About' },
-              { to: '/contact',        label: 'Contact' },
-              { to: '/privacy-policy', label: 'Privacy Policy' },
-              { to: '/fitness-blog',           label: '📝 Blog' },
-              { to: '/fitness-shop',           label: '🛒 Shop' },
-              { to: '/fitness-reels',         label: '🎬 FitReels' },
-              { to: '/fitness-guide-videos',  label: '🏋️ Fitness Videos' },
-              { to: '/fitness-news',   label: '📰 Fitness News' },
-            ].map(link => (
-              <Link key={link.to} to={link.to}
-                className={`px-3 py-3 rounded-lg text-base font-medium transition ${
-                  location.pathname === link.to
-                    ? 'bg-brand-50 dark:bg-brand-900/30 text-brand-600 dark:text-brand-400'
-                    : 'text-gray-600 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-800'
-                }`}
-              >
-                {link.label}
-              </Link>
-            ))}
-
-            {/* Calculators */}
-            <div className="mt-2">
-              <p className="text-xs font-black uppercase tracking-widest text-gray-400 px-3 mb-1.5">🧮 Calculators</p>
-              <div className="bg-gray-50 dark:bg-gray-800 rounded-xl overflow-hidden divide-y divide-gray-100 dark:divide-gray-700">
-                {calculators.map(calc => (
-                  <Link key={calc.to} to={calc.to}
-                    className={`flex items-center gap-3 px-3 py-2.5 transition ${
-                      location.pathname === calc.to
-                        ? 'bg-brand-50 dark:bg-brand-900/30 text-brand-700 dark:text-brand-300'
-                        : 'text-gray-600 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700'
+            {/* Pages — 2 col grid */}
+            <div>
+              <p className="text-[10px] font-black uppercase tracking-widest text-gray-400 px-1 mb-1.5">Pages</p>
+              <div className="grid grid-cols-2 gap-1.5">
+                {[
+                  { to: '/',               label: '🏠 Home' },
+                  { to: '/about',          label: 'ℹ️ About' },
+                  { to: '/contact',        label: '✉️ Contact' },
+                  { to: '/privacy-policy', label: '🔒 Privacy' },
+                  { to: '/fitness-blog',   label: '📝 Blog' },
+                  { to: '/fitness-shop',   label: '🛒 Shop' },
+                  { to: '/fitness-reels',  label: '🎞️ FitReels' },
+                  { to: '/fitness-guide-videos', label: '🎬 Fitness' },
+                  { to: '/fitness-news',   label: '📰 News' },
+                ].map(link => (
+                  <Link key={link.to} to={link.to}
+                    className={`px-3 py-2 rounded-xl text-xs font-semibold transition text-center ${
+                      location.pathname === link.to
+                        ? 'bg-brand-50 dark:bg-brand-900/30 text-brand-600 dark:text-brand-400'
+                        : 'text-gray-600 dark:text-gray-300 bg-gray-50 dark:bg-gray-800 hover:bg-brand-50 dark:hover:bg-brand-900/20'
                     }`}
                   >
-                    <span>{calc.icon}</span>
-                    <div>
-                      <p className="text-base font-semibold">{calc.label}</p>
-                      <p className="text-sm text-gray-400">{calc.desc}</p> 
+                    {link.label}
+                  </Link>
+                ))}
+              </div>
+            </div>
+
+            {/* Calculators — 2 col grid */}
+            <div>
+              <p className="text-[10px] font-black uppercase tracking-widest text-gray-400 px-1 mb-1.5">🧮 Calculators</p>
+              <div className="grid grid-cols-2 gap-1.5">
+                {calculators.map(calc => (
+                  <Link key={calc.to} to={calc.to}
+                    className={`flex items-center gap-2 px-3 py-2 rounded-xl transition ${
+                      location.pathname === calc.to
+                        ? 'bg-brand-50 dark:bg-brand-900/30 text-brand-700 dark:text-brand-300'
+                        : 'text-gray-600 dark:text-gray-300 bg-gray-50 dark:bg-gray-800 hover:bg-brand-50 dark:hover:bg-brand-900/20'
+                    }`}
+                  >
+                    <span className="text-sm shrink-0">{calc.icon}</span>
+                    <div className="min-w-0">
+                      <p className="text-xs font-semibold leading-tight truncate">{calc.label}</p>
+                      <p className="text-[10px] text-gray-400 truncate">{calc.desc}</p>
                     </div>
                   </Link>
                 ))}
