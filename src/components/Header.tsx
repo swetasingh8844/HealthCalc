@@ -70,10 +70,9 @@ export const Header: React.FC<HeaderProps> = ({ isDarkMode, toggleDarkMode }) =>
 
   return (
     <header className="sticky top-0 z-50 bg-white dark:bg-gray-900 shadow-sm border-b border-gray-100 dark:border-gray-800 transition-colors duration-300">
-      <div className="max-w-screen-3xl mx-auto px-8 h-24 flex items-center gap-2.5">
-
+     <div className="w-full max-w-screen-xl mx-auto px-3 h-16 flex items-center gap-2 overflow-hidden">
         {/* Logo */}
-        <Link to="/" className="text-2xl font-black text-gray-900 dark:text-white tracking-tight shrink-0 mr-6">
+        <Link to="/" className="text-lg sm:text-xl font-black text-gray-900 dark:text-white tracking-tight shrink-0 mr-6">
           TheFit<span className="text-brand-600">Calculator</span>
         </Link>
 
@@ -108,7 +107,7 @@ export const Header: React.FC<HeaderProps> = ({ isDarkMode, toggleDarkMode }) =>
   {isCalcDropdownOpen && (
    <div
   style={{ top: calcPos.top, left: calcPos.left }}
-  className="fixed w-64 bg-white dark:bg-gray-800 border border-gray-100 dark:border-gray-700 rounded-2xl shadow-xl z-[99999]"
+  className="fixed w-64 bg-white dark:bg-gray-800 border border-gray-100 dark:border-gray-700 rounded-2xl shadow-xl z-[50]"
 >
       <div className="p-2">
         {calculators.map(calc => (
@@ -153,20 +152,33 @@ export const Header: React.FC<HeaderProps> = ({ isDarkMode, toggleDarkMode }) =>
         </div>
 
         {/* Mobile: language + dark + hamburger */}
-        <div className="flex items-center gap-1 xl:hidden ml-auto">
-          <LanguageTranslator />
-          <DarkToggle />
-          <button
-            onClick={() => setIsMenuOpen(o => !o)}
-            className="p-1.5 text-gray-600 dark:text-gray-300 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors"
-            aria-label="Toggle menu"
-          >
-            <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2}
-                d={isMenuOpen ? 'M6 18L18 6M6 6l12 12' : 'M4 6h16M4 12h16M4 18h16'} />
-            </svg>
-          </button>
-        </div>
+       <div className="flex items-center gap-1 xl:hidden ml-auto max-w-[55%] overflow-hidden">
+
+  {/* Language */}
+  <div className="w-[70px] shrink-0 overflow-hidden">
+    <LanguageTranslator />
+  </div>
+
+  {/* Dark Mode */}
+  <div className="shrink-0">
+    <DarkToggle />
+  </div>
+
+  {/* Menu */}
+  <button
+    onClick={() => setIsMenuOpen(o => !o)}
+    className="p-1.5 shrink-0 text-gray-600 dark:text-gray-300 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700"
+  >
+    <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2}
+        d={isMenuOpen
+          ? 'M6 18L18 6M6 6l12 12'
+          : 'M4 6h16M4 12h16M4 18h16'}
+      />
+    </svg>
+  </button>
+
+</div>
       </div>
 
       {/* Mobile Menu */}
