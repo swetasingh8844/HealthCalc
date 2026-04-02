@@ -70,23 +70,27 @@ export const Header: React.FC<HeaderProps> = ({ isDarkMode, toggleDarkMode }) =>
 
   return (
     <header className="sticky top-0 z-50 bg-white dark:bg-gray-900 shadow-sm border-b border-gray-100 dark:border-gray-800 transition-colors duration-300">
-      <div className="w-full max-w-screen-xl mx-auto px-3 py-2 flex flex-col xl:flex-row xl:items-center gap-2">
+      <div className="w-full mx-auto px-4 py-2 flex flex-col xl:flex-row xl:items-center gap-2 shrink-0 ">
         {/* Logo */}
-        <Link to="/" className="text-2xl font-black text-gray-900 dark:text-white tracking-tight shrink-0 mr-2">
-          TheFit<span className="text-brand-600">Calculator</span>
-          
-        </Link>
-       <LanguageTranslator />
+        {/* Logo + Language */}
+<div className="flex items-center gap-3 shrink-0 mr-6">
+  <Link to="/" className="text-2xl font-black text-gray-900 dark:text-white tracking-tight shrink-0">
+    TheFit<span className="text-brand-600">Calculator</span>
+  </Link>
+  <div className="hidden xl:block">
+    <LanguageTranslator />
+  </div>
+</div>
         {/* Desktop Nav */}
        <nav className="hidden xl:flex items-center gap-0.5 flex-1 min-w-0 overflow-x-auto scrollbar-none">
 
   {/* Scrollable section — only these 4 links scroll */}
-  <div className="flex items-center gap-0.5 overflow-x-auto scrollbar-none min-w-0">
-    <Link to="/"               className={nl('/')}>Home</Link>
-    <Link to="/about"          className={nl('/about')}>About</Link>
-    <Link to="/contact"        className={nl('/contact')}>Contact</Link>
-    <Link to="/privacy-policy" className={nl('/privacy-policy')}>Privacy</Link>
-  </div>
+  <div className="flex items-center gap-0.5 shrink-0">
+  <Link to="/"               className={nl('/')}>Home</Link>
+  <Link to="/about"          className={nl('/about')}>About</Link>
+  <Link to="/contact"        className={nl('/contact')}>Contact</Link>
+  <Link to="/privacy-policy" className={nl('/privacy-policy')}>Privacy</Link>
+</div>
 
   {/* Calculators dropdown — NOT inside scrollable div */}
  <div className="relative shrink-0 overflow-visible" ref={calcRef}>
@@ -147,33 +151,25 @@ export const Header: React.FC<HeaderProps> = ({ isDarkMode, toggleDarkMode }) =>
 </nav>
 
         {/* Right: Language + Dark toggle */}
-        <div className="hidden xl:flex items-center gap-2 shrink-0 ml-auto">
+        <div className="hidden xl:flex items-center gap-4 shrink-0 ml-auto">
           {/* <LanguageTranslator /> */}
           <DarkToggle />
         </div>
 
         {/* Mobile: language + dark + hamburger */}
-       <div className="flex items-center gap-1 xl:hidden ml-auto max-w-[55%] overflow-hidden">
-
-  {/* Dark Mode */}
-  <div className="shrink-0">
-    <DarkToggle />
-  </div>
-
-  {/* Menu */}
+       <div className="flex items-center gap-1.5 xl:hidden ml-auto">
+  <LanguageTranslator />
   <button
     onClick={() => setIsMenuOpen(o => !o)}
-    className="p-1.5 shrink-0 text-gray-600 dark:text-gray-300 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700"
+    className="p-1.5 text-gray-600 dark:text-gray-300 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors shrink-0"
+    aria-label="Toggle menu"
   >
     <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2}
-        d={isMenuOpen
-          ? 'M6 18L18 6M6 6l12 12'
-          : 'M4 6h16M4 12h16M4 18h16'}
-      />
+        d={isMenuOpen ? 'M6 18L18 6M6 6l12 12' : 'M4 6h16M4 12h16M4 18h16'} />
     </svg>
   </button>
-
+  <DarkToggle />
 </div>
       </div>
 
