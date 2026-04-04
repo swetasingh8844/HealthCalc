@@ -70,7 +70,7 @@ export const Header: React.FC<HeaderProps> = ({ isDarkMode, toggleDarkMode }) =>
 
   return (
     <header className="sticky top-0 z-50 bg-white dark:bg-gray-900 shadow-sm border-b border-gray-100 dark:border-gray-800 transition-colors duration-300">
-      <div className="w-full mx-auto px-4 py-2 flex flex-col xl:flex-row xl:items-center gap-2 shrink-0 ">
+      <div className="w-full mx-auto px-4 py-4 flex flex-col xl:flex-row xl:items-center gap-2 shrink-0 ">
         {/* Logo */}
         {/* Logo + Language */}
 <div className="flex items-center gap-3 shrink-0 mr-6">
