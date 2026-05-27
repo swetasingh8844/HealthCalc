@@ -24,6 +24,7 @@
   <url><loc>https://thefitcalculator.com/about</loc><priority>0.5</priority></url>
   <url><loc>https://thefitcalculator.com/contact</loc><priority>0.5</priority></url>
   <url><loc>https://thefitcalculator.com/privacy-policy</loc><priority>0.4</priority></url>
+  <url><loc>https://thefitcalculator.com/calmnest</loc><priority>0.4</priority></url>
   <url><loc>https://thefitcalculator.com/fitness-reels</loc><changefreq>weekly</changefreq><priority>0.7</priority></url>
 
 </urlset>

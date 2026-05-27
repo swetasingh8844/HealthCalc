@@ -75,6 +75,16 @@ const fitnessContent = [
     bg: 'bg-rose-50 dark:bg-rose-900/20',
     border: 'border-rose-200 dark:border-rose-800',
   },
+  {
+    to: '/calmnest',
+    icon: '🌿',
+    label: 'Calmnest — Wellness Corner',
+    desc: 'Breathing exercises, relaxing sounds, mood check-ins, hydration tracker, daily quotes and desk stretches.',
+    tag: 'Calmnest',
+    color: 'from-teal-500 to-emerald-600',
+    bg: 'bg-teal-50 dark:bg-teal-900/20',
+    border: 'border-teal-200 dark:border-teal-800',
+  },
 ];
 
 const healthTips = [

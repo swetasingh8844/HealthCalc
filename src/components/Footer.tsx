@@ -56,6 +56,7 @@ export const Footer: React.FC = () => {
               <li><Link to="/fitness-guide-videos" className="hover:text-brand-500 transition-colors">🎬 Fitness Videos</Link></li>
               <li><Link to="/fitness-reels" className="hover:text-brand-500 transition-colors">🎞️ FitReels</Link></li>
               <li><Link to="/fitness-news" className="hover:text-brand-500 transition-colors">📰 Fitness News</Link></li>
+               <li><Link to="/calmnest" className="hover:text-brand-500 transition-colors">📰 CalmNest</Link></li>
             </ul>
           </div>
 

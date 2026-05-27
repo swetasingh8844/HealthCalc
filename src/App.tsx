@@ -29,6 +29,7 @@ import { ProteinIntakeCalculator } from './components/calculators/Proteinintakec
 import { LifeExpectancyCalculator } from './components/calculators/Lifeexpectancycalculator';
 import FitnessGuidesPage from './pages/FitnessGuidesPages';
 import HealthNewsPage from './pages/HealthNewsPage';
+import Calmnest from './pages/Calmnest';
 
 // Scroll to top on route change
 const ScrollToTop = () => {
@@ -117,6 +118,7 @@ const App: React.FC = () => {
             <Route path="/life-expectancy-calculator" element={<LifeExpectancyCalculator />} />
             <Route path="/fitness-guide-videos" element={<FitnessGuidesPage />} />
             <Route path="/fitness-news" element={<HealthNewsPage />} />
+            <Route path= "/calmnest" element={<Calmnest />}/>
           </Routes>
           </Layout>
         </main>
